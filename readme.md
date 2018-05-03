@@ -15,7 +15,11 @@ s
 s
 s
 s
+<<<<<<< HEAD
 a
 a
 a
 a
+=======
+We got this
+>>>>>>> development
