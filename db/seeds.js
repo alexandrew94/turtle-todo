@@ -15,13 +15,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date(2018, 04, 04),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date(2018, 04, 04),
+      dueDate: new Date('2018-05-03'),
       recurring: 7
     }]}, {
     username: 'user2',
@@ -34,13 +34,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date(2016, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date(2016, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     }]}, {
     username: 'user3',
@@ -51,13 +51,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date(2016, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date(2016, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     }]}, {
     username: 'user4',
@@ -68,13 +68,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date(2016, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     },{
       title: 'Walking rex the cat' ,
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date(2018, 04, 01),
+      dueDate: new Date('2018-05-04'),
       recurring: 7
     } ]
   }])
