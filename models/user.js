@@ -4,8 +4,9 @@ mongoose.Promise = require('bluebird');
 
 const taskSchema = new mongoose.Schema({
   title: String,
+  points: Number,
   description: String,
-  actionRequired: Boolean,
+  dueDate: Date,
   recurring: Number
 }, {
   timestamps: true

@@ -13,12 +13,16 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'u1',
     tasks: [{
       title: 'Dishwashing',
+      points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      actionRequired: true
+      dueDate: new Date(2018, 04, 04),
+      recurring: 7
     }, {
       title: 'Walking rex the cat',
+      points: 5,
       description: 'I like dogs better',
-      actionRequired: true
+      dueDate: new Date(2018, 04, 04),
+      recurring: 7
     }]}, {
     username: 'user2',
     email: 'user2@user2',
@@ -28,10 +32,16 @@ mongoose.connect(dbURI, (err, db) => {
     dishwashingScore: 5,
     tasks: [{
       title: 'Dishwashing',
-      description: 'I dont mind doing them if i didnt cook'
+      points: 5,
+      description: 'I dont mind doing them if i didnt cook',
+      dueDate: new Date(2016, 04, 01),
+      recurring: 7
     }, {
       title: 'Walking rex the cat',
-      description: 'I like dogs better'
+      points: 5,
+      description: 'I like dogs better',
+      dueDate: new Date(2016, 04, 01),
+      recurring: 7
     }]}, {
     username: 'user3',
     email: 'user3@user3',
@@ -39,21 +49,33 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'u3',
     tasks: [{
       title: 'Dishwashing',
-      description: 'I dont mind doing them if i didnt cook'
+      points: 5,
+      description: 'I dont mind doing them if i didnt cook',
+      dueDate: new Date(2016, 04, 01),
+      recurring: 7
     }, {
       title: 'Walking rex the cat',
-      description: 'I like dogs better'
+      points: 5,
+      description: 'I like dogs better',
+      dueDate: new Date(2016, 04, 01),
+      recurring: 7
     }]}, {
     username: 'user4',
     email: 'u4@u4',
     password: 'u4',
     passwordConfirmation: 'u4',
     tasks: [{
-      title: 'Dishwashing' ,
-      description: 'I dont mind doing them if i didnt cook'
+      title: 'Dishwashing',
+      points: 5,
+      description: 'I dont mind doing them if i didnt cook',
+      dueDate: new Date(2016, 04, 01),
+      recurring: 7
     },{
       title: 'Walking rex the cat' ,
-      description: 'I like dogs better'
+      points: 5,
+      description: 'I like dogs better',
+      dueDate: new Date(2018, 04, 01),
+      recurring: 7
     } ]
   }])
     .then(users => console.log(`${users.length} users created!`))
