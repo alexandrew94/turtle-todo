@@ -15,4 +15,4 @@ app.use('/api', router);
 
 app.use(errorHandler);
 
-app.listen(4000, () => console.log(`Totes on port ${port} tho`));
+app.listen(port, () => console.log(`Totes on port ${port} tho`));
