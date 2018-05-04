@@ -8,6 +8,10 @@ router.route('/users')
   .get(users.usersIndex);
 
 router.route('/users/:id')
+  .post(secureRoute, users.usersEdit)
+  .delete(secureRoute, users.usersDelete);
+
+router.route('/users/:id/tasks')
   .get(secureRoute, tasks.tasksIndex)
   .post(secureRoute, tasks.tasksCreate);
 

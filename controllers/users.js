@@ -10,14 +10,6 @@ function usersIndex(req, res, next) {
     .catch(err => next(err));
 }
 
-// Creating a new user
-// function usersCreate(req, res, next) {
-//   User
-//     .create(req.body)
-//     .then(user => res.status(201).json(user))
-//     .catch(err => next(err));
-// }
-
 //Register/USER Create
 function usersCreate(req, res ,next){
   User.create(req.body)
@@ -49,10 +41,42 @@ function login(req, res, next) {
     .catch(next);
 }
 
-// Remaining tasks:
+// Letting the currently logged in user edit themselves
+function usersEdit(req, res, next) {
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (user.id === req.currentUser.id) {
+        user = Object.assign(user, req.body);
+        user.save();
+        return res.json(user);
+      } else {
+        return res.json({ message: 'Unauthorized' });
+      }
+    })
+    .catch(err => next(err));
+}
 
+// Letting the currently logged in user delete themselves
+function usersDelete(req, res, next) {
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (user.id === req.currentUser.id) {
+        user.remove();
+        return res.json({ message: 'User successfully removed' });
+      } else {
+        return res.json({ message: 'Unauthorized' });
+      }
+    })
+    .catch(err => next(err));
+}
+
+// Remaining tasks:
 module.exports = {
   usersIndex: usersIndex,
   usersCreate: usersCreate,
+  usersEdit: usersEdit,
+  usersDelete: usersDelete,
   login: login
 };
