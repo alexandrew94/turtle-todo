@@ -13,15 +13,19 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'u1',
     tasks: [{
       title: 'Dishwashing',
-      description: 'I dont mind doing them if i didnt cook'
+      description: 'I dont mind doing them if i didnt cook',
+      actionRequired: true
     }, {
       title: 'Walking rex the cat',
-      description: 'I like dogs better'
+      description: 'I like dogs better',
+      actionRequired: true
     }]}, {
     username: 'user2',
     email: 'user2@user2',
     password: 'u2',
     passwordConfirmation: 'u2',
+    score: 25,
+    dishwashingScore: 5,
     tasks: [{
       title: 'Dishwashing',
       description: 'I dont mind doing them if i didnt cook'
