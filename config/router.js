@@ -10,6 +10,9 @@ router.route('/users/:id')
   .get(tasks.tasksIndex)
   .post(tasks.tasksCreate);
 
+router.post('/login', users.login);
+
+
 router.route('/users/:id/tasks/:taskId')
   .get(tasks.tasksShow)
   .post(tasks.tasksEdit)

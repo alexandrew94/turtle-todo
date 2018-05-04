@@ -87,10 +87,11 @@ function tasksDelete(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      const task = user.tasks.id(req.params.tasksId);
+      const task = user.tasks.id(req.params.taskId);
       task.remove();
       return user.save();
     })
+    .then(task => res.json(task))
     .catch(err => next(err));
 }
 
