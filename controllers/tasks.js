@@ -1,20 +1,22 @@
 const User = require('../models/user');
+const moment = require('moment');
 
 // Indexing all the tasks for a certain user
 function tasksIndex(req, res, next) {
   User
     .findById(req.params.id)
-    // .populate('tasks')
-    // I don't know why populate isn't required here.
     .then(user => {
-      const requiredTasks = [];
-      user.tasks.forEach(e => {
-        // Insert some sort of validation for times here, some sort of mechanism to check if the timing of the event is required.
-        if (e.actionRequired) {
-          requiredTasks.push(e);
-        }
-      });
-      res.json(requiredTasks);
+      if(user.id === req.currentUser.id) {
+        const todaysTasks = [];
+        user.tasks.forEach(e => {
+          if (moment(new Date()).format('MMM Do YY') === moment(e.dueDate).format('MMM Do YY')) {
+            todaysTasks.push(e);
+          }
+        });
+        res.json(todaysTasks);
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
     })
     .catch(err => next(err));
 }
@@ -24,9 +26,13 @@ function tasksCreate(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      req.body.actionRequired = true;
-      user.tasks.push(req.body);
-      return user.save();
+      if(user.id === req.currentUser.id) {
+        req.body.actionRequired = true;
+        user.tasks.push(req.body);
+        return user.save();
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
     })
     .then(user => res.json(user))
     .catch(err => next(err));
@@ -37,23 +43,27 @@ function tasksComplete(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      const task = user.tasks.id(req.params.taskId);
-      if (!user.score) {
-        user.score = 0;
+      if(user.id === req.currentUser.id) {
+        const task = user.tasks.id(req.params.taskId);
+        if (!user.score) {
+          user.score = 0;
+        }
+        user.score += 5;
+        if (!user[`${task.title}Score`]) {
+          user[`${task.title}Score`] = 0;
+        }
+        user[`${task.title}Score`] += task.points;
+        // All of these lines above could be used in the future to determine how to increment the score on the main user data. I think this is actually subject to change depending on the naming conventions we call our tasks etc. For instance, if we do this our task title can't have spaces in it.
+        task.actionRequired = false;
+        if (!task.recurring) {
+          task.remove();
+        }
+        // For recurring tasks, we might not remove this.
+        user.save();
+        return res.status(202).json(user);
+      } else {
+        res.json({ message: 'Unauthorized' });
       }
-      user.score += 5;
-      if (!user[`${task.title}Score`]) {
-        user[`${task.title}Score`] = 0;
-      }
-      user[`${task.title}Score`] += 5;
-      // All of these lines above could be used in the future to determine how to increment the score on the main user data. I think this is actually subject to change depending on the naming conventions we call our tasks etc. For instance, if we do this our task title can't have spaces in it.
-      task.actionRequired = false;
-      if (!task.recurring) {
-        task.remove();
-      }
-      // For recurring tasks, we might not remove this.
-      user.save();
-      return res.status(202).json(user);
     })
     .catch(err => next(err));
 }
@@ -63,8 +73,12 @@ function tasksShow(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      const task = user.tasks.id(req.params.taskId);
-      res.json(task);
+      if(user.id === req.currentUser.id) {
+        const task = user.tasks.id(req.params.taskId);
+        res.json(task);
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
     })
     .catch(err => next(err));
 }
@@ -74,10 +88,14 @@ function tasksEdit(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      let task = user.tasks.id(req.params.taskId);
-      task = Object.assign(task, req.body);
-      user.save();
-      res.json(task);
+      if(user.id === req.currentUser.id) {
+        let task = user.tasks.id(req.params.taskId);
+        task = Object.assign(task, req.body);
+        user.save();
+        res.json(task);
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
     })
     .catch(err => next(err));
 }
@@ -87,9 +105,13 @@ function tasksDelete(req, res, next) {
   User
     .findById(req.params.id)
     .then(user => {
-      const task = user.tasks.id(req.params.taskId);
-      task.remove();
-      return user.save();
+      if(user.id === req.currentUser.id) {
+        const task = user.tasks.id(req.params.taskId);
+        task.remove();
+        return user.save();
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
     })
     .then(task => res.json(task))
     .catch(err => next(err));
