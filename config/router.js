@@ -15,7 +15,8 @@ router.post('/login', users.login);
 
 router.route('/users/:id/tasks/:taskId')
   .get(tasks.tasksShow)
-  .post(tasks.tasksEdit);
+  .post(tasks.tasksEdit)
+  .delete(tasks.tasksDelete);
 
 router.route('/users/:id/tasks/:taskId/complete')
   .post(tasks.tasksComplete);
