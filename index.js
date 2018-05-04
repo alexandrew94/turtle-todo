@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const router = require('./config/router');
 const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/project-3');
+const router = require('./config/router');
+
+const { port, dbURI } = require('./config/environment');
+
+mongoose.connect(dbURI);
 
 app.use(bodyParser.json());
 app.use('/api', router);
 
-app.listen(4000, () => console.log('Totes on port 4000 tho'));
+
+app.listen(4000, () => console.log(`Totes on port ${port} tho`));
