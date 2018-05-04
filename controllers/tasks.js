@@ -32,17 +32,6 @@ function tasksCreate(req, res, next) {
     .catch(err => next(err));
 }
 
-//  Finding a particular task by the task Id
-function tasksShow(req, res, next) {
-  User
-    .findById(req.params.id)
-    .then(user => {
-      const task = user.tasks.id(req.params.taskId);
-      res.json(task);
-    })
-    .catch(err => next(err));
-}
-
 // This 'deletion' function will be used for completing a task. It will update the user's score when you do it.
 function tasksComplete(req, res, next) {
   User
@@ -69,11 +58,49 @@ function tasksComplete(req, res, next) {
     .catch(err => next(err));
 }
 
+//  Finding a particular task by the task Id
+function tasksShow(req, res, next) {
+  User
+    .findById(req.params.id)
+    .then(user => {
+      const task = user.tasks.id(req.params.taskId);
+      res.json(task);
+    })
+    .catch(err => next(err));
+}
+
+function tasksEdit(req, res, next) {
+  // This will need some sort of validation later, since we want only the currently logged in user to be able to edit a task.
+  User
+    .findById(req.params.id)
+    .then(user => {
+      let task = user.tasks.id(req.params.taskId);
+      task = Object.assign(task, req.body);
+      user.save();
+      res.json(task);
+    })
+    .catch(err => next(err));
+}
+
+function tasksDelete(req, res, next) {
+  // This will need some sort of validation later, since we want only the currently logged in user to be able to delete a task.
+  User
+    .findById(req.params.id)
+    .then(user => {
+      const task = user.tasks.id(req.params.tasksId);
+      task.remove();
+      return user.save();
+    })
+    .catch(err => next(err));
+}
+
 // Remaining tasks:
 
 module.exports = {
   tasksIndex: tasksIndex,
   tasksCreate: tasksCreate,
   tasksShow: tasksShow,
-  tasksComplete: tasksComplete
+  tasksEdit: tasksEdit,
+  tasksComplete: tasksComplete,
+  tasksDelete: tasksDelete
 };
