@@ -52,7 +52,7 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'I like dogs better'
     } ]
   }])
-    .then(users => console.log(`${users.length} wines created!`))
+    .then(users => console.log(`${users.length} users created!`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
 

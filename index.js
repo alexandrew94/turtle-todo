@@ -12,5 +12,4 @@ mongoose.connect(dbURI);
 app.use(bodyParser.json());
 app.use('/api', router);
 
-
 app.listen(4000, () => console.log(`Totes on port ${port} tho`));
