@@ -1,0 +1,20 @@
+<form ng-submit="usersEdit.handleUsersEdit()">
+  <div class="field">
+    <label for="username">Username</label>
+    <input class="input" placeholder="Username" name="username" ng-model="usersEdit.user.username" />
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input class="input" placeholder="Email" name="email" ng-model="usersEdit.user.email" />
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input class="input" type="password" placeholder="Password" name="password" ng-model="usersEdit.user.password" />
+  </div>
+  <div class="field">
+    <label for="passwordConfirmation">Password Confirmation</label>
+    <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="usersEdit.user.passwordConfirmation" />
+  </div>
+
+  <button class="button is-primary">Submit</button>
+</form>

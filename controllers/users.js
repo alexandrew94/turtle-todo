@@ -10,6 +10,14 @@ function usersIndex(req, res, next) {
     .catch(err => next(err));
 }
 
+// Show the current user
+function usersShow(req, res, next) {
+  User
+    .findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err => next(err));
+}
+
 //Register/USER Create
 function usersCreate(req, res ,next){
   User.create(req.body)
@@ -75,6 +83,7 @@ function usersDelete(req, res, next) {
 // Remaining tasks:
 module.exports = {
   usersIndex: usersIndex,
+  usersShow: usersShow,
   usersCreate: usersCreate,
   usersEdit: usersEdit,
   usersDelete: usersDelete,

@@ -2,13 +2,14 @@ LoginCtrl.$inject = ['$auth', '$state'];
 
 function LoginCtrl($auth, $state) {
   this.data = {};
-  this.handleLogin = function handleLogin() {
+
+  function handleLogin() {
     $auth
       .login(this.data)
-      .then(res => $state.go('tasksHome', { id:
-        res.data.user._id}));
+      .then(res => $state.go('tasksHome', { id: res.data.user._id }));
+  }
 
-  };
+  this.handleLogin = handleLogin;
 }
 
 export default LoginCtrl;
