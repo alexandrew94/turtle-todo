@@ -1,12 +1,14 @@
-loginCtrl.$inject = ['$auth', '$state'];
+LoginCtrl.$inject = ['$auth', '$state'];
 
-function loginCtrl($auth, $state) {
+function LoginCtrl($auth, $state) {
   this.data = {};
   this.handleLogin = function handleLogin() {
     $auth
       .login(this.data)
-      .then(() => $state.go('tasksHome'));
+      .then(res => $state.go('tasksHome', { id:
+        res.data.user._id}));
+
   };
 }
 
-export default loginCtrl;
+export default LoginCtrl;

@@ -15,13 +15,13 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date('2018-05-04'),
+      dueDate: new Date('2018-05-05'),
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date('2018-05-03'),
+      dueDate: new Date('2018-05-05'),
       recurring: 7
     }]}, {
     username: 'user2',
