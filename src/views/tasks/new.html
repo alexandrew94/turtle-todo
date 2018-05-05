@@ -1,1 +1,20 @@
 <h1>NEW TASK</h1>
+<form name="tasksNew.form" ng-submit="tasksNew.handleCreate()" novalidate>
+  <div class="field">
+    <label for="title">Title</label>
+    <input class="input" placeholder="Title" name="title" ng-model="tasksNew.data.title"/>
+  </div>
+  <div class="field">
+    <label for="points">Points</label>
+    <input class="input" placeholder="Points" name="points" ng-model="tasksNew.data.points"/>
+  </div>
+  <div class="field">
+    <label for="description">Description</label>
+    <input class="input" placeholder="Description" name="description" ng-model="tasksNew.data.description"/>
+  </div>
+  <div class="field">
+    <label for="dueDate">DueDate</label>
+    <input class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
+  </div>
+  <button class="button is-primary">Submit</button>
+</form>

@@ -12,6 +12,7 @@ import RegisterCtrl from './controllers/auth/register';
 import UsersShowCtrl from './controllers/auth/show';
 import UsersEditCtrl from './controllers/auth/edit';
 import TasksIndexCtrl from './controllers/tasks/index';
+import TasksNewCtrl from './controllers/tasks/new';
 
 // import './scss/style.scss';
 
@@ -21,6 +22,7 @@ angular.module('todo', ['ui.router', 'satellizer'])
   .config(Auth)
   .controller('LoginCtrl', LoginCtrl)
   .controller('TasksIndexCtrl', TasksIndexCtrl)
+  .controller('TasksNewCtrl', TasksNewCtrl)
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl);

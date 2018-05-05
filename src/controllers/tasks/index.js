@@ -4,8 +4,7 @@ function TasksIndexCtrl($http, $state) {
   this.all = [];
 
   console.log('User Id--->',$state.params.id);
-  const id = $state.params.id;
-  $http.get(`/api/users/${id}/tasks`)
+  $http.get(`/api/users/${$state.params.id}/tasks`)
   // .then(res => console.log('Users tasks --->', res.data));
     .then(res => this.all = res.data);
 }

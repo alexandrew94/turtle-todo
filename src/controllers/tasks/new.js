@@ -1,11 +1,16 @@
-WinesNewCtrl.$inject = ['$http', '$state'];
+TasksNewCtrl.$inject = ['$http', '$state'];
 
 
-function WinesNewCtrl($http, $state) {
-  this.data = {}
+function TasksNewCtrl($http, $state) {
+  this.data = {};
+  console.log('User Id--->',$state.params.id);
 
-  $http.post('/api/wines', data);
+  function handleCreate(){
 
-
-  .then(() => $state.go('tasksIndex'));
+    $http.post(`/api/users/${$state.params.id}/tasks`, this.data)
+      .then(() => $state.go('tasksHome'));
+  }
+  this.handleCreate = handleCreate;
 }
+
+export default TasksNewCtrl;
