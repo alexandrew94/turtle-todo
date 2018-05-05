@@ -1,0 +1,11 @@
+<form ng-submit="login.handleLogin()">
+  <div class="field">
+    <label for="email">Email</label>
+    <input class="input" placeholder="Email" name="email" ng-model="login.data.email" />
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input class="input" type="password" placeholder="Password" name="password" ng-model="login.data.password" />
+  </div>
+  <button class="button is-primary">Submit</button>
+</form>
