@@ -4,11 +4,11 @@ const tasks = require('../controllers/tasks');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/users')
-  .post(users.usersCreate)
   .get(users.usersIndex);
 
 router.route('/users/:id')
-  .post(secureRoute, users.usersEdit)
+  .get(secureRoute, users.usersShow)
+  .put(secureRoute, users.usersEdit)
   .delete(secureRoute, users.usersDelete);
 
 router.route('/users/:id/tasks')
@@ -16,6 +16,8 @@ router.route('/users/:id/tasks')
   .post(secureRoute, tasks.tasksCreate);
 
 router.post('/login', users.login);
+
+router.post('/register', users.usersCreate);
 
 router.route('/users/:id/tasks/:taskId')
   .get(secureRoute, tasks.tasksShow)
