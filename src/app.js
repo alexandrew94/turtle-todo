@@ -1,7 +1,7 @@
 import angular from 'angular';
 // 3rd party dependincies
 import '@uirouter/angularjs';
-// import 'satellizer';
+import 'satellizer';
 
 import Router from './config/router';
 import Auth from './config/auth';
@@ -13,7 +13,7 @@ import 'bulma';
 // import UsersIndexCtrl from './controllers/users/index';
 
 
-angular.module('todo', ['ui.router'])
+angular.module('todo', ['ui.router', 'satellizer'])
   .config(Router)
   .config(Auth)
   .controller('LoginCtrl', LoginCtrl);
