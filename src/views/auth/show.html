@@ -2,3 +2,6 @@
 <p>You have to be logged in as the user to see the data on this page.</p>
 <p>Username: {{ usersShow.user.username }}</p>
 <p>Email: {{ usersShow.user.email }}</p>
+<p>Total Score: {{ usersShow.user.score }}</p>
+<p>Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
+<button ng-click="usersShow.handleUsersDelete()" class="button">Delete Profile</button>
