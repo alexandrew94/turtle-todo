@@ -8,12 +8,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('tasksHome',{
       url: '/users/:id/tasks',
-<<<<<<< HEAD
       templateUrl: 'views/tasks/index.html',
       controller: 'TasksIndexCtrl as tasksIndex'
-=======
-      templateUrl: 'views/tasks/index.html'
-      // controller: 'TasksIndexCtrl as tasksIndex'
     })
     .state('login', {
       url: '/login',
@@ -34,7 +30,6 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/users/:id/edit',
       templateUrl: 'views/auth/edit.html',
       controller: 'UsersEditCtrl as usersEdit'
->>>>>>> development
     });
 
   $urlRouterProvider.otherwise('/');
