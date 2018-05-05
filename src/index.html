@@ -5,6 +5,30 @@
   <title>WDI33 Project 3</title>
 </head>
 <body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" ui-sref='tasksHome'>
+      Home
+    </a>
+    <a class="navbar-item" ui-sref='login'>
+      login
+    </a>
+    <a class="navbar-item" ui-sref='register'>
+      register
+    </a>
+    <a class="navbar-item" ui-sref='usersShow'>
+      usersShow
+    </a>
+    <a class="navbar-item" ui-sref='usersEdit'>
+      usersEdit
+    </a>
+    <a class="navbar-item" ui-sref='tasksNew'>
+      New Task
+    </a>
+  </div>
+</nav>
+<div class="container">
   <ui-view></ui-view>
+</div>
 </body>
 </html>

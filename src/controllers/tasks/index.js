@@ -6,9 +6,8 @@ function TasksIndexCtrl($http, $state) {
   console.log('User Id--->',$state.params.id);
   const id = $state.params.id;
   $http.get(`/api/users/${id}/tasks`)
+  // .then(res => console.log('Users tasks --->', res.data));
     .then(res => this.all = res.data);
-  console.log('Users tasks --->', this);
-
 }
 
 export default TasksIndexCtrl;
