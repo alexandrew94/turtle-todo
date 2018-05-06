@@ -36,7 +36,6 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/tasks/new.html',
       controller: 'TasksNewCtrl as tasksNew'
     });
-
   $urlRouterProvider.otherwise('/');
 }
 

@@ -7,6 +7,7 @@ import Router from './config/router';
 import Auth from './config/auth';
 import 'bulma';
 
+import MainCtrl from './controllers/main';
 import LoginCtrl from './controllers/auth/login';
 import RegisterCtrl from './controllers/auth/register';
 import UsersShowCtrl from './controllers/auth/show';
@@ -20,6 +21,7 @@ import TasksNewCtrl from './controllers/tasks/new';
 angular.module('todo', ['ui.router', 'satellizer'])
   .config(Router)
   .config(Auth)
+  .controller('MainCtrl', MainCtrl)
   .controller('LoginCtrl', LoginCtrl)
   .controller('TasksIndexCtrl', TasksIndexCtrl)
   .controller('TasksNewCtrl', TasksNewCtrl)
