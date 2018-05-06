@@ -1,9 +1,24 @@
 <h1>NEW TASK</h1>
 <form name="tasksNew.form" ng-submit="tasksNew.handleCreate()" novalidate>
-  <div class="field">
+  <div >
     <label for="title">Title</label>
     <input class="input" placeholder="Title" name="title" ng-model="tasksNew.data.title"/>
   </div>
+    <div class="field">
+      <div class="control">
+        <div class="select is-primary">
+          <label for="service_field">Your Task?</label>
+          <select>
+            <option>Select dropdown</option>
+            <option value="1">Dishwashing</option>
+            <option value="2">Walking the Dog</option>
+            <option value="3">Clean the kitchen</option>
+            <option value="4">Take out Recycling and Bins</option>
+            <option value="5">Food shopping</option>
+          </select>
+        </div>
+      </div>
+    </div>
   <div class="field">
     <label for="points">Points</label>
     <input class="input" placeholder="Points" name="points" ng-model="tasksNew.data.points"/>
