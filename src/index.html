@@ -7,7 +7,7 @@
 <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" ui-sref='tasksHome'>
+    <a class="navbar-item" ui-sref='tasksHome({ id: currentUser._id })'>
       Home
     </a>
     <a class="navbar-item" ui-sref='login'>
@@ -16,13 +16,13 @@
     <a class="navbar-item" ui-sref='register'>
       register
     </a>
-    <a class="navbar-item" ui-sref='usersShow'>
+    <a class="navbar-item" ui-sref="usersShow({ id: currentUser._id })">
       usersShow
     </a>
-    <a class="navbar-item" ui-sref='usersEdit'>
+    <a class="navbar-item" ui-sref='usersEdit({ id: currentUser._id })'>
       usersEdit
     </a>
-    <a class="navbar-item" ui-sref='tasksNew'>
+    <a class="navbar-item" ui-sref='tasksNew({ id: currentUser._id })'>
       New Task
     </a>
   </div>
