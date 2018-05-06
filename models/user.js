@@ -7,6 +7,7 @@ const taskSchema = new mongoose.Schema({
   points: Number,
   description: String,
   dueDate: Date,
+  time: String,
   recurring: Number
 }, {
   timestamps: true

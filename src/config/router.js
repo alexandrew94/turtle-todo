@@ -32,7 +32,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'UsersEditCtrl as usersEdit'
     })
     .state('tasksNew', {
-      url: 'users/:id/newtask',
+      url: '/users/:id/newtask',
       templateUrl: 'views/tasks/new.html',
       controller: 'TasksNewCtrl as tasksNew'
     });

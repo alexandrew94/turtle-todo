@@ -16,12 +16,14 @@ mongoose.connect(dbURI, (err, db) => {
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
       dueDate: new Date('2018-05-05'),
+      time: '16:00',
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
       dueDate: new Date('2018-05-05'),
+      time: '16:00',
       recurring: 7
     }]}, {
     username: 'user2',
@@ -35,12 +37,14 @@ mongoose.connect(dbURI, (err, db) => {
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     }]}, {
     username: 'user3',
@@ -52,12 +56,14 @@ mongoose.connect(dbURI, (err, db) => {
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     }]}, {
     username: 'user4',
@@ -69,12 +75,14 @@ mongoose.connect(dbURI, (err, db) => {
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     },{
       title: 'Walking rex the cat' ,
       points: 5,
       description: 'I like dogs better',
       dueDate: new Date('2018-05-04'),
+      time: '16:00',
       recurring: 7
     } ]
   }])

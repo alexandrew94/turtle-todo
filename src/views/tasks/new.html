@@ -1,20 +1,15 @@
 <h1>NEW TASK</h1>
 <form name="tasksNew.form" ng-submit="tasksNew.handleCreate()" novalidate>
-  <div >
-    <label for="title">Title</label>
-    <input class="input" placeholder="Title" name="title" ng-model="tasksNew.data.title"/>
-  </div>
     <div class="field">
       <div class="control">
         <div class="select is-primary">
-          <label for="service_field">Your Task?</label>
-          <select>
-            <option>Select dropdown</option>
-            <option value="1">Dishwashing</option>
-            <option value="2">Walking the Dog</option>
-            <option value="3">Clean the kitchen</option>
-            <option value="4">Take out Recycling and Bins</option>
-            <option value="5">Food shopping</option>
+          <select ng-model="tasksNew.data.title">
+            <option>Your Task?</option>
+            <option value="dishwashing">Dishwashing</option>
+            <option value="walkingTheDog">Walking the Dog</option>
+            <option value="cleanTheKitchen">Clean the kitchen</option>
+            <option value="takeOutRecyclingAndBins">Take out Recycling and Bins</option>
+            <option value="foodShopping">Food shopping</option>
           </select>
         </div>
       </div>
@@ -29,7 +24,11 @@
   </div>
   <div class="field">
     <label for="dueDate">DueDate</label>
-    <input class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
+    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
+  </div>
+  <div class="field">
+    <label for="dueDate">Time</label>
+    <input type="time" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.time"/>
   </div>
   <button class="button is-primary">Submit</button>
 </form>
