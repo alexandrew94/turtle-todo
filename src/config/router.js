@@ -1,3 +1,13 @@
+secureState.$inject = ['$q', '$auth', '$state', '$stateParams'];
+function secureState($q, $auth, $state, $stateParams) {
+  return new $q((resolve) => {
+    console.log('stateParams ID', $stateParams.id);
+    console.log('payload', $auth.getPayload().sub);
+    if($auth.isAuthenticated() && $stateParams.id === $auth.getPayload().sub) return resolve();
+    $state.go('login');
+  });
+}
+
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function Router($stateProvider, $urlRouterProvider) {
@@ -9,7 +19,8 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('tasksHome',{
       url: '/users/:id/tasks',
       templateUrl: 'views/tasks/index.html',
-      controller: 'TasksIndexCtrl as tasksIndex'
+      controller: 'TasksIndexCtrl as tasksIndex',
+      resolve: { secureState }
     })
     .state('login', {
       url: '/login',
@@ -24,22 +35,26 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('usersShow', {
       url: '/users/:id',
       templateUrl: 'views/auth/show.html',
-      controller: 'UsersShowCtrl as usersShow'
+      controller: 'UsersShowCtrl as usersShow',
+      resolve: { secureState }
     })
     .state('usersEdit', {
       url: '/users/:id/edit',
       templateUrl: 'views/auth/edit.html',
-      controller: 'UsersEditCtrl as usersEdit'
+      controller: 'UsersEditCtrl as usersEdit',
+      resolve: { secureState }
     })
     .state('tasksNew', {
       url: '/users/:id/newtask',
       templateUrl: 'views/tasks/new.html',
-      controller: 'TasksNewCtrl as tasksNew'
+      controller: 'TasksNewCtrl as tasksNew',
+      resolve: { secureState }
     })
     .state('tasksEdit', {
       url: '/users/:id/editTask/:taskId',
       templateUrl: 'views/tasks/edit.html',
-      controller: 'TasksEditCtrl as tasksEdit'
+      controller: 'TasksEditCtrl as tasksEdit',
+      resolve: { secureState }
     });
   $urlRouterProvider.otherwise('/');
 }
