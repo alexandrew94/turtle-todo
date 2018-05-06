@@ -15,14 +15,14 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date('2018-05-05'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     }, {
-      title: 'Walking rex the cat',
+      title: 'Walking the Dog',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date('2018-05-05'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     }]}, {
@@ -36,14 +36,14 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-06',
       time: '16:00',
       recurring: 7
     }, {
-      title: 'Walking rex the cat',
+      title: 'Walking the Dog',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-06',
       time: '16:00',
       recurring: 7
     }]}, {
@@ -55,14 +55,14 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     }]}, {
@@ -74,14 +74,14 @@ mongoose.connect(dbURI, (err, db) => {
       title: 'Dishwashing',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     },{
       title: 'Walking rex the cat' ,
       points: 5,
       description: 'I like dogs better',
-      dueDate: new Date('2018-05-04'),
+      dueDate: '2018-05-05',
       time: '16:00',
       recurring: 7
     } ]

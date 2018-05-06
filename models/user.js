@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema({
   title: String,
   points: Number,
   description: String,
-  dueDate: Date,
+  dueDate: String,
   time: String,
   recurring: Number
 }, {

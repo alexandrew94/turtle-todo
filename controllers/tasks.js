@@ -2,40 +2,23 @@ const User = require('../models/user');
 const moment = require('moment');
 
 // Indexing all the tasks for a certain user
-function tasksIndex(req, res, next) {
-  User
-    .findById(req.params.id)
-    .then(user => {
-      if(user.id === req.currentUser.id) {
-        const todaysTasks = [];
-        user.tasks.forEach(e => {
-          if (moment(new Date()).format('MMM Do YY') === moment(e.dueDate).format('MMM Do YY')) {
-            todaysTasks.push(e);
-          }
-        });
-        res.json(todaysTasks);
-      } else {
-        res.json({ message: 'Unauthorized' });
-      }
-    })
-    .catch(err => next(err));
+function tasksIndex(req, res) {
+  const todaysTasks = req.currentUser.tasks.filter(task => {
+    if (task.dueDate === moment().format('YYYY-MM-DD') || task.recurring === 'daily') {
+      return task;
+    }
+  });
+  res.json(todaysTasks);
 }
 
 // Making a new task - it automatically assigns `actionRequired` as true for the new task.
 function tasksCreate(req, res, next) {
-  User
-    .findById(req.params.id)
-    .then(user => {
-      if(user.id === req.currentUser.id) {
-        req.body.actionRequired = true;
-        user.tasks.push(req.body);
-        return user.save();
-      } else {
-        res.json({ message: 'Unauthorized' });
-      }
-    })
+  req.body.dueDate = moment(req.body.dueDate).format('YYYY-MM-DD');
+  req.currentUser.tasks.push(req.body);
+  console.log('Loggin curret user--->',req.currentUser);
+  req.currentUser.save()
     .then(user => res.json(user))
-    .catch(err => next(err));
+    .catch(next);
 }
 
 // This 'deletion' function will be used for completing a task. It will update the user's score when you do it.

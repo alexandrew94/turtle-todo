@@ -1,0 +1,35 @@
+<h1>NEW TASK</h1>
+<form name="tasksEdit.form" ng-submit="tasksEdit.handleUpdate()" novalidate>
+    <div class="field">
+      <div class="control">
+        <div class="select is-primary">
+          <select ng-model="tasksEdit.task.title">
+            <option value="{{task.title}}">{{task.title}}</option>
+            <option value="dishwashing">Dishwashing</option>
+            <option value="walkingTheDog">Walking the Dog</option>
+            <option value="cleanTheKitchen">Clean the kitchen</option>
+            <option value="takeOutRecyclingAndBins">Take out Recycling and Bins</option>
+            <option value="foodShopping">Food shopping</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  <div class="field">
+    <label for="points">Points</label>
+    <input value="{{task.points}}" class="input" placeholder="Points" name="points" ng-model="tasksEdit.task.points"/>
+  </div>
+  <div class="field">
+    <label for="description">Description</label>
+    <input value="{{task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
+  </div>
+  <div class="field">
+    <label for="dueDate">DueDate</label>
+    <p>{{task.dueDate}}</p>
+    <input class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+  </div>
+  <div class="field">
+    <label for="dueDate">Time</label>
+    <input value="{{task.time}}" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
+  </div>
+  <button class="button is-primary">Submit</button>
+</form>

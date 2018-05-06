@@ -35,6 +35,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/users/:id/newtask',
       templateUrl: 'views/tasks/new.html',
       controller: 'TasksNewCtrl as tasksNew'
+    })
+    .state('tasksEdit', {
+      url: '/users/:id/editTask/:taskId',
+      templateUrl: 'views/tasks/edit.html',
+      controller: 'TasksEditCtrl as tasksEdit'
     });
   $urlRouterProvider.otherwise('/');
 }
