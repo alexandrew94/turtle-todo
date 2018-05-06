@@ -1,4 +1,4 @@
-<form ng-submit="login.handleLogin()">
+<form ng-submit="login.handleLogin(); main.setCurrentUser()">
   <div class="field">
     <label for="email">Email</label>
     <input class="input" placeholder="Email" name="email" ng-model="login.data.email" />

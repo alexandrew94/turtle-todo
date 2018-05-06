@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>WDI33 Project 3</title>
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" ui-sref='tasksHome({ id: JSON.parse(localStorage.getItem("lastname")) })'>
+    <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })'>
       Home
     </a>
     <a class="navbar-item" ui-sref='login'>
@@ -16,13 +16,13 @@
     <a class="navbar-item" ui-sref='register'>
       register
     </a>
-    <a class="navbar-item" ui-sref="usersShow({ id: currentUser._id })">
+    <a class="navbar-item" ui-sref="usersShow({ id: main.currentUser._id })">
       usersShow
     </a>
-    <a class="navbar-item" ui-sref='usersEdit({ id: currentUser._id })'>
+    <a class="navbar-item" ui-sref='usersEdit({ id: main.currentUser._id })'>
       usersEdit
     </a>
-    <a class="navbar-item" ui-sref='tasksNew({ id: currentUser._id })'>
+    <a class="navbar-item" ui-sref='tasksNew({ id: main.currentUser._id })'>
       New Task
     </a>
   </div>
