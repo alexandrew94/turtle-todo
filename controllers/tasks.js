@@ -27,7 +27,6 @@ function tasksCreate(req, res, next) {
     .findById(req.params.id)
     .then(user => {
       if(user.id === req.currentUser.id) {
-        req.body.actionRequired = true;
         user.tasks.push(req.body);
         return user.save();
       } else {

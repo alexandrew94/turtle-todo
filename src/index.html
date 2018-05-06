@@ -5,25 +5,28 @@
   <title>WDI33 Project 3</title>
 </head>
 <body ng-controller="MainCtrl as main">
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation" ng-init="main.setCurrentUser()">
   <div class="navbar-brand">
     <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })'>
       Home
     </a>
-    <a class="navbar-item" ui-sref='login'>
+    <a class="navbar-item" ui-sref="login" ng-if="!main.isAuthenticated()">
       login
     </a>
-    <a class="navbar-item" ui-sref='register'>
+    <a class="navbar-item" ui-sref="register" ng-if="!main.isAuthenticated()">
       register
     </a>
-    <a class="navbar-item" ui-sref="usersShow({ id: main.currentUser._id })">
+    <a class="navbar-item" ui-sref="usersShow({ id: main.currentUser._id })" ng-if="main.isAuthenticated()">
       usersShow
     </a>
-    <a class="navbar-item" ui-sref='usersEdit({ id: main.currentUser._id })'>
+    <a class="navbar-item" ui-sref='usersEdit({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
       usersEdit
     </a>
-    <a class="navbar-item" ui-sref='tasksNew({ id: main.currentUser._id })'>
+    <a class="navbar-item" ui-sref='tasksNew({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
       New Task
+    </a>
+    <a class="navbar-item" ng-click="main.handleLogout()" ng-if="main.isAuthenticated()">
+      Log Out
     </a>
   </div>
 </nav>
