@@ -7,7 +7,7 @@ function LoginCtrl($auth, $state, $rootScope) {
     $auth
       .login(this.data)
       .then(res => {
-        $rootScope.currentUser = res.data.user;
+        localStorage.setItem('currentUser', JSON.Stringify(res.data.user));
         console.log($rootScope.currentUser);
         $state.go('tasksHome', { id: res.data.user._id });
       });
