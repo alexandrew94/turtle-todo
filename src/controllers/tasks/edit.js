@@ -10,7 +10,13 @@ function TasksEditCtrl($http, $state){
     $http.post(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`, this.task)
       .then(() => $state.go('tasksHome', { id: $state.params.id }));
   }
+
+  function handleDelete(){
+    $http.delete(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`, this.task)
+      .then(() => $state.go('tasksHome', { id: $state.params.id }));
+  }
   this.handleUpdate = handleUpdate;
+  this.handleDelete = handleDelete;
 }
 
 export default TasksEditCtrl;

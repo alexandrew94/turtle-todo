@@ -32,4 +32,5 @@
     <input value="{{task.time}}" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
   </div>
   <button class="button is-primary">Submit</button>
+  <button ng-click="tasksEdit.handleDelete()" class="button is-danger">Delete</button>
 </form>
