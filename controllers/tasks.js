@@ -28,6 +28,7 @@ function tasksIndex(req, res) {
 // Making a new task - it automatically assigns `actionRequired` as true for the new task.
 function tasksCreate(req, res, next) {
   req.body.dueDate = moment(req.body.dueDate).format('YYYY-MM-DD');
+  req.body.time = moment(req.body.time).format('HH:mm');
   req.currentUser.tasks.push(req.body);
   console.log('Loggin curret user--->',req.currentUser);
   req.currentUser.save()
@@ -131,6 +132,7 @@ function tasksEdit(req, res, next) {
     .then(user => {
       if(user.id === req.currentUser.id) {
         let task = user.tasks.id(req.params.taskId);
+        req.body.dueDate = moment(req.body.dueDate).format('YYYY-MM-DD');
         task = Object.assign(task, req.body);
         user.save();
         res.json(task);

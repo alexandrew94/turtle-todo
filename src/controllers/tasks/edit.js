@@ -7,6 +7,11 @@ function TasksEditCtrl($http, $state, $rootScope){
     .then(res => {
       this.task = res.data;
       this.task.dueDate = new Date(res.data.dueDate);
+      this.task.time = new Date(`1970-01-01T${this.task.time}:00Z`);
+      console.log('Saved time-->',this.task.time,'Converted time-->', new Date(res.data.time));
+      // new Date("2015-03-25T12:00:00Z");
+
+
     });
 
   function handleUpdate(){
@@ -26,13 +31,13 @@ function TasksEditCtrl($http, $state, $rootScope){
   }
 
   function updateLocation(location){
-    this.data.location = location;
+    this.task.location = location;
   }
 
 
-  this.updateLocation = updateLocation;
   this.handleUpdate = handleUpdate;
   this.handleDelete = handleDelete;
+  this.updateLocation = updateLocation;
 }
 
 export default TasksEditCtrl;

@@ -46,14 +46,22 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'I dont mind doing them if i didnt cook',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }, {
       title: 'Walking the Dog',
       points: 5,
       description: 'I like dogs better',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }]}, {
     username: 'user3',
     email: 'user3@user3',
@@ -65,14 +73,22 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'I dont mind doing them if i didnt cook',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }, {
       title: 'Walking rex the cat',
       points: 5,
       description: 'I like dogs better',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }]}, {
     username: 'user4',
     email: 'u4@u4',
@@ -84,14 +100,22 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'I dont mind doing them if i didnt cook',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     },{
       title: 'Walking rex the cat' ,
       points: 5,
       description: 'I like dogs better',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     } ]
   }])
     .then(users => console.log(`${users.length} users created!`))
