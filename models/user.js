@@ -14,12 +14,32 @@ const taskSchema = new mongoose.Schema({
 });
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  email: { type: String, required: true },
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   score: Number,
+  // taskScores: { type: Object },
   dishwashingScore: Number,
-  tasks: [ taskSchema ]
+  takeOutRecyclingAndBinsScore: Number,
+  changeTheBedSheetsScore: Number,
+  takeCareOfBinsScore: Number,
+  checkAndChangeLightbulbsScore: Number,
+  cleanKitchenScore: Number,
+  cleanBathroomScore: Number,
+  cleanBedroomScore: Number,
+  cleanLivingRoomScore: Number,
+  deepCleanScore: Number,
+  foodShoppingScore: Number,
+  cleaningEquipmentScore: Number,
+  ikeaScore: Number,
+  walkTheDogScore: Number,
+  cleanOutTheCarScore: Number,
+  workOnGardenScore: Number,
+  exerciseScore: Number,
+  updatingComputerSoftwareScore: Number,
+  clothesWashingScore: Number,
+  tasks: [ taskSchema ],
+  completedTasks: []
 });
 
 taskSchema.set('toJSON', {
