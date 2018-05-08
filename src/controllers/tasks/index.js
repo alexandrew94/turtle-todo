@@ -2,11 +2,18 @@ TasksIndexCtrl.$inject = ['$http','$state'];
 
 function TasksIndexCtrl($http, $state) {
   this.all = [];
-  console.log('User Id--->',$state.params.id);
   $http.get(`/api/users/${$state.params.id}/tasks`)
   // .then(res => console.log('Users tasks --->', res.data));
     .then(res => this.all = res.data);
+
+  function handleComplete(userId,taskId){
+    $http.post(`/api/users/${userId}/tasks/${taskId}/complete`, this.task)
+      .then(res => this.all = res.data.tasks);
+  }
+
+  this.handleComplete = handleComplete;
 }
+
 
 export default TasksIndexCtrl;
 
