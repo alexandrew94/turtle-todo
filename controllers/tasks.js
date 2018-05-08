@@ -3,12 +3,26 @@ const moment = require('moment');
 
 // Indexing all the tasks for a certain user
 function tasksIndex(req, res) {
-  const todaysTasks = req.currentUser.tasks.filter(task => {
+  const allTasks = [];
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for today.
     if (task.dueDate === moment().format('YYYY-MM-DD') || task.recurring === 'daily') {
       return task;
     }
-  });
-  res.json(todaysTasks);
+  }));
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for the past.
+    if (moment(task.dueDate).isBefore(moment().format('YYYY-MM-DD'))) {
+      return task;
+    }
+  }));
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for the future.
+    if (moment(task.dueDate).isAfter(moment().format('YYYY-MM-DD'))) {
+      return task;
+    }
+  }));
+  res.json(allTasks);
 }
 
 // Making a new task - it automatically assigns `actionRequired` as true for the new task.
@@ -37,7 +51,6 @@ function tasksComplete(req, res, next) {
         }
         user[`${task.title}Score`] += task.points;
         // All of these lines above could be used in the future to determine how to increment the score on the main user data. I think this is actually subject to change depending on the naming conventions we call our tasks etc. For instance, if we do this our task title can't have spaces in it.
-        task.actionRequired = false;
         if (!task.recurring) {
           task.remove();
         }

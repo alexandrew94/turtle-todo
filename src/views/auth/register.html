@@ -1,4 +1,8 @@
+<div ng-if="register.message">
+  {{ register.message.message }}
+</div>
 <form ng-submit="register.handleRegister()">
+  <p>All fields are required.</p>
   <div class="field">
     <label for="username">Username</label>
     <input class="input" placeholder="Username" name="username" ng-model="register.data.username" />

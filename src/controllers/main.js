@@ -1,6 +1,6 @@
-MainCtrl.$inject = ['$auth', '$state'];
+MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$timeout'];
 
-function MainCtrl($auth, $state) {
+function MainCtrl($auth, $state, $rootScope, $timeout) {
   this.currentUser;
   this.isAuthenticated = $auth.isAuthenticated;
 
@@ -14,6 +14,11 @@ function MainCtrl($auth, $state) {
     localStorage.removeItem('currentUser');
     $state.go('home');
   };
+
+  $rootScope.$on('flashMessage', (e, data) => {
+    this.flashMessage = data;
+    $timeout(() => this.flashMessage = null, 5000);
+  });
 }
 
 export default MainCtrl;

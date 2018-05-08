@@ -7,7 +7,10 @@
 <body ng-controller="MainCtrl as main">
   <nav class="navbar" role="navigation" aria-label="main navigation" ng-init="main.setCurrentUser()">
   <div class="navbar-brand">
-    <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })'>
+    <a class="navbar-item" ui-sref='/' ng-if="!main.isAuthenticated()">
+      Landing Page
+    </a>
+    <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
       Home
     </a>
     <a class="navbar-item" ui-sref="login" ng-if="!main.isAuthenticated()">
@@ -30,6 +33,9 @@
     </a>
   </div>
 </nav>
+<div ng-if="main.flashMessage.content">
+  {{ main.flashMessage.content }}
+</div>
 <div class="container">
   <ui-view></ui-view>
 </div>

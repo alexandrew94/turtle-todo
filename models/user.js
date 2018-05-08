@@ -14,9 +14,9 @@ const taskSchema = new mongoose.Schema({
 });
 
 const userSchema = new mongoose.Schema({
-  username: String,
-  email: String,
-  password: String,
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
   score: Number,
   dishwashingScore: Number,
   tasks: [ taskSchema ]
@@ -46,11 +46,11 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next){
-  if(!this.password && !this.githubId) {
-    this.invalidate('password', 'password is required');
+  if(!this.password) {
+    this.invalidate('Password', 'Password is required');
   }
   if(this.isModified('password') && this._passwordConfirmation !== this.password){
-    this.invalidate('passwordConfirmation', 'does not match');
+    this.invalidate('Password Confirmation', 'Does not match');
   }
   next();
 });

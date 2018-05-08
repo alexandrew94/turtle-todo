@@ -1,12 +1,17 @@
-UsersEditCtrl.$inject = ['$http', '$state'];
+UsersEditCtrl.$inject = ['$http', '$state', '$rootScope'];
 
-function UsersEditCtrl($http, $state) {
+function UsersEditCtrl($http, $state, $rootScope) {
   this.user = {};
 
   function handleUsersEdit() {
     $http
       .put(`/api/users/${$state.params.id}`, this.user)
-      .then(res => $state.go('usersShow', { id: res.data._id }));
+      .then(res => {
+        $rootScope.$broadcast('flashMessage', {
+          content: 'Edit successful!'
+        });
+        $state.go('usersShow', { id: res.data._id });
+      });
   }
   this.handleUsersEdit = handleUsersEdit;
 }
