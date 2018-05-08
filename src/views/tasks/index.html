@@ -12,6 +12,7 @@
             <p class="title is-4">{{ task.description }}</p>
             <p class="title is-4">{{ task.points }}</p>
             <p class="title is-4">{{ task.dueDate }}</p>
+            <p class="title is-4">{{ task.time }}</p>
           </div>
         </div>
       </div>
@@ -34,9 +35,11 @@
               <p class="title is-4">{{ task.description }}</p>
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>
+              <p class="title is-4">{{ task.time }}</p>
             </div>
           </div>
         </div>
+        <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
         <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
     </div>
@@ -55,11 +58,13 @@
               <p class="title is-4">{{ task.description }}</p>
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>
+              <p class="title is-4">{{ task.time }}</p>
             </div>
           </div>
         </div>
+        <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
-        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>4
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
       </div>
   </div>
 </div>

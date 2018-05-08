@@ -12,16 +12,13 @@ function TasksIndexCtrl($http, $state, $rootScope) {
   // .then(res => console.log('Users tasks --->', res.data));
     .then(res => {
       this.all = res.data;
-      console.log('this.all-->',this.all);
       this.todaysTasks = res.data[0];
-      console.log('this.todaysTasks--->',this.todaysTasks);
       this.pastTasks = res.data[1];
       this.futureTasks = res.data[2];
 
     });
 
   function handleComplete(userId,taskId){
-    console.log('clicked');
     $rootScope.$broadcast('flashMessage', {
       content: 'Great job! Task completed!'
     });
@@ -33,7 +30,6 @@ function TasksIndexCtrl($http, $state, $rootScope) {
           .then(res => {
             this.all = res.data;
             this.todaysTasks = res.data[0];
-            console.log('in handleComplete--->',this.todaysTasks);
             this.pastTasks = res.data[1];
             this.futureTasks = res.data[2];
           });
