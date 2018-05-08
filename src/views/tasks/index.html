@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <div class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+      <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
       <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
       <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
     </div>
