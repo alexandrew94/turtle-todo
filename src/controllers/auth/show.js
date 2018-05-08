@@ -1,6 +1,6 @@
-UsersShowCtrl.$inject = ['$http', '$state'];
+UsersShowCtrl.$inject = ['$http', '$state', '$auth', '$rootScope'];
 
-function UsersShowCtrl($http, $state) {
+function UsersShowCtrl($http, $state, $auth, $rootScope) {
   this.user = {};
   $http
     .get(`/api/users/${$state.params.id}`)
@@ -10,7 +10,14 @@ function UsersShowCtrl($http, $state) {
   function handleUsersDelete() {
     $http
       .delete(`/api/users/${$state.params.id}`)
-      .then(() => $state.go('home'));
+      .then(() => {
+        $auth.logout();
+        localStorage.removeItem('currentUser');
+        $rootScope.$broadcast('flashMessage', {
+          content: 'User successfully deleted!'
+        });
+        $state.go('home');
+      });
   }
 
   this.handleUsersDelete = handleUsersDelete;

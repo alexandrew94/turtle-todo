@@ -1,9 +1,18 @@
-secureState.$inject = ['$q', '$auth', '$state', '$stateParams'];
-function secureState($q, $auth, $state, $stateParams) {
+secureState.$inject = ['$q', '$auth', '$state', '$stateParams', '$rootScope'];
+function secureState($q, $auth, $state, $stateParams, $rootScope) {
   return new $q((resolve) => {
-    console.log('stateParams ID', $stateParams.id);
-    console.log('payload', $auth.getPayload().sub);
-    if($auth.isAuthenticated() && $stateParams.id === $auth.getPayload().sub) return resolve();
+    if($auth.isAuthenticated()) {
+      if($stateParams.id === $auth.getPayload().sub) {
+        return resolve();
+      }
+      $rootScope.$broadcast('flashMessage', {
+        content: 'Incorrect URL.'
+      });
+      return $state.go('tasksHome', { id: $auth.getPayload().sub });
+    }
+    $rootScope.$broadcast('flashMessage', {
+      content: 'You must be logged in to visit that page.'
+    });
     $state.go('login');
   });
 }
@@ -56,7 +65,15 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'TasksEditCtrl as tasksEdit',
       resolve: { secureState }
     });
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise(function ($injector) {
+    var $state = $injector.get('$state');
+    var $auth = $injector.get('$auth');
+    var $rootScope = $injector.get('$rootScope');
+    $rootScope.$broadcast('flashMessage', {
+      content: 'Invalid URL!'
+    });
+    $state.go('home', { id: $auth.getPayload().sub });
+  });
 }
 
 export default Router;

@@ -1,6 +1,6 @@
-LoginCtrl.$inject = ['$auth', '$state'];
+LoginCtrl.$inject = ['$auth', '$state', '$rootScope'];
 
-function LoginCtrl($auth, $state) {
+function LoginCtrl($auth, $state, $rootScope) {
   this.data = {};
 
   function handleLogin() {
@@ -8,7 +8,15 @@ function LoginCtrl($auth, $state) {
       .login(this.data)
       .then(res => {
         localStorage.setItem('currentUser', JSON.stringify(res.data.user));
+        $rootScope.$broadcast('flashMessage', {
+          content: res.data.message
+        });
         $state.go('tasksHome', { id: res.data.user._id });
+      })
+      .catch(err => {
+        $rootScope.$broadcast('flashMessage', {
+          content: err.data.message
+        });
       });
   }
 
