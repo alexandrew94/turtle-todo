@@ -6,6 +6,7 @@ import 'angular-moment';
 
 import Router from './config/router';
 import Auth from './config/auth';
+import './scss/style.scss';
 import 'bulma';
 
 import MainCtrl from './controllers/main';
@@ -16,6 +17,8 @@ import UsersEditCtrl from './controllers/auth/edit';
 import TasksIndexCtrl from './controllers/tasks/index';
 import TasksNewCtrl from './controllers/tasks/new';
 import TasksEditCtrl from './controllers/tasks/edit';
+//Directives
+import gMap from './directives/gMap';
 
 // import './scss/style.scss';
 
@@ -30,5 +33,6 @@ angular.module('todo', ['ui.router', 'satellizer', 'angularMoment'])
   .controller('TasksEditCtrl', TasksEditCtrl)
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
-  .controller('UsersEditCtrl', UsersEditCtrl);
+  .controller('UsersEditCtrl', UsersEditCtrl)
+  .directive('gMap', gMap);
 // .controller('UsersIndexCtrl', UsersIndexCtrl);

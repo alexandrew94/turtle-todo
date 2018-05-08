@@ -17,14 +17,22 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'I dont mind doing them if i didnt cook',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }, {
       title: 'Walking the Dog',
       points: 5,
       description: 'I like dogs better',
       dueDate: '2018-05-08',
       time: '16:00',
-      recurring: 7
+      recurring: 7,
+      location: {
+        lat: 35.922725,
+        lng: -121.088713
+      }
     }]}, {
     username: 'user2',
     email: 'user2@user2',
