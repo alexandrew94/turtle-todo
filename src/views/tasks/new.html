@@ -41,6 +41,10 @@
     <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
   </div>
   <div class="field">
+    <label for="location">Location</label>
+    <input class="input" placeholder="Location" name="location" g-autocomplete handle-change="tasksNew.updateLocation(location)" />
+  </div>
+  <div class="field">
     <label for="dueDate">Time</label>
     <input type="time" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.time"/>
   </div>

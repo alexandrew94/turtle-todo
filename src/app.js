@@ -19,6 +19,7 @@ import TasksNewCtrl from './controllers/tasks/new';
 import TasksEditCtrl from './controllers/tasks/edit';
 //Directives
 import gMap from './directives/gMap';
+import gAutocomplete from './directives/gAutocomplete';
 
 // import './scss/style.scss';
 
@@ -34,5 +35,5 @@ angular.module('todo', ['ui.router', 'satellizer', 'angularMoment'])
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
-  .directive('gMap', gMap);
-// .controller('UsersIndexCtrl', UsersIndexCtrl);
+  .directive('gMap', gMap)
+  .directive('gAutocomplete', gAutocomplete);
