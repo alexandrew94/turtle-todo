@@ -4,6 +4,7 @@
       <div class="control">
         <div class="select is-primary">
           <select ng-model="tasksNew.data.title">
+            <option selected="selected" disabled>Select a task</option>
             <option>Your Task?</option>
             <option value="dishwashing">Dishwashing</option>
             <option value="takeOutRecyclingAndBins">Take out Recycling and Bins</option>
@@ -37,12 +38,12 @@
     <input class="input" placeholder="Description" name="description" ng-model="tasksNew.data.description"/>
   </div>
   <div class="field">
-    <label for="dueDate">DueDate</label>
-    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
-  </div>
-  <div class="field">
     <label for="location">Location</label>
     <input class="input" placeholder="Location" name="location" g-autocomplete handle-change="tasksNew.updateLocation(location)" />
+  </div>
+  <div class="field">
+    <label for="dueDate">DueDate</label>
+    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
   </div>
   <div class="field">
     <label for="dueDate">Time</label>

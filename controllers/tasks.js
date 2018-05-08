@@ -29,7 +29,6 @@ function tasksIndex(req, res) {
 function tasksCreate(req, res, next) {
   req.body.dueDate = moment(req.body.dueDate).format('YYYY-MM-DD');
   req.currentUser.tasks.push(req.body);
-  console.log('Loggin curret user--->',req.currentUser);
   req.currentUser.save()
     .then(user => res.json(user))
     .catch(next);
@@ -41,7 +40,6 @@ function tasksComplete(req, res, next) {
     .then(user => {
       if(user.id === req.currentUser.id) {
         const task = user.tasks.id(req.params.taskId);
-        console.log(task);
         if (!user.score) {
           user.score = 0;
         }

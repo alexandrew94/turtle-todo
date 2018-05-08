@@ -3,10 +3,9 @@ const bcrypt = require('bcrypt');
 mongoose.Promise = require('bluebird');
 
 const taskSchema = new mongoose.Schema({
-  title: String,
-  points: Number,
+  title: { type: String, required: true },
   description: String,
-  dueDate: String,
+  dueDate: { type: String, required: true },
   time: String,
   recurring: Number,
   location: {
@@ -50,6 +49,13 @@ const userSchema = new mongoose.Schema({
 taskSchema.set('toJSON', {
   virtuals: true
 });
+
+taskSchema.virtual('displayTitle')
+  .get(function() {
+    return this.title.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){
+      return str.toUpperCase();
+    });
+  });
 
 userSchema.plugin(require('mongoose-unique-validator'));
 
