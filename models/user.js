@@ -8,8 +8,13 @@ const taskSchema = new mongoose.Schema({
   description: String,
   dueDate: String,
   time: String,
-  recurring: Number
-}, {
+  recurring: Number,
+  location: {
+    lat: {type: Number},
+    lng: {type: Number}
+  }
+},
+{
   timestamps: true
 });
 
