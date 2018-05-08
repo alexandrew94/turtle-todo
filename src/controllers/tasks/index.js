@@ -1,7 +1,7 @@
 TasksIndexCtrl.$inject = ['$http','$state'];
 
 function TasksIndexCtrl($http, $state) {
-
+  this.task = {};
   this.all = [];
   this.todaysTasks = [];
   this.pastTasks = [];
@@ -18,6 +18,7 @@ function TasksIndexCtrl($http, $state) {
     });
 
   function handleComplete(userId,taskId){
+    console.log(this.all);
     $http.post(`/api/users/${userId}/tasks/${taskId}/complete`, this.task)
       .then(res => this.all = res.data.tasks);
   }
