@@ -25,11 +25,12 @@
   <div class="field">
     <label for="dueDate">DueDate</label>
     <p>{{task.dueDate}}</p>
-    <input class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+    <input  type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
   </div>
   <div class="field">
     <label for="dueDate">Time</label>
     <input value="{{task.time}}" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
   </div>
   <button class="button is-primary">Submit</button>
+  <button ng-click="tasksEdit.handleDelete()" class="button is-danger">Delete</button>
 </form>

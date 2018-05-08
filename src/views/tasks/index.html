@@ -14,6 +14,8 @@
             <p class="title is-4">{{ task.dueDate }}</p>
           </div>
         </div>
+        <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
       </div>
       <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
     </div>
@@ -23,8 +25,8 @@
 <h2>Unfinished Tasks From the Past:</h2>
 <div class="columns is-multiline">
   <div ng-repeat="task in tasksIndex.pastTasks" class="column is-half-tablet is-one-third-desktop">
-      <div class="card">
-        <div class="card-image"></div>
+    <div class="card">
+      <div class="card-image"></div>
         <div class="card-content">
           <div class="media">
             <div class="media-content">
@@ -36,7 +38,8 @@
           </div>
         </div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
-      </div>
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+    </div>
   </div>
 </div>
 
@@ -56,6 +59,7 @@
           </div>
         </div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
       </div>
   </div>
 </div>
