@@ -42,6 +42,7 @@ function tasksComplete(req, res, next) {
     .then(user => {
       if(user.id === req.currentUser.id) {
         const task = user.tasks.id(req.params.taskId);
+        console.log('LOGGING TASK', task);
         if (!user.score) {
           user.score = 0;
         }
@@ -52,11 +53,17 @@ function tasksComplete(req, res, next) {
         user[`${task.title}Score`] += task.points;
         // All of these lines above could be used in the future to determine how to increment the score on the main user data. I think this is actually subject to change depending on the naming conventions we call our tasks etc. For instance, if we do this our task title can't have spaces in it.
         if (!task.recurring) {
-          task.remove();
+          task
+            .remove();
         }
         // For recurring tasks, we might not remove this.
-        user.save();
-        return res.status(202).json(user);
+        user
+          .save()
+          .then(() => {
+            console.log('LOGGING THE USER! MAKE SURE TASK IS NO LONGER THERE.', user);
+            res.json(user.tasks);
+          });
+        // return res.status(202).json(user.tasks);
       } else {
         res.json({ message: 'Unauthorized' });
       }

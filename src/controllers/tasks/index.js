@@ -1,7 +1,7 @@
-TasksIndexCtrl.$inject = ['$http','$state'];
+TasksIndexCtrl.$inject = ['$http','$state','$rootScope'];
 
-function TasksIndexCtrl($http, $state) {
-  this.task = {};
+function TasksIndexCtrl($http, $state, $rootScope) {
+
   this.all = [];
   this.todaysTasks = [];
   this.pastTasks = [];
@@ -18,9 +18,21 @@ function TasksIndexCtrl($http, $state) {
     });
 
   function handleComplete(userId,taskId){
-    console.log(this.all);
-    $http.post(`/api/users/${userId}/tasks/${taskId}/complete`, this.task)
-      .then(res => this.all = res.data.tasks);
+    $rootScope.$broadcast('flashMessage', {
+      content: 'Great job! Task completed!'
+    });
+    $http
+      .post(`/api/users/${userId}/tasks/${taskId}/complete`)
+      .then(res => {
+        this.all = res.data.tasks;
+        $http.get(`/api/users/${$state.params.id}/tasks`)
+          .then(res => {
+            this.all = res.data;
+            this.todaysTasks = res.data[0];
+            this.pastTasks = res.data[1];
+            this.futureTasks = res.data[2];
+          });
+      });
   }
 
 

@@ -11,13 +11,16 @@ function MainCtrl($auth, $state, $rootScope, $timeout) {
 
   this.handleLogout = function handleLogout() {
     $auth.logout();
+    $rootScope.$broadcast('flashMessage', {
+      content: 'Log out successful!'
+    });
     localStorage.removeItem('currentUser');
     $state.go('home');
   };
 
   $rootScope.$on('flashMessage', (e, data) => {
     this.flashMessage = data;
-    $timeout(() => this.flashMessage = null, 5000);
+    $timeout(() => this.flashMessage = null, 2000);
   });
 }
 

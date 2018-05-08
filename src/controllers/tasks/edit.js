@@ -1,17 +1,23 @@
-TasksEditCtrl.$inject = ['$http', '$state'];
+TasksEditCtrl.$inject = ['$http', '$state', '$rootScope'];
 
-function TasksEditCtrl($http, $state){
+function TasksEditCtrl($http, $state, $rootScope){
   this.task = {};
 
   $http.get(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`)
     .then(res => this.task = res.data);
 
   function handleUpdate(){
+    $rootScope.$broadcast('flashMessage', {
+      content: 'Task successfully edited!'
+    });
     $http.post(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`, this.task)
       .then(() => $state.go('tasksHome', { id: $state.params.id }));
   }
 
   function handleDelete(){
+    $rootScope.$broadcast('flashMessage', {
+      content: 'Task successfully deleted!'
+    });
     $http.delete(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`, this.task)
       .then(() => $state.go('tasksHome', { id: $state.params.id }));
   }
