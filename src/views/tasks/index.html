@@ -37,6 +37,7 @@
           </div>
         </div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
     </div>
   </div>
 </div>
@@ -57,6 +58,7 @@
           </div>
         </div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
       </div>
   </div>
 </div>
