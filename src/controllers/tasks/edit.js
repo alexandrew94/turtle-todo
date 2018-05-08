@@ -21,6 +21,13 @@ function TasksEditCtrl($http, $state, $rootScope){
     $http.delete(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`, this.task)
       .then(() => $state.go('tasksHome', { id: $state.params.id }));
   }
+
+  function updateLocation(location){
+    this.data.location = location;
+  }
+
+  
+  this.updateLocation = updateLocation;
   this.handleUpdate = handleUpdate;
   this.handleDelete = handleDelete;
 }

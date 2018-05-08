@@ -23,9 +23,12 @@
     <input value="{{task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
   </div>
   <div class="field">
-    <label for="dueDate">DueDate</label>
-    <p>{{task.dueDate}}</p>
-    <input  type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+    <label for="dueDate">{{task.dueDate}}</label>
+    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+  </div>
+  <div class="field">
+    <label for="location">Location</label>
+    <input class="input" placeholder="Location" name="location" g-autocomplete handle-change="tasksEdit.updateLocation(location)" />
   </div>
   <div class="field">
     <label for="dueDate">Time</label>
