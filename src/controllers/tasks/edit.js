@@ -4,7 +4,10 @@ function TasksEditCtrl($http, $state, $rootScope){
   this.task = {};
 
   $http.get(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`)
-    .then(res => this.task = res.data);
+    .then(res => {
+      this.task = res.data;
+      this.task.dueDate = new Date(res.data.dueDate);
+    });
 
   function handleUpdate(){
     $rootScope.$broadcast('flashMessage', {
@@ -26,7 +29,7 @@ function TasksEditCtrl($http, $state, $rootScope){
     this.data.location = location;
   }
 
-  
+
   this.updateLocation = updateLocation;
   this.handleUpdate = handleUpdate;
   this.handleDelete = handleDelete;
