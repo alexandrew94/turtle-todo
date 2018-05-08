@@ -3,20 +3,20 @@
 <h2>Today's Tasks:</h2>
 <div class="columns is-multiline">
   <div ng-repeat="task in tasksIndex.todaysTasks" class="column is-half-tablet is-one-third-desktop">
-      <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">{{ task.title }}</p>
-              <p class="title is-4">{{ task.description }}</p>
-              <p class="title is-4">{{ task.points }}</p>
-              <p class="title is-4">{{ task.dueDate }}</p>
-            </div>
+    <div class="card">
+      <div class="card-image"></div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{ task.title }}</p>
+            <p class="title is-4">{{ task.description }}</p>
+            <p class="title is-4">{{ task.points }}</p>
+            <p class="title is-4">{{ task.dueDate }}</p>
           </div>
         </div>
-        <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
       </div>
+      <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+    </div>
   </div>
 </div>
 
