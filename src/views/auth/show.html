@@ -27,56 +27,58 @@
 </button>
 
 <h2>Already-completed tasks:</h2>
-<div class="columns is-multiline">
-  <div ng-repeat="task in usersShow.user.completedTasks" class="column is-half-tablet is-one-third-desktop">
-    <div class="card">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4 has-text-centered">{{ task.displayTitle }}</p>
-          <div class="has-text-centered">
-          </div>
-          <div class="expand-div has-text-centered">
-            <button class="expand" ng-click="usersShow.openModal(task._id)">
-              <i class="fas fa-expand-arrows-alt"></i>
-              &nbsp
-              View More
-            </button>
-          </div>
-          <div class="time-and-date has-text-centered">
-            <p class="is-4">
-              <i class="fas fa-calendar-alt"></i>
-              &nbsp
-              {{ task.dueDate }}
-            </p>
-            <p ng-if="task.time != 'Invalid date'" class="is-4">
-              <i class="fas fa-clock"></i>
-              &nbsp
-              {{ task.time }}
-            </p>
+<div class="completed-tasks">
+  <div class="columns is-multiline">
+    <div ng-repeat="task in usersShow.user.completedTasks" class="column is-one-third-tablet is-one-fifth-desktop">
+      <div class="card">
+        <div class="media">
+          <div class="media-content">
+            <p class="title has-text-centered">{{ task.displayTitle }}</p>
+            <div class="has-text-centered">
+            </div>
+            <div class="expand-div has-text-centered">
+              <button class="expand" ng-click="usersShow.openModal(task._id)">
+                <i class="fas fa-expand-arrows-alt"></i>
+                &nbsp
+                View More
+              </button>
+            </div>
+            <div class="time-and-date has-text-centered">
+              <p>
+                <i class="fas fa-calendar-alt"></i>
+                &nbsp
+                {{ task.dueDate }}
+              </p>
+              <p ng-if="task.time != 'Invalid date'" class="is-4">
+                <i class="fas fa-clock"></i>
+                &nbsp
+                {{ task.time }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="modal" id="{{task._id}}">
-      <!-- <div class="modal-background"></div> -->
-      <div class="modal-card backcolor">
-        <section class="modal-card-body margin-modal">
-          <div class="is-pulled-right">
-            <button ng-click="usersShow.openModal(task._id)" class="close-modal" aria-label="close">
-              <i class="fas fa-times-circle"></i>
-            </button>
-          </div>
-          <h1 class="modal-card-title">{{ task.displayTitle }}</h1>
-          <p class="title is-4">{{ task.description }}</p>
-          <p class="title is-4">{{ task.points }}</p>
-          <div class="time-and-date has-text-centered">
-            <p class="title is-4">{{ task.dueDate }}</p>
-            <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
-          </div>
-          <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
-          <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
-          <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
-        </section>
+      <div class="modal" id="{{task._id}}">
+        <!-- <div class="modal-background"></div> -->
+        <div class="modal-card backcolor">
+          <section class="modal-card-body margin-modal">
+            <div class="is-pulled-right">
+              <button ng-click="usersShow.openModal(task._id)" class="close-modal" aria-label="close">
+                <i class="fas fa-times-circle"></i>
+              </button>
+            </div>
+            <h1 class="modal-card-title">{{ task.displayTitle }}</h1>
+            <p class="title is-4">{{ task.description }}</p>
+            <p class="title is-4">{{ task.points }}</p>
+            <div class="time-and-date has-text-centered">
+              <p class="title is-4">{{ task.dueDate }}</p>
+              <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+            </div>
+            <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
+            <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+            <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+          </section>
+        </div>
       </div>
     </div>
   </div>

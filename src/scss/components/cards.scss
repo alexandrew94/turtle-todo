@@ -2,13 +2,12 @@
   border-radius: $default-border-radius;
   border: $default-border;
   border-color: $white;
-  min-height: 700px;
+  height: 700px;
 
   .description {
     font-size: 24px;
     width: 80%;
     margin: 10px 10%;
-    
   }
 
   .title {

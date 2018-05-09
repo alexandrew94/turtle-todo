@@ -1,0 +1,7 @@
+<h1 class="{{task._id}}" ng-click="function({{task._id}})"></h1>
+
+<script>
+function(title) {
+  document.getElementsByClassName(title)[0]
+}
+</script>

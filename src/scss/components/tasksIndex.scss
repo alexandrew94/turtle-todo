@@ -23,6 +23,17 @@ section {
   }
 }
 
+.empty-message {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
 .divider {
   i {
     color: white;

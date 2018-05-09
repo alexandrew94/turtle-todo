@@ -1,54 +1,71 @@
-<h1>NEW TASK</h1>
-<form name="tasksNew.form" ng-submit="tasksNew.handleCreate()" novalidate>
-    <div class="field">
-      <div class="control">
-        <div class="select is-primary">
-          <select ng-model="tasksNew.data.title">
-            <option selected="selected" disabled>Select a task</option>
-            <option>Your Task?</option>
-            <option value="dishwashing">Dishwashing</option>
-            <option value="takeOutRecyclingAndBins">Take out Recycling and Bins</option>
-            <option value="changeTheBedSheets">Change the bed sheets</option>
-            <option value="takeCareOfBins">Take out bins and recycling</option>
-            <option value="checkAndChangeLightbulbs">Check and change light bulbs</option>
-            <option value="cleanKitchen">Clean Kitchen</option>
-            <option value="cleanBathroom">Clean Bathroom</option>
-            <option value="cleanBedroom">Clean Bedroom</option>
-            <option value="cleanLivingRoom">Clean Living Room</option>
-            <option value="deepClean">Deep-Clean</option>
-            <option value="foodShopping">food Shopping</option>
-            <option value="cleaningEquipment">Cleaning Equipment</option>
-            <option value="ikea">Ikea</option>
-            <option value="walkTheDog">Walk the Dog</option>
-            <option value="cleanOutTheCar">Clean out the Car</option>
-            <option value="workOnGarden">Work on Garden</option>
-            <option value="exercise">Exercise</option>
-            <option value="updatingComputerSoftware">Updating computer/software</option>
-            <option value="clothesWashing">Clothes Washing</option>
-          </select>
+<div class="card-background">
+  <form name="tasksNew.form" ng-submit="tasksNew.handleCreate()" novalidate>
+    <div class="input-fields">
+      <h1>New Task</h1>
+      <div class="field">
+        <div class="control">
+          <label for="title">Task Type (required)</label>
+          <div class="select is-primary" name="title">
+            <select ng-model="tasksNew.data.title">
+              <option>Your Task?</option>
+              <option value="dishwashing">Dishwashing</option>
+              <option value="takeOutRecyclingAndBins">Take out Recycling and Bins</option>
+              <option value="changeTheBedSheets">Change the bed sheets</option>
+              <option value="takeCareOfBins">Take out bins and recycling</option>
+              <option value="checkAndChangeLightbulbs">Check and change light bulbs</option>
+              <option value="cleanKitchen">Clean Kitchen</option>
+              <option value="cleanBathroom">Clean Bathroom</option>
+              <option value="cleanBedroom">Clean Bedroom</option>
+              <option value="cleanLivingRoom">Clean Living Room</option>
+              <option value="deepClean">Deep-Clean</option>
+              <option value="foodShopping">food Shopping</option>
+              <option value="cleaningEquipment">Cleaning Equipment</option>
+              <option value="ikea">Ikea</option>
+              <option value="walkTheDog">Walk the Dog</option>
+              <option value="cleanOutTheCar">Clean out the Car</option>
+              <option value="workOnGarden">Work on Garden</option>
+              <option value="exercise">Exercise</option>
+              <option value="updatingComputerSoftware">Updating computer/software</option>
+              <option value="clothesWashing">Clothes Washing</option>
+            </select>
+          </div>
         </div>
       </div>
+      <!-- <div class="field">
+        <label for="points">Points</label>
+        <input class="input" placeholder="Points" name="points" ng-model="tasksNew.data.points"/>
+      </div> -->
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea class="input" placeholder="Description" name="description" ng-model="tasksNew.data.description"/></textarea>
+      </div>
+      <div class="time-and-date">
+        <div class="field">
+          <label for="dueDate">
+            <i class="fas fa-calendar-alt"></i>
+            &nbsp
+            Due Date (required)</label>
+          <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
+        </div>
+        <div class="field">
+          <label for="dueDate">
+            <i class="fas fa-clock"></i>
+            &nbsp;
+            Time
+          </label>
+          <input type="time" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.time"/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="location">Location</label>
+        <input class="input" placeholder="Location" name="location" ng-model="tasksNew.data.locationTitle" g-autocomplete handle-change="tasksNew.updateLocation(location)"/>
+      </div>
     </div>
-  <!-- <div class="field">
-    <label for="points">Points</label>
-    <input class="input" placeholder="Points" name="points" ng-model="tasksNew.data.points"/>
-  </div> -->
-  <div class="field">
-    <label for="description">Description</label>
-    <input class="input" placeholder="Description" name="description" ng-model="tasksNew.data.description"/>
-  </div>
-  <div class="field">
-    <label for="location">Location</label>
-    <input class="input" placeholder="Location" name="location" ng-model="tasksNew.data.locationTitle" g-autocomplete handle-change="tasksNew.updateLocation(location)"/>
-  </div>
-  <div ng-if="tasksNew.data.location" class="map-tasksNewPAge" g-map center="tasksNew.data.location">GOOGLE MAP GOES HERE</div>
-  <div class="field">
-    <label for="dueDate">DueDate</label>
-    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>
-  </div>
-  <div class="field">
-    <label for="dueDate">Time</label>
-    <input type="time" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.time"/>
-  </div>
-  <button class="button is-primary">Submit</button>
-</form>
+    <div ng-if="tasksNew.data.location" class="map-tasksNewPage" g-map center="tasksNew.data.location">GOOGLE MAP GOES HERE</div>
+    <button class="button is-primary">
+      <i class="fas fa-check-square"></i>
+      &nbsp
+      Submit
+    </button>
+  </form>
+</div>

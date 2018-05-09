@@ -18,8 +18,23 @@
       width: 100%;
     }
 
+    .edit {
+      border-radius: $default-border-radius;
+      padding: 20px;
+      font-size: 24px;
+      border: 0px;
+      background-color: $grey-light;
+      color: $white-ter;
+    }
+
+    .description {
+      margin: 5% 10%;
+    }
+
     .time-and-date {
       background-color: white;
+      padding: 20px;
+      border-radius: $default-border-radius;
       margin: 5% 10%;
     }
 
@@ -28,9 +43,14 @@
       border: none;
     }
 
-    .modal-map{
-      height: 400px;
+    .modal-map {
+      height: 250px;
       width: 100%;
+    }
+
+    .complete {
+      width: 100%;
+      font-size: 48px;
     }
 
     .margin-modal{
