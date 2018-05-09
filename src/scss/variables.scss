@@ -1,8 +1,17 @@
-$family-sans-serif: "Dosis", sans-serif;
+// GENERAL VARIABLES
 $primary: #92B265;
 $accent-color: #5fb3ce;
 $background-color: lightblue;
-
 $navbar-height: 5rem;
 
+// BORDERS
+$default-border-radius: 20px;
+$default-border: 10px solid;
+
+// TYPOGRAPHY
+$family-sans-serif: "Dosis", sans-serif;
 $family-primary: $family-sans-serif;
+$dark-text: #4a4a4a;
+
+// CARDS
+$card-background-color: $background-color;

@@ -1,0 +1,84 @@
+.card {
+  border-radius: $default-border-radius;
+  border: $default-border;
+  border-color: $white;
+  min-height: 600px;
+
+  .description {
+    font-size: 18px;
+    width: 80%;
+    margin: 10%;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: 40px;
+    color: dark-text;
+  }
+
+  .edit {
+    font-size: 18px;
+    border-radius: $default-border-radius;
+    border: 0px;
+    background-color: $grey-light;
+    color: $white-ter;
+  }
+
+  .card-content {
+    margin: 0;
+  }
+
+  .time-and-date {
+    position: absolute;
+    bottom: 200px;
+    background-color: white;
+    width: 80%;
+    border-radius: $default-border-radius;
+    margin: 10%;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  .complete {
+    font-size: 32px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .map {
+    position: absolute;
+    bottom: 45px;
+    height: 150px;
+    width: 100%;
+    border-radius: $default-border-radius;
+  }
+}
+
+.todays-tasks {
+
+  .card {
+    background-color: $white-ter;
+  }
+}
+
+.past-tasks {
+
+  .card {
+    background-color: $background-color;
+
+    .complete {
+      background-color: $accent-color;
+    }
+  }
+}
+
+.todays-tasks {
+
+  .card {
+    background-color: $background-color;
+  }
+}
