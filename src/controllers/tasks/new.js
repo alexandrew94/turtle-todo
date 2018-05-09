@@ -35,9 +35,7 @@ function TasksNewCtrl($http, $state, $rootScope, $scope) {
     this.data.location = location;
     console.log('Location--->', this.data.location);
     $scope.$apply();
-
   }
-
   this.handleCreate = handleCreate;
   this.updateLocation = updateLocation;
 }

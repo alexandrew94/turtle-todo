@@ -40,7 +40,7 @@
     <label for="location">Location</label>
     <input class="input" placeholder="Change the location of your task?" name="location" g-autocomplete handle-change="tasksEdit.updateLocation(location)" />
   </div>
-  <div ng-if="tasksEdit.task.location" class="map" g-map center="tasksEdit.task.location">GOOGLE MAP GOES HERE</div>
+  <div ng-if="tasksEdit.task.location" class="map-tasksNewPAge" g-map center="tasksEdit.task.location">GOOGLE MAP GOES HERE</div>
   <div class="field">
     <label for="dueDate">Time</label>
     <input value="{{tasksEdit.task.time}}" type="time" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>

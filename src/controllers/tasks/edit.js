@@ -1,6 +1,6 @@
-TasksEditCtrl.$inject = ['$http', '$state', '$rootScope'];
+TasksEditCtrl.$inject = ['$http', '$state', '$rootScope', '$scope'];
 
-function TasksEditCtrl($http, $state, $rootScope){
+function TasksEditCtrl($http, $state, $rootScope,$scope){
   this.task = {};
 
   $http.get(`/api/users/${$state.params.id}/tasks/${$state.params.taskId}`)
@@ -29,6 +29,8 @@ function TasksEditCtrl($http, $state, $rootScope){
 
   function updateLocation(location){
     this.task.location = location;
+    console.log('Location--->', this.task.location);
+    $scope.$apply();
   }
 
 
