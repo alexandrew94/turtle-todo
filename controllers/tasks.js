@@ -35,35 +35,6 @@ function tasksCreate(req, res, next) {
     .catch(next);
 }
 
-// function tasksComplete(req, res, next) {
-//   User
-//     .findById(req.params.id)
-//     .then(user => {
-//       if(user.id === req.currentUser.id) {
-//         const task = user.tasks.id(req.params.taskId);
-//         if (!user.score) {
-//           user.score = 0;
-//         }
-//         user.score += 5;
-//         if (!user[`${task.title}Score`]) {
-//           user[`${task.title}Score`] = 0;
-//         }
-//         user[`${task.title}Score`] += 5;
-//         if (!task.recurring) {
-//           user.completedTasks.push(task);
-//           task.remove();
-//         }
-//         return user.save()
-//           .then((user) => {
-//             res.json(user.tasks);
-//           });
-//       } else {
-//         res.json({ message: 'Unauthorized' });
-//       }
-//     })
-//     .catch(err => next(err));
-// }
-
 function tasksComplete(req, res, next) {
   User
     .findById(req.params.id)
@@ -77,11 +48,6 @@ function tasksComplete(req, res, next) {
         if(!user.taskScores) {
           user.taskScores = [];
         }
-        // user.taskScores.forEach((e) => {
-        //   if(Object.keys(e)[0] === `${task.title}Score`) {
-        //     e[`${task.title}Score`] += 5;
-        //   }
-        // });
         if (!user[`${task.title}Score`]) {
           user[`${task.title}Score`] = 0;
         }
@@ -100,47 +66,6 @@ function tasksComplete(req, res, next) {
     })
     .catch(err => next(err));
 }
-
-// This 'deletion' function will be used for completing a task. It will update the user's score when you do it.
-// function tasksComplete(req, res, next) {
-//   User
-//     .findById(req.params.id)
-//     .then(user => {
-//       if(user.id === req.currentUser.id) {
-//         const task = user.tasks.id(req.params.taskId);
-//         console.log(task);
-//         if (!user.score) {
-//           user.score = 0;
-//         }
-//         user.score += 5;
-//         if(!user.taskScores) {
-//           user.taskScores = {};
-//         }
-//         if (!user.taskScores[`${task.title}Score`]) {
-//           user.taskScores[`${task.title}Score`] = 0;
-//         }
-//         console.log('LOGGING USER TASKSCORES before =+5', user.taskScores, user.score);
-//         user.taskScores[`${task.title}Score`] += 5;
-//         console.log('LOGGING USER TASKSCORES', user.taskScores, user.score);
-//         // All of these lines above could be used in the future to determine how to increment the score on the main user data. I think this is actually subject to change depending on the naming conventions we call our tasks etc. For instance, if we do this our task title can't have spaces in it.
-//         if (!task.recurring) {
-//           task.remove();
-//         }
-//         // For recurring tasks, we might not remove this.
-//         console.log('logging the whole user', user.taskScores);
-//         return user.save()
-//           .then((user) => {
-//             console.log('right after save--->',user.taskScores);
-//             res.json(user.tasks);
-//           });
-//         // console.log('logging the whole user after save', user.taskScores);
-//         // return res.status(202).json(user.tasks);
-//       } else {
-//         res.json({ message: 'Unauthorized' });
-//       }
-//     })
-//     .catch(err => next(err));
-// }
 
 //  Finding a particular task by the task Id
 function tasksShow(req, res, next) {

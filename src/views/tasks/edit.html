@@ -1,4 +1,4 @@
-<h1>NEW TASK</h1>
+<h1>Edit TASK</h1>
 <form name="tasksEdit.form" ng-submit="tasksEdit.handleUpdate()" novalidate>
     <div class="field">
       <div class="control">
@@ -28,29 +28,22 @@
         </div>
       </div>
     </div>
-  <!-- <div class="field">
-    <label for="points">Points</label>
-    <input value="{{task.points}}" class="input" placeholder="Points" name="points" ng-model="tasksEdit.task.points"/>
-  </div> -->
   <div class="field">
     <label for="description">Description</label>
-    <input value="{{task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
+    <input value="{{tasksEdit.task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
   </div>
   <div class="field">
-    <label for="description"></label>
-    <input value="{{task.locationTitle}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.locationTitle"/>
-  </div>
-  <div class="field">
-    <label for="dueDate">DueDate</label>
-    <input value="{{task.dueDate}}" type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+    <label for="dueDate">Due-Date</label>
+    <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
   </div>
   <div class="field">
     <label for="location">Location</label>
-    <input value="{{task.locationTitle}}" class="input" placeholder="{{task.locationTitle}}" name="location" g-autocomplete handle-change="tasksEdit.updateLocation(location)" />
+    <input class="input" placeholder="Change the location of your task?" name="location" g-autocomplete handle-change="tasksEdit.updateLocation(location)" />
   </div>
+  <div ng-if="tasksEdit.task.location" class="map" g-map center="tasksEdit.task.location">GOOGLE MAP GOES HERE</div>
   <div class="field">
     <label for="dueDate">Time</label>
-    <input value="{{task.time}}" type="time" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
+    <input value="{{tasksEdit.task.time}}" type="time" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
   </div>
   <button class="button is-primary">Submit</button>
   <button ng-click="tasksEdit.handleDelete()" class="button is-danger">Delete</button>
