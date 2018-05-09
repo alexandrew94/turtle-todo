@@ -8,7 +8,7 @@ function gMap() {
     link($scope, $element){
       const map = new google.maps.Map($element[0], {
         center: {lat: 51, lng: -0.78},
-        zoom: 12,
+        zoom: 15,
         styles: [
           {
             'elementType': 'labels',
@@ -210,7 +210,7 @@ function gMap() {
           {},
           {}
         ],
-        disableDefaultUI: true
+        disableDefaultUI: false
       });
 
       const marker = new google.maps.Marker({

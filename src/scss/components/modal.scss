@@ -1,8 +1,43 @@
-.modal-map{
-  height: 400px;
-}
+.modal {
+  background-color: rgba(173, 216, 230, 0.8);
 
-.margin-modal{
-  margin: 0;
-  border-radius: 0;
+  .modal-card-body {
+    background-color: lightblue;
+    padding: 0;
+
+    .close-modal {
+      background-color: inherit;
+      color: $danger;
+      border: 0px;
+      font-size: 48px;
+      display: block;
+      z-index: 100;
+    }
+
+    .modal-card-title {
+      text-align: center;
+      font-size: 48px;
+      z-index: -1;
+    }
+
+    .time-and-date {
+      background-color: white;
+      margin: 5% 10%;
+    }
+
+    .close-modal:active {
+      outline: none;
+      border: none;
+    }
+
+    .modal-map{
+      height: 400px;
+      width: 100%;
+    }
+
+    .margin-modal{
+      margin: 0;
+      border-radius: 0;
+    }
+  }
 }

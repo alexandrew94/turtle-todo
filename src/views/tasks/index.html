@@ -6,6 +6,7 @@
     Add a task
   </a>
 </h1>
+
 <section class="todays-tasks container">
   <h2>Today's Tasks:</h2>
   <p ng-if="!tasksIndex.todaysTasks.length">You have no tasks set for today! <a ui-sref='tasksNew({ id: main.currentUser._id })'>Add a task!</a></p>
@@ -27,7 +28,7 @@
               <button class="expand" ng-click="tasksIndex.openModal(task._id)">
                 <i class="fas fa-expand-arrows-alt"></i>
                 &nbsp
-                Expand
+                View More
               </button>
             </div>
             <div class="time-and-date has-text-centered">
@@ -51,31 +52,35 @@
         </button>
       </div>
       <div class="modal" id="{{task._id}}">
-        <div class="modal-background"></div>
+        <!-- <div class="modal-background"></div> -->
         <div class="modal-card backcolor">
-          <header class="modal-card-head">
-            <p class="modal-card-title">{{ task.displayTitle }}</p>
-            <button ng-click="tasksIndex.openModal(task._id)" class="delete" aria-label="close"></button>
-          </header>
           <section class="modal-card-body margin-modal">
+            <div class="is-pulled-right">
+              <button ng-click="tasksIndex.openModal(task._id)" class="close-modal" aria-label="close">
+                <i class="fas fa-times-circle"></i>
+              </button>
+            </div>
+            <h1 class="modal-card-title">{{ task.displayTitle }}</h1>
             <p class="title is-4">{{ task.description }}</p>
             <p class="title is-4">{{ task.points }}</p>
-            <p class="title is-4">{{ task.dueDate }}</p>
-            <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
-            <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
-          </section>
-          <footer class="modal-card-foot">
+            <div class="time-and-date has-text-centered">
+              <p class="title is-4">{{ task.dueDate }}</p>
+              <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+            </div>
+            <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
             <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
             <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
-          </footer>
+          </section>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="has-text-centered divider">
   <i class="fas fa-leaf"></i>
 </div>
+
 <section class="past-tasks container">
   <h2>Past Unfinished Tasks:</h2>
   <p ng-if="!tasksIndex.pastTasks.length">Congratulations. You have no unfinished tasks from the past!</p>
@@ -97,7 +102,7 @@
               <button class="expand" ng-click="tasksIndex.openModal(task._id)">
                 <i class="fas fa-expand-arrows-alt"></i>
                 &nbsp
-                Expand
+                View More
               </button>
             </div>
             <div class="time-and-date has-text-centered">
@@ -132,7 +137,7 @@
             <p class="title is-4">{{ task.points }}</p>
             <p class="title is-4">{{ task.dueDate }}</p>
             <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
-            <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+            <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
           </section>
           <footer class="modal-card-foot">
             <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
@@ -143,9 +148,11 @@
     </div>
   </div>
 </section>
+
 <div class="has-text-centered divider">
   <i class="fas fa-leaf"></i>
 </div>
+
 <section class="future-tasks container">
   <h2>Future Tasks:</h2>
   <p ng-if="!tasksIndex.futureTasks.length">You have no upcoming tasks for the future.</p>
@@ -167,7 +174,7 @@
               <button class="expand" ng-click="tasksIndex.openModal(task._id)">
                 <i class="fas fa-expand-arrows-alt"></i>
                 &nbsp
-                Expand
+                View More
               </button>
             </div>
             <div class="time-and-date has-text-centered">
@@ -201,7 +208,7 @@
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>
               <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
-              <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+              <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
             </section>
             <footer class="modal-card-foot">
               <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>

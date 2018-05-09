@@ -5,7 +5,7 @@
   min-height: 700px;
 
   .description {
-    font-size: 18px;
+    font-size: 24px;
     width: 80%;
     margin: 10px 10%;
     
@@ -29,10 +29,24 @@
     margin: 0;
   }
 
-
   .expand-div {
     position: absolute;
-    bottom: 360px;
+    bottom: 380px;
+    width: 100%;
+
+    .expand {
+      display: block;
+      margin: 0 auto;
+      font-size: 24px;
+      color: $dark-text;
+      width: 80%;
+      border-radius: $default-border-radius;
+      border: 0px;
+      padding: 10px;
+      background-color: $warning;
+    }
+
+    .expand:focus { outline:0; }
   }
 
   .time-and-date {
