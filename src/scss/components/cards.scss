@@ -2,12 +2,12 @@
   border-radius: $default-border-radius;
   border: $default-border;
   border-color: $white;
-  min-height: 600px;
+  min-height: 700px;
 
   .description {
     font-size: 18px;
     width: 80%;
-    margin: 10%;
+    margin: 10px 10%;
   }
 
   .title {
@@ -26,6 +26,12 @@
 
   .card-content {
     margin: 0;
+  }
+
+
+  .expand-div {
+    position: absolute;
+    bottom: 360px;
   }
 
   .time-and-date {

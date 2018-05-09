@@ -1,6 +1,6 @@
-UsersEditCtrl.$inject = ['$http', '$state', '$rootScope'];
+UsersEditCtrl.$inject = ['$http', '$state', '$auth', '$rootScope'];
 
-function UsersEditCtrl($http, $state, $rootScope) {
+function UsersEditCtrl($http, $state, $auth, $rootScope) {
   this.user = {};
   $http
     .get(`/api/users/${$state.params.id}`)
@@ -17,6 +17,21 @@ function UsersEditCtrl($http, $state, $rootScope) {
       });
   }
   this.handleUsersEdit = handleUsersEdit;
+
+  function handleUsersDelete() {
+    $http
+      .delete(`/api/users/${$state.params.id}`)
+      .then(() => {
+        $auth.logout();
+        localStorage.removeItem('currentUser');
+        $rootScope.$broadcast('flashMessage', {
+          content: 'User successfully deleted!'
+        });
+        $state.go('home');
+      });
+  }
+
+  this.handleUsersDelete = handleUsersDelete;
 }
 
 export default UsersEditCtrl;
