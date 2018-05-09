@@ -21,4 +21,12 @@
     margin: auto 20px;
     font-size: 24px;
   }
+
+  .navbar-start{
+    height: 80px;
+  }
+
+  .navbar-menu, .is-active{
+    background-color: $accent-color;
+  }
 }

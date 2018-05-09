@@ -1,6 +1,8 @@
-MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$timeout'];
+MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$timeout','$transitions'];
 
-function MainCtrl($auth, $state, $rootScope, $timeout) {
+function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
+  this.isHome = true;
+  this.navBarIsOpen = false;
   this.currentUser;
   this.isAuthenticated = $auth.isAuthenticated;
 
@@ -22,6 +24,18 @@ function MainCtrl($auth, $state, $rootScope, $timeout) {
     this.flashMessage = data;
     $timeout(() => this.flashMessage = null, 2000);
   });
+
+  $transitions.onSuccess({}, (transition) => {
+    this.isHome = (transition.to().name === 'tasksHome');
+    this.navBarIsOpen = false;
+  });
+
+  function toggleNav(){
+    this.navBarIsOpen = !this.navBarIsOpen;
+  }
+
+  this.toggleNav = toggleNav;
+
 }
 
 export default MainCtrl;
