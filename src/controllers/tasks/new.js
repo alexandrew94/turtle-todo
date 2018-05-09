@@ -3,6 +3,10 @@ TasksNewCtrl.$inject = ['$http', '$state', '$rootScope'];
 function TasksNewCtrl($http, $state, $rootScope) {
   this.data = {};
   function handleCreate(){
+    if (!this.data.time) {
+      delete this.data.time;
+    }
+    console.log('LOGGING THIS DATA ON TASK NEW CREATE', this.data);
     if (!this.data.title) {
       return $rootScope.$broadcast('flashMessage', {
         content: 'Please enter a valid title!'

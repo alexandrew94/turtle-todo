@@ -35,6 +35,35 @@ function tasksCreate(req, res, next) {
     .catch(next);
 }
 
+// function tasksComplete(req, res, next) {
+//   User
+//     .findById(req.params.id)
+//     .then(user => {
+//       if(user.id === req.currentUser.id) {
+//         const task = user.tasks.id(req.params.taskId);
+//         if (!user.score) {
+//           user.score = 0;
+//         }
+//         user.score += 5;
+//         if (!user[`${task.title}Score`]) {
+//           user[`${task.title}Score`] = 0;
+//         }
+//         user[`${task.title}Score`] += 5;
+//         if (!task.recurring) {
+//           user.completedTasks.push(task);
+//           task.remove();
+//         }
+//         return user.save()
+//           .then((user) => {
+//             res.json(user.tasks);
+//           });
+//       } else {
+//         res.json({ message: 'Unauthorized' });
+//       }
+//     })
+//     .catch(err => next(err));
+// }
+
 function tasksComplete(req, res, next) {
   User
     .findById(req.params.id)
@@ -46,8 +75,13 @@ function tasksComplete(req, res, next) {
         }
         user.score += 5;
         if(!user.taskScores) {
-          user.taskScores = {};
+          user.taskScores = [];
         }
+        // user.taskScores.forEach((e) => {
+        //   if(Object.keys(e)[0] === `${task.title}Score`) {
+        //     e[`${task.title}Score`] += 5;
+        //   }
+        // });
         if (!user[`${task.title}Score`]) {
           user[`${task.title}Score`] = 0;
         }

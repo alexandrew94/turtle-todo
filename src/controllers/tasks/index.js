@@ -15,7 +15,6 @@ function TasksIndexCtrl($http, $state, $rootScope) {
       this.todaysTasks = res.data[0];
       this.pastTasks = res.data[1];
       this.futureTasks = res.data[2];
-
     });
 
   function handleComplete(userId,taskId){
@@ -35,7 +34,6 @@ function TasksIndexCtrl($http, $state, $rootScope) {
           });
       });
   }
-
 
   this.handleComplete = handleComplete;
 }

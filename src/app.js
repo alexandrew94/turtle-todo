@@ -6,8 +6,8 @@ import 'angular-moment';
 
 import Router from './config/router';
 import Auth from './config/auth';
-import './scss/style.scss';
 import 'bulma';
+import './scss/main.scss';
 
 import MainCtrl from './controllers/main';
 import LoginCtrl from './controllers/auth/login';

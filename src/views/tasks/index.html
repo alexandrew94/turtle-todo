@@ -1,64 +1,26 @@
-<h1 ng-init="main.setCurrentUser()">Index Tasks</h1>
-
-<h2>Today's Tasks:</h2>
-<div class="columns is-multiline">
-  <div ng-repeat="task in tasksIndex.todaysTasks" class="column is-half-tablet is-one-third-desktop">
-    <div class="card">
-      <div class="card-image"></div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">{{ task.displayTitle }}</p>
-            <p class="title is-4">{{ task.description }}</p>
-            <p class="title is-4">{{ task.points }}</p>
-            <p class="title is-4">{{ task.dueDate }}</p>
-            <p class="title is-4">{{ task.time }}</p>
-          </div>
-        </div>
-      </div>
-      <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
-      <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
-      <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
-    </div>
-  </div>
-</div>
-
-<h2>Unfinished Tasks From the Past:</h2>
-<div class="columns is-multiline">
-  <div ng-repeat="task in tasksIndex.pastTasks" class="column is-half-tablet is-one-third-desktop">
-    <div class="card">
-      <div class="card-image"></div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">{{ task.title }}</p>
-              <p class="title is-4">{{ task.description }}</p>
-              <p class="title is-4">{{ task.points }}</p>
-              <p class="title is-4">{{ task.dueDate }}</p>
-              <p class="title is-4">{{ task.time }}</p>
-            </div>
-          </div>
-        </div>
-        <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
-        <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
-        <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
-    </div>
-  </div>
-</div>
-
-<h2>Tasks set for a future date:</h2>
-<div class="columns is-multiline">
-  <div ng-repeat="task in tasksIndex.futureTasks" class="column is-half-tablet is-one-third-desktop">
+<h1 ng-init="main.setCurrentUser()">
+  My Tasks:
+  <a class="button is-primary add-button is-pulled-right" ui-sref='tasksNew({ id: main.currentUser._id })'>
+    <i class="fas fa-plus"></i>
+    &nbsp
+    Add a task
+  </a>
+</h1>
+<section class="todays-tasks">
+  <h2>Today's Tasks:</h2>
+  <p ng-if="!tasksIndex.todaysTasks.length">You have no tasks set for today! <a ui-sref='tasksNew({ id: main.currentUser._id })'>Add a task!</a></p>
+  <div class="columns is-multiline">
+    <div ng-repeat="task in tasksIndex.todaysTasks" class="column is-half-tablet is-one-third-desktop">
       <div class="card">
         <div class="card-image"></div>
         <div class="card-content">
           <div class="media">
             <div class="media-content">
-              <p class="title is-4">{{ task.title }}</p>
+              <p class="title is-4">{{ task.displayTitle }}</p>
               <p class="title is-4">{{ task.description }}</p>
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>
-              <p class="title is-4">{{ task.time }}</p>
+              <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
             </div>
           </div>
         </div>
@@ -66,5 +28,65 @@
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
         <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
       </div>
+    </div>
   </div>
+</section>
+<div class="has-text-centered divider">
+  <i class="fas fa-leaf"></i>
+</div>
+<section class="past-tasks">
+  <h2>Past Unfinished Tasks:</h2>
+  <p ng-if="!tasksIndex.pastTasks.length">Congratulations. You have no unfinished tasks from the past!</p>
+  <div class="columns is-multiline">
+    <div ng-repeat="task in tasksIndex.pastTasks" class="column is-half-tablet is-one-third-desktop">
+      <div class="card">
+        <div class="card-image"></div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ task.displayTitle }}</p>
+                <p class="title is-4">{{ task.description }}</p>
+                <p class="title is-4">{{ task.points }}</p>
+                <p class="title is-4">{{ task.dueDate }}</p>
+                <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+              </div>
+            </div>
+          </div>
+          <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+          <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+          <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="has-text-centered divider">
+  <i class="fas fa-leaf"></i>
+</div>
+<section class="future-tasks">
+  <h2>Future Tasks:</h2>
+  <p ng-if="!tasksIndex.futureTasks.length">You have no upcoming tasks for the future.</p>
+  <div class="columns is-multiline">
+    <div ng-repeat="task in tasksIndex.futureTasks" class="column is-half-tablet is-one-third-desktop">
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ task.displayTitle }}</p>
+                <p class="title is-4">{{ task.description }}</p>
+                <p class="title is-4">{{ task.points }}</p>
+                <p class="title is-4">{{ task.dueDate }}</p>
+                <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+              </div>
+            </div>
+          </div>
+          <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+          <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+          <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+        </div>
+    </div>
+  </div>
+</section>
+<div class="has-text-centered divider">
+  <i class="fas fa-leaf"></i>
 </div>

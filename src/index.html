@@ -3,37 +3,55 @@
 <head>
   <meta charset="utf-8">
   <title>WDI33 Project 3</title>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWsQJmU3ga6-p_SwGkJT2Ro7shpx8QzQI&libraries=places"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 </head>
 <body ng-controller="MainCtrl as main">
   <nav class="navbar" role="navigation" aria-label="main navigation" ng-init="main.setCurrentUser()">
-  <div class="navbar-brand">
-    <a class="navbar-item" ui-sref='home' ng-if="!main.isAuthenticated()">
-      Landing Page
-    </a>
-    <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
-      Home
-    </a>
-    <a class="navbar-item" ui-sref="login" ng-if="!main.isAuthenticated()">
-      login
-    </a>
-    <a class="navbar-item" ui-sref="register" ng-if="!main.isAuthenticated()">
-      register
-    </a>
-    <a class="navbar-item" ui-sref="usersShow({ id: main.currentUser._id })" ng-if="main.isAuthenticated()">
-      usersShow
-    </a>
-    <a class="navbar-item" ui-sref='usersEdit({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
-      usersEdit
-    </a>
-    <a class="navbar-item" ui-sref='tasksNew({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
-      New Task
-    </a>
-    <a class="navbar-item" ng-click="main.handleLogout()" ng-if="main.isAuthenticated()">
-      Log Out
-    </a>
-  </div>
-</nav>
+    <div class="navbar-start">
+      <div class="navbar-brand">
+        <a ui-sref='home' ng-if="!main.isAuthenticated()">
+          <img class="navbar-logo" src="../assets/image/turtle.svg">
+        </a>
+        <a ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
+          <img class="navbar-logo" src="../assets/image/turtle.svg">
+        </a>
+      </div>
+      <a class="navbar-item" ui-sref='home' ng-if="!main.isAuthenticated()">
+        <i class="fas fa-home"></i>
+        &nbsp
+        Home
+      </a>
+      <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
+        <i class="fas fa-th-list"></i>
+        &nbsp
+        All My Tasks
+      </a>
+    </div>
+    <div class="navbar-end">
+      <a class="button is-primary" ui-sref="login" ng-if="!main.isAuthenticated()">
+        <i class="fas fa-user-plus"></i>
+        &nbsp
+        Log In
+      </a>
+      <a class="button is-warning" ui-sref="register" ng-if="!main.isAuthenticated()">
+        <i class="fas fa-sign-in-alt"></i>
+        &nbsp
+        Sign Up
+      </a>
+      <a class="navbar-item" ui-sref="usersShow({ id: main.currentUser._id })" ng-if="main.isAuthenticated()">
+        <i class="fas fa-user"></i>
+        &nbsp
+        My Profile
+      </a>
+      <a class="button is-warning" ng-click="main.handleLogout()" ng-if="main.isAuthenticated()">
+        <i class="fas fa-sign-out-alt"></i>
+        &nbsp
+        Log Out
+      </a>
+    </div>
+  </nav>
 <div ng-if="main.flashMessage.content">
   {{ main.flashMessage.content }}
 </div>
