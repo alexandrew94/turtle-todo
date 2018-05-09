@@ -51,6 +51,15 @@ taskSchema.set('toJSON', {
   virtuals: true
 });
 
+taskSchema.virtual('displayDescrpition')
+  .get(function(){
+    if(this.description.length > 15){
+      return (this.description.substring(0,25)) + '...';
+    } else {
+      return this.description;
+    }
+  });
+
 taskSchema.virtual('displayTitle')
   .get(function() {
     return this.title.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){

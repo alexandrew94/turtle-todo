@@ -9,7 +9,7 @@ function gMap() {
 
       const map = new google.maps.Map($element[0], {
         center: {lat: 51, lng: -0.78},
-        zoom: 15,
+        zoom: 12,
         styles: [
           {
             'elementType': 'labels',

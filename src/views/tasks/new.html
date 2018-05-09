@@ -41,6 +41,7 @@
     <label for="location">Location</label>
     <input class="input" placeholder="Location" name="location" ng-model="tasksNew.data.locationTitle" g-autocomplete handle-change="tasksNew.updateLocation(location)"/>
   </div>
+  <div ng-if="tasksNew.data.location" class="map-tasksNewPAge" g-map center="tasksNew.data.location">GOOGLE MAP GOES HERE</div>
   <div class="field">
     <label for="dueDate">DueDate</label>
     <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksNew.data.dueDate"/>

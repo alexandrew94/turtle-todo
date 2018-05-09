@@ -1,6 +1,6 @@
-TasksNewCtrl.$inject = ['$http', '$state', '$rootScope'];
+TasksNewCtrl.$inject = ['$http', '$state', '$rootScope', '$scope'];
 
-function TasksNewCtrl($http, $state, $rootScope) {
+function TasksNewCtrl($http, $state, $rootScope, $scope) {
   this.data = {};
   function handleCreate(){
     if (!this.data.time) {
@@ -32,8 +32,10 @@ function TasksNewCtrl($http, $state, $rootScope) {
   }
 
   function updateLocation(location){
-    console.log('Location as a string--->', this.data.locationTitle);
     this.data.location = location;
+    console.log('Location--->', this.data.location);
+    $scope.$apply();
+
   }
 
   this.handleCreate = handleCreate;
