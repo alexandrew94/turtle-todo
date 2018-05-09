@@ -4,25 +4,27 @@
 <p>Email: {{ usersShow.user.email }}</p>
 <p>Total Score: {{ usersShow.user.score }}</p>
 <p ng-if="usersShow.user.dishwashingScore">Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
-<p ng-if="usersShow.user.takeOutRecyclingAndBinsScore">takeOutRecyclingAndBins: {{ usersShow.user.takeOutRecyclingAndBinsScore }}</p>
-<p ng-if="usersShow.user.changeTheBedSheetsScore">changeTheBedSheets: {{ usersShow.user.changeTheBedSheetsScore }}</p>
-<p ng-if="usersShow.user.takeCareOfBinsScore">takeCareOfBins: {{ usersShow.user.takeCareOfBinsScore }}</p>
-<p ng-if="usersShow.user.checkAndChangeLightbulbsScore">checkAndChangeLightbulbs: {{ usersShow.user.checkAndChangeLightbulbsScore }}</p>
-<p ng-if="usersShow.user.cleanKitchenScore">cleanKitchen: {{ usersShow.user.cleanKitchenScore }}</p>
-<p ng-if="usersShow.user.cleanBathroomScore">cleanBathroom: {{ usersShow.user.cleanBathroomScore }}</p>
-<p ng-if="usersShow.user.cleanBedroomScore">cleanBedroom: {{ usersShow.user.cleanBedroomScore }}</p>
-<p ng-if="usersShow.user.cleanLivingRoomScore">cleanLivingRoom: {{ usersShow.user.cleanLivingRoomScore }}</p>
-<p ng-if="usersShow.user.deepCleanScore">deepClean: {{ usersShow.user.deepCleanScore }}</p>
-<p ng-if="usersShow.user.foodShoppingScore">foodShopping: {{ usersShow.user.foodShoppingScore }}</p>
-<p ng-if="usersShow.user.cleaningEquipmentScore">cleaningEquipment: {{ usersShow.user.cleaningEquipmentScore }}</p>
-<p ng-if="usersShow.user.ikeaScore">ikea: {{ usersShow.user.ikeaScore }}</p>
-<p ng-if="usersShow.user.walkTheDogScore">walkTheDog: {{ usersShow.user.walkTheDogScore }}</p>
-<p ng-if="usersShow.user.cleanOutTheCarScore">cleanOutTheCar: {{ usersShow.user.cleanOutTheCarScore }}</p>
-<p ng-if="usersShow.user.workOnGardenScore">workOnGarden: {{ usersShow.user.workOnGardenScore }}</p>
-<p ng-if="usersShow.user.exerciseScore">exercise: {{ usersShow.user.exerciseScore }}</p>
-<p ng-if="usersShow.user.updatingComputerSoftwareScore">updatingComputerSoftware: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
-<p ng-if="usersShow.user.clothesWashingScore">clothesWashing: {{ usersShow.user.clothesWashingScore }}</p>
-<button ng-click="usersShow.handleUsersDelete()" class="button">Delete Profile</button>
+<p ng-if="usersShow.user.takeOutRecyclingAndBinsScore">Take Out Recycling and Bins: {{ usersShow.user.takeOutRecyclingAndBinsScore }}</p>
+<p ng-if="usersShow.user.changeTheBedSheetsScore">Change The Bed Sheets: {{ usersShow.user.changeTheBedSheetsScore }}</p>
+<p ng-if="usersShow.user.takeCareOfBinsScore">Take Care Of Bins: {{ usersShow.user.takeCareOfBinsScore }}</p>
+<p ng-if="usersShow.user.checkAndChangeLightbulbsScore">Check And Change Light Bulbs: {{ usersShow.user.checkAndChangeLightbulbsScore }}</p>
+<p ng-if="usersShow.user.cleanKitchenScore">Clean Kitchen: {{ usersShow.user.cleanKitchenScore }}</p>
+<p ng-if="usersShow.user.cleanBathroomScore">Clean Bathroom: {{ usersShow.user.cleanBathroomScore }}</p>
+<p ng-if="usersShow.user.cleanBedroomScore">Clean Bedroom: {{ usersShow.user.cleanBedroomScore }}</p>
+<p ng-if="usersShow.user.cleanLivingRoomScore">Clean Living Rooms: {{ usersShow.user.cleanLivingRoomScore }}</p>
+<p ng-if="usersShow.user.deepCleanScore">Deep Clean: {{ usersShow.user.deepCleanScore }}</p>
+<p ng-if="usersShow.user.foodShoppingScore">Food Shopping: {{ usersShow.user.foodShoppingScore }}</p>
+<p ng-if="usersShow.user.cleaningEquipmentScore">Cleaning Equipment: {{ usersShow.user.cleaningEquipmentScore }}</p>
+<p ng-if="usersShow.user.ikeaScore">IKEA: {{ usersShow.user.ikeaScore }}</p>
+<p ng-if="usersShow.user.walkTheDogScore">Walk The Dog: {{ usersShow.user.walkTheDogScore }}</p>
+<p ng-if="usersShow.user.cleanOutTheCarScore">Clean Out The Car: {{ usersShow.user.cleanOutTheCarScore }}</p>
+<p ng-if="usersShow.user.workOnGardenScore">Work On Garden: {{ usersShow.user.workOnGardenScore }}</p>
+<p ng-if="usersShow.user.exerciseScore">Exercise: {{ usersShow.user.exerciseScore }}</p>
+<p ng-if="usersShow.user.updatingComputerSoftwareScore">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
+<p ng-if="usersShow.user.clothesWashingScore">Clothes Washing: {{ usersShow.user.clothesWashingScore }}</p>
+<button class="button is-success" ui-sref="usersEdit({ id: main.currentUser._id })">
+  Edit
+</button>
 
 <h2>Already-completed tasks:</h2>
 <div class="columns is-multiline">
@@ -32,7 +34,7 @@
         <div class="card-content">
           <div class="media">
             <div class="media-content">
-              <p class="title is-4">{{ task.title }}</p>
+              <p class="title is-4">{{ task.displayTitle }}</p>
               <p class="title is-4">{{ task.description }}</p>
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>

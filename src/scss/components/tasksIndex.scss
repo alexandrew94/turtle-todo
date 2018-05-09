@@ -1,0 +1,47 @@
+.map {
+  height: 200px;
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 48px;
+  font-weight: 800;
+
+  .add-button {
+    font-size: 36px;
+  }
+}
+
+section {
+  border-radius: 20px;
+  padding: 30px;
+  border: 10px solid white;
+  margin: 30px 0;
+
+  h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+  }
+}
+
+.divider {
+  i {
+    color: white;
+    font-size: 48px;
+    margin: 0 auto;
+  }
+}
+
+.todays-tasks {
+  background-color: $accent-color;
+}
+
+.past-tasks {
+  background-color: $primary;
+}
+
+.future-tasks {
+  background-color: $yellow;
+}

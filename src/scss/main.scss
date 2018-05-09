@@ -1,0 +1,15 @@
+// IMPORTING BULMA INITIAL VARIABLES
+@import '~bulma/sass/utilities/initial-variables';
+
+// VARIABLES AND MIXINS
+@import 'variables';
+
+// IMPORTING BULMA
+
+@import '~bulma';
+
+// COMPONENTS
+@import 'components/base';
+@import 'components/navbar';
+@import 'components/landing';
+@import 'components/tasksIndex';
