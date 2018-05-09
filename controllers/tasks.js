@@ -131,6 +131,7 @@ function tasksEdit(req, res, next) {
       if(user.id === req.currentUser.id) {
         let task = user.tasks.id(req.params.taskId);
         req.body.dueDate = moment(req.body.dueDate).format('YYYY-MM-DD');
+        req.body.time = moment(req.body.time).format('HH:mm');
         task = Object.assign(task, req.body);
         user.save();
         res.json(task);

@@ -4,6 +4,7 @@ mongoose.Promise = require('bluebird');
 
 const taskSchema = new mongoose.Schema({
   title: { type: String, required: true },
+  locationTitle: String,
   description: String,
   dueDate: { type: String, required: true },
   time: String,

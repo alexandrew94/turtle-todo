@@ -28,6 +28,7 @@ function TasksNewCtrl($http, $state, $rootScope) {
   }
 
   function updateLocation(location){
+    console.log('Location as a string--->', this.data.locationTitle);
     this.data.location = location;
   }
 

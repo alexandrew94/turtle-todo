@@ -13,6 +13,7 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'u1',
     tasks: [{
       title: 'Dishwashing',
+      locationTitle: 'Kings Cross',
       points: 5,
       description: 'I dont mind doing them if i didnt cook',
       dueDate: '2018-05-08',
@@ -24,6 +25,7 @@ mongoose.connect(dbURI, (err, db) => {
       }
     }, {
       title: 'Walking the Dog',
+      locationTitle: 'Kings Cross',
       points: 5,
       description: 'I like dogs better',
       dueDate: '2018-05-08',

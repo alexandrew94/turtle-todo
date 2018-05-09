@@ -8,6 +8,7 @@ function TasksEditCtrl($http, $state, $rootScope){
       this.task = res.data;
       this.task.dueDate = new Date(res.data.dueDate);
       this.task.time = new Date(`1970-01-01T${this.task.time}:00Z`);
+      console.log('Location title-->',this.task);
     });
 
   function handleUpdate(){

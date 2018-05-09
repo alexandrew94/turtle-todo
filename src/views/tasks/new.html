@@ -39,7 +39,7 @@
   </div>
   <div class="field">
     <label for="location">Location</label>
-    <input class="input" placeholder="Location" name="location" g-autocomplete handle-change="tasksNew.updateLocation(location)" />
+    <input class="input" placeholder="Location" name="location" ng-model="tasksNew.data.locationTitle" g-autocomplete handle-change="tasksNew.updateLocation(location)"/>
   </div>
   <div class="field">
     <label for="dueDate">DueDate</label>
