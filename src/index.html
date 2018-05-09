@@ -17,19 +17,25 @@
         <a ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
           <img class="navbar-logo" src="../assets/image/turtle.svg">
         </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-click="main.toggleNav()" ng-class="{ 'is-active': main.navBarIsOpen }">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
       <a class="navbar-item" ui-sref='home' ng-if="!main.isAuthenticated()">
         <i class="fas fa-home"></i>
         &nbsp
         Home
       </a>
+    </div>
+    <div class="navbar-menu" ng-class="{ 'is-active': main.navBarIsOpen }">
+      <div class="navbar-end">
       <a class="navbar-item" ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
         <i class="fas fa-th-list"></i>
         &nbsp
         All My Tasks
       </a>
-    </div>
-    <div class="navbar-end">
       <a class="button is-primary" ui-sref="login" ng-if="!main.isAuthenticated()">
         <i class="fas fa-sign-in-alt"></i>
         &nbsp
@@ -51,6 +57,7 @@
         Log Out
       </a>
     </div>
+  </div>
   </nav>
 <div ng-if="main.flashMessage.content">
   {{ main.flashMessage.content }}

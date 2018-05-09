@@ -5,3 +5,24 @@ function(title) {
   document.getElementsByClassName(title)[0]
 }
 </script>
+
+<div class="field">
+  <label for="description">Description</label>
+  <input value="{{tasksEdit.task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
+</div>
+<div class="field">
+  <label for="dueDate">Due-Date</label>
+  <input type="date" class="input" placeholder="DueDate" name="dueDate" ng-model="tasksEdit.task.dueDate"/>
+</div>
+<div class="field">
+  <label for="location">Location</label>
+  <input class="input" placeholder="Change the location of your task?" name="location" g-autocomplete handle-change="tasksEdit.updateLocation(location)" />
+</div>
+<div ng-if="tasksEdit.task.location" class="map-tasksNewPAge" g-map center="tasksEdit.task.location">GOOGLE MAP GOES HERE</div>
+<div class="field">
+  <label for="dueDate">Time</label>
+  <input value="{{tasksEdit.task.time}}" type="time" class="input" placeholder="Time" name="time" ng-model="tasksEdit.task.time"/>
+</div>
+<button class="button is-primary">Submit</button>
+<button ng-click="tasksEdit.handleDelete()" class="button is-danger">Delete</button>
+</form>
