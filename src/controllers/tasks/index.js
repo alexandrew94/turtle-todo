@@ -35,6 +35,13 @@ function TasksIndexCtrl($http, $state, $rootScope) {
       });
   }
 
+  function openModal(taskId){
+    console.log(taskId);
+    const modal = document.getElementById(taskId);
+    modal.classList.toggle('is-active');
+  }
+
+  this.openModal = openModal;
   this.handleComplete = handleComplete;
 }
 

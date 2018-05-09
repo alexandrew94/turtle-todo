@@ -2,6 +2,9 @@ UsersEditCtrl.$inject = ['$http', '$state', '$rootScope'];
 
 function UsersEditCtrl($http, $state, $rootScope) {
   this.user = {};
+  $http
+    .get(`/api/users/${$state.params.id}`)
+    .then(res => this.user = res.data);
 
   function handleUsersEdit() {
     $http

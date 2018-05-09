@@ -18,6 +18,7 @@
             <div class="media-content">
               <p class="title is-4">{{ task.displayTitle }}</p>
               <p class="title is-4">{{ task.description }}</p>
+              <button ng-click="tasksIndex.openModal(task._id)" class="button">Expand</button>
               <p class="title is-4">{{ task.points }}</p>
               <p class="title is-4">{{ task.dueDate }}</p>
               <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
@@ -27,6 +28,26 @@
         <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
         <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
         <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+      </div>
+      <div class="modal" id="{{task._id}}">
+        <div class="modal-background"></div>
+        <div class="modal-card backcolor">
+          <header class="modal-card-head">
+            <p class="modal-card-title">{{ task.displayTitle }}</p>
+            <button ng-click="tasksIndex.openModal(task._id)" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body margin-modal">
+            <p class="title is-4">{{ task.description }}</p>
+            <p class="title is-4">{{ task.points }}</p>
+            <p class="title is-4">{{ task.dueDate }}</p>
+            <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+            <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+          </section>
+          <footer class="modal-card-foot">
+            <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+            <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+          </footer>
+        </div>
       </div>
     </div>
   </div>
@@ -46,6 +67,7 @@
               <div class="media-content">
                 <p class="title is-4">{{ task.displayTitle }}</p>
                 <p class="title is-4">{{ task.description }}</p>
+                <button ng-click="tasksIndex.openModal(task._id)" class="button">Expand</button>
                 <p class="title is-4">{{ task.points }}</p>
                 <p class="title is-4">{{ task.dueDate }}</p>
                 <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
@@ -55,6 +77,26 @@
           <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
           <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
           <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+      </div>
+      <div class="modal" id="{{task._id}}">
+        <div class="modal-background"></div>
+        <div class="modal-card backcolor">
+          <header class="modal-card-head">
+            <p class="modal-card-title">{{ task.displayTitle }}</p>
+            <button ng-click="tasksIndex.openModal(task._id)" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body margin-modal">
+            <p class="title is-4">{{ task.description }}</p>
+            <p class="title is-4">{{ task.points }}</p>
+            <p class="title is-4">{{ task.dueDate }}</p>
+            <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+            <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+          </section>
+          <footer class="modal-card-foot">
+            <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+            <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+          </footer>
+        </div>
       </div>
     </div>
   </div>
@@ -74,6 +116,7 @@
               <div class="media-content">
                 <p class="title is-4">{{ task.displayTitle }}</p>
                 <p class="title is-4">{{ task.description }}</p>
+                <button ng-click="tasksIndex.openModal(task._id)" class="button">Expand</button>
                 <p class="title is-4">{{ task.points }}</p>
                 <p class="title is-4">{{ task.dueDate }}</p>
                 <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
@@ -83,6 +126,26 @@
           <div ng-if="task.location" class="map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
           <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
           <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+        </div>
+        <div class="modal" id="{{task._id}}">
+          <div class="modal-background"></div>
+          <div class="modal-card backcolor">
+            <header class="modal-card-head">
+              <p class="modal-card-title">{{ task.displayTitle }}</p>
+              <button ng-click="tasksIndex.openModal(task._id)" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body margin-modal">
+              <p class="title is-4">{{ task.description }}</p>
+              <p class="title is-4">{{ task.points }}</p>
+              <p class="title is-4">{{ task.dueDate }}</p>
+              <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+              <div ng-if="task.location" class="modal-map" g-map center="task.location">GOOGLE MAP GOES HERE</div>
+            </section>
+            <footer class="modal-card-foot">
+              <a class="button" ui-sref='tasksEdit({ id: main.currentUser._id, taskId: task._id })'>Edit</a>
+              <button ng-click="tasksIndex.handleComplete(main.currentUser._id,task._id)" class="button">Complete</button>
+            </footer>
+          </div>
         </div>
     </div>
   </div>
