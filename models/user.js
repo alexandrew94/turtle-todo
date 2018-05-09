@@ -53,7 +53,7 @@ taskSchema.set('toJSON', {
 
 taskSchema.virtual('displayDescrpition')
   .get(function(){
-    if(this.description.length > 15){
+    if(this.description && this.description.length > 15){
       return (this.description.substring(0,25)) + '...';
     } else {
       return this.description;

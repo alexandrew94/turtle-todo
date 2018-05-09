@@ -10,14 +10,12 @@
       color: $danger;
       border: 0px;
       font-size: 48px;
-      display: block;
-      z-index: 100;
     }
 
     .modal-card-title {
       text-align: center;
       font-size: 48px;
-      z-index: -1;
+      width: 100%;
     }
 
     .time-and-date {
