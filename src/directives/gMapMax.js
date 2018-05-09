@@ -210,7 +210,7 @@ function gMap() {
           {},
           {}
         ],
-        disableDefaultUI: true
+        disableDefaultUI: false
       });
 
       const marker = new google.maps.Marker({
