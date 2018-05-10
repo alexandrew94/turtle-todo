@@ -168,7 +168,7 @@
   }
   .expBarWrap{
     height: 50px;
-    width: 200px;
+    width: 80%;
     border-radius: $default-border-radius;
     border: 3px solid red;
 
@@ -178,6 +178,6 @@
     height: 46px;
     background-color: red;
     display: inline-block;
-    float: left
+    float: left;
   }
 }

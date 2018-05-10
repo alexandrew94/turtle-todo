@@ -2,6 +2,8 @@ UsersShowCtrl.$inject = ['$http', '$state', '$scope'];
 
 function UsersShowCtrl($http, $state, $scope) {
   this.user = {};
+  this.selectedTask = null;
+
   $http
     .get(`/api/users/${$state.params.id}`)
     .then(res => this.user = res.data)
@@ -97,6 +99,18 @@ function UsersShowCtrl($http, $state, $scope) {
 
   this.taskScore = {};
 
+  function selectTask(task){
+    this.selectedTask = task;
+  }
+
+  function unSelectTask() {
+    this.selectedTask = null;
+  }
+
+  function isSelectedTask(task) {
+    return this.selectedTask === task;
+  }
+
   function showDetails(scorename) {
     this.taskScore.title = scorename.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){
       return str.toUpperCase();
@@ -110,24 +124,12 @@ function UsersShowCtrl($http, $state, $scope) {
   }
 
   function userExBar(task, taskName){
-    var x = (task % 25);
-    if(x === 5){
-      $scope[`expBarMove${taskName}`] = { 'width': '40px' };
-    }
-    if(x === 10){
-      $scope[`expBarMove${taskName}`] = { 'width': '80px' };
-    }
-    if(x === 15){
-      $scope[`expBarMove${taskName}`] = { 'width': '120px' };
-    }
-    if(x === 20){
-      $scope[`expBarMove${taskName}`] = { 'width': '160px' };
-    }
-    if(x === 25){
-      $scope[`expBarMove${taskName}`] = { 'width': '0px' };
-    }
+    $scope[`expBarMove${taskName}`] = { 'width': `${((task % 25) / 25 )*100}%`};
   }
-
+  //$scope[`expBarMove${taskName}`] = width: `${(task % 25 )*100}%`
+  this.selectTask = selectTask;
+  this.unSelectTask = unSelectTask;
+  this.isSelectedTask = isSelectedTask;
   this.userExBar = userExBar;
   this.showDetails = showDetails;
   this.userTaskLevel = userTaskLevel;
