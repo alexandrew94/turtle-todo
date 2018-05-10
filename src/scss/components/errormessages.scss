@@ -1,0 +1,21 @@
+.flash-message {
+  min-height: 50px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.invalid {
+  background-color: $red;
+  color: white;
+}
+
+.primary {
+  background-color: $primary;
+  color: white;
+}
+
+.neutral {
+  background-color: $warning;
+  color: $dark-text;
+}

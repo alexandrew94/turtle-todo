@@ -9,12 +9,14 @@ function LoginCtrl($auth, $state, $rootScope) {
       .then(res => {
         localStorage.setItem('currentUser', JSON.stringify(res.data.user));
         $rootScope.$broadcast('flashMessage', {
+          style: 'primary',
           content: res.data.message
         });
         $state.go('tasksHome', { id: res.data.user._id });
       })
       .catch(err => {
         $rootScope.$broadcast('flashMessage', {
+          style: 'invalid',
           content: err.data.message
         });
       });

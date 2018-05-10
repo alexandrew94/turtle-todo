@@ -12,6 +12,7 @@ function RegisterCtrl($auth, $state, $rootScope) {
           .then(res => {
             localStorage.setItem('currentUser', JSON.stringify(res.data.user));
             $rootScope.$broadcast('flashMessage', {
+              style: 'primary',
               content: 'Thanks for signing up. Welcome to our app!'
             });
             $state.go('tasksHome', { id: res.data.user._id });

@@ -1,4 +1,29 @@
-<h1>Showing the user</h1>
+<h1 ng-init="usersShow.totalScore()">Showing the user</h1>
+<div class="">
+  Total score: {{ usersShow.user.score }}. (Hover for details.)
+</div>
+<div class="total-score-meter">
+  <span ng-mouseover="usersShow.showDetails('dishwashingScore')" ng-style="dishwashingScore"></span
+  ><span ng-mouseover="usersShow.showDetails('takeOutRecyclingAndBinsScore')" ng-style="takeOutRecyclingAndBinsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('changeTheBedSheetsScore')" ng-style="changeTheBedSheetsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('takeCareOfBinsScore')" ng-style="takeCareOfBinsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('checkAndChangeLightbulbsScore')" ng-style="checkAndChangeLightbulbsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanKitchenScore')" ng-style="cleanKitchenScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanBathroomScore')" ng-style="cleanBathroomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanBedroomScore')" ng-style="cleanBedroomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanLivingRoomScore')" ng-style="cleanLivingRoomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('deepCleanScore')" ng-style="deepCleanScore"></span
+  ><span ng-mouseover="usersShow.showDetails('foodShoppingScore')" ng-style="foodShoppingScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleaningEquipmentScore')" ng-style="cleaningEquipmentScore"></span
+  ><span ng-mouseover="usersShow.showDetails('ikeaScore')" ng-style="ikeaScore"></span
+  ><span ng-mouseover="usersShow.showDetails('walkTheDogScore')" ng-style="walkTheDogScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanOutTheCarScore')" ng-style="cleanOutTheCarScore"></span
+  ><span ng-mouseover="usersShow.showDetails('workOnGardenScore')" ng-style="workOnGardenScore"></span
+  ><span ng-mouseover="usersShow.showDetails('exerciseScore')" ng-style="exerciseScore"></span
+  ><span ng-mouseover="usersShow.showDetails('updatingComputerSoftwareScore')" ng-style="updatingComputerSoftwareScore"></span
+  ><span ng-mouseover="usersShow.showDetails('clothesWashingScore')" ng-style="clothesWashingScore"></span>
+</div>
+<div ng-if="usersShow.taskScore.title">{{ usersShow.taskScore.title }}: {{ usersShow.taskScore.data }} ({{ usersShow.taskScore.percentage }}% of all completed tasks).</div>
 <p>You have to be logged in as the user to see the data on this page.</p>
 <p>Username: {{ usersShow.user.username }}</p>
 <p>Email: {{ usersShow.user.email }}</p>

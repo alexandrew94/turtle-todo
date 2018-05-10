@@ -11,6 +11,7 @@ function UsersEditCtrl($http, $state, $auth, $rootScope) {
       .put(`/api/users/${$state.params.id}`, this.user)
       .then(res => {
         $rootScope.$broadcast('flashMessage', {
+          style: 'primary',
           content: 'Edit successful!'
         });
         $state.go('usersShow', { id: res.data._id });
@@ -25,6 +26,7 @@ function UsersEditCtrl($http, $state, $auth, $rootScope) {
         $auth.logout();
         localStorage.removeItem('currentUser');
         $rootScope.$broadcast('flashMessage', {
+          style: 'neutral',
           content: 'User successfully deleted!'
         });
         $state.go('home');
