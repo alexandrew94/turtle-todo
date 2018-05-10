@@ -7,6 +7,7 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
   this.isAuthenticated = $auth.isAuthenticated;
 
   this.setCurrentUser = function setCurrentUser() {
+    console.log('LOGGING PARSED CURRENT USER', JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     $auth.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   };

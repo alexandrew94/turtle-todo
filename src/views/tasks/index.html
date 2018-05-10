@@ -7,7 +7,7 @@
   </a>
 </h1> -->
 
-<section class="todays-tasks container">
+<section class="todays-tasks container" ng-init="main.setCurrentUser()">
   <h2>Today's Tasks:</h2>
   <p class="empty-message" ng-if="!tasksIndex.todaysTasks.length">You have no tasks set for today! <a ui-sref='tasksNew({ id: main.currentUser._id })'>Add a task!</a></p>
   <div class="columns is-multiline">
