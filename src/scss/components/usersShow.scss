@@ -70,4 +70,18 @@
     font-size: 20px;
     color: #008964;
   }
+  .expBarWrap{
+    height: 50px;
+    width: 200px;
+    border-radius: $default-border-radius;
+    border: 3px solid red;
+
+
+  }
+  .expBarFront{
+    height: 46px;
+    background-color: red;
+    display: inline-block;
+    float: left
+  }
 }

@@ -108,3 +108,17 @@
 //     e[`${task.title}Score`] += 5;
 //   }
 // });
+
+
+
+if( x === 5){
+  $scope.expBarMove = { 'width': '40px' };
+}if(x === 10){
+  $scope.expBarMove = { 'width': '80px' };
+}if(x === 15){
+  $scope.expBarMove = { 'width': '120px' };
+}if(x === 20){
+  $scope.expBarMove = { 'width': '140px' };
+}else{
+  $scope.expBarMove = { 'width': '0px' };
+}
