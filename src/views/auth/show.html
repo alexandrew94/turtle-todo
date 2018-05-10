@@ -59,13 +59,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.updatingComputerSoftwareScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.updatingComputerSoftwareScore, 'UpdatingComputerSoftwareScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveUpdatingComputerSoftwareScore"></span>
+                <div class="task-title">
+                  Updating Computer Software:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
+                <h1>{{ usersShow.user.updatingComputerSoftwareScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.updatingComputerSoftwareScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.updatingComputerSoftwareScore, 'UpdatingComputerSoftwareScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveUpdatingComputerSoftwareScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -76,13 +78,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.takeOutRecyclingAndBinsScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.takeOutRecyclingAndBinsScore, 'takeOutRecyclingAndBinsScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveTakeOutRecyclingAndBinsScore"></span>
+                <div class="task-title">
+                  Take Out Recycling and Bins:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Take Out Recycling and Bins: {{ usersShow.user.takeOutRecyclingAndBinsScore }}</p>
+                <h1>{{ usersShow.user.takeOutRecyclingAndBinsScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.takeOutRecyclingAndBinsScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.takeOutRecyclingAndBinsScore, 'takeOutRecyclingAndBinsScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveTakeOutRecyclingAndBinsScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -93,13 +97,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.changeTheBedSheetsScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.changeTheBedSheetsScore, 'ChangeTheBedSheetsScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveChangeTheBedSheetsScore"></span>
+                <div class="task-title">
+                  Change The Bed Sheets:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Change The Bed Sheets: {{ usersShow.user.changeTheBedSheetsScore }}</p>
+                <h1>{{ usersShow.user.changeTheBedSheetsScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.changeTheBedSheetsScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.changeTheBedSheetsScore, 'ChangeTheBedSheetsScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveChangeTheBedSheetsScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -110,13 +116,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.takeCareOfBinsScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.takeCareOfBinsScore, 'TakeCareOfBinsScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveTakeCareOfBinsScore"></span>
+                <div class="task-title">
+                  Take Care Of Bins:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Take Care Of Bins: {{ usersShow.user.takeCareOfBinsScore }}</p>
+                <h1>{{ usersShow.user.takeCareOfBinsScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.takeCareOfBinsScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.takeCareOfBinsScore, 'TakeCareOfBinsScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveTakeCareOfBinsScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -127,13 +135,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.checkAndChangeLightbulbsScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.checkAndChangeLightbulbsScore, 'CheckAndChangeLightbulbsScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCheckAndChangeLightbulbsScore"></span>
+                <div class="task-title">
+                  Check And Change Light Bulbs:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Check And Change Light Bulbs: {{ usersShow.user.checkAndChangeLightbulbsScore }}</p>
+                <h1>{{ usersShow.user.checkAndChangeLightbulbsScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.checkAndChangeLightbulbsScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.checkAndChangeLightbulbsScore, 'CheckAndChangeLightbulbsScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCheckAndChangeLightbulbsScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -144,13 +154,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleanKitchenScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleanKitchenScore, 'CleanKitchenScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleanKitchenScore"></span>
+                <div class="task-title">
+                  Clean Kitchen:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clean Kitchen: {{ usersShow.user.cleanKitchenScore }}</p>
+                <h1>{{ usersShow.user.cleanKitchenScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanKitchenScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleanKitchenScore, 'CleanKitchenScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleanKitchenScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -161,13 +173,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleanBathroomScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleanBathroomScore, 'CleanBathroomScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleanBathroomScore"></span>
+                <div class="task-title">
+                  Clean Bathroom:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clean Bathroom: {{ usersShow.user.cleanBathroomScore }}</p>
+                <h1>{{ usersShow.user.cleanKitchenScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanBathroomScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleanBathroomScore, 'CleanBathroomScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleanBathroomScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -178,13 +192,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleanBedroomScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleanBedroomScore, 'CleanBedroomScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleanBedroomScore"></span>
+                <div class="task-title">
+                  Clean Bedroom:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clean Bedroom: {{ usersShow.user.cleanBedroomScore }}</p>
+                <h1>{{ usersShow.user.cleanBedroomScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanBedroomScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleanBedroomScore, 'CleanBedroomScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleanBedroomScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -195,13 +211,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleanLivingRoomScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleanLivingRoomScore, 'CleanLivingRoomScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleanLivingRoomScore"></span>
+                <div class="task-title">
+                  Clean Living Rooms:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clean Living Rooms: {{ usersShow.user.cleanLivingRoomScore }}</p>
+                <h1>{{ usersShow.user.cleanLivingRoomScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanLivingRoomScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleanLivingRoomScore, 'CleanLivingRoomScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleanLivingRoomScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -212,13 +230,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.deepCleanScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.deepCleanScore, 'DeepCleanScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveDeepCleanScore"></span>
+                <div class="task-title">
+                  Deep Clean:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Deep Clean: {{ usersShow.user.deepCleanScore }}</p></p>
+                <h1>{{ usersShow.user.deepCleanScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.deepCleanScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.deepCleanScore, 'DeepCleanScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveDeepCleanScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -229,13 +249,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.foodShoppingScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.foodShoppingScore, 'FoodShoppingScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveFoodShoppingScore"></span>
+                <div class="task-title">
+                  Food Shopping:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Food Shopping: {{ usersShow.user.foodShoppingScore }}</p>
+                <h1>{{ usersShow.user.foodShoppingScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.foodShoppingScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.foodShoppingScore, 'FoodShoppingScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveFoodShoppingScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -246,13 +268,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleaningEquipmentScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleaningEquipmentScore, 'CleaningEquipmentScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleaningEquipmentScore"></span>
+                <div class="task-title">
+                  Cleaning Equipment:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Cleaning Equipment: {{ usersShow.user.cleaningEquipmentScore }}</p>
+                <h1>{{ usersShow.user.cleaningEquipmentScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleaningEquipmentScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleaningEquipmentScore, 'CleaningEquipmentScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleaningEquipmentScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -263,13 +287,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.ikeaScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.ikeaScore, 'IkeaScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveIkeaScore"></span>
+                <div class="task-title">
+                  IKEA:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">IKEA: {{ usersShow.user.ikeaScore }}</p>
+                <h1>{{ usersShow.user.ikeaScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.ikeaScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.ikeaScore, 'IkeaScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveIkeaScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -280,13 +306,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.walkTheDogScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.walkTheDogScore, 'WalkTheDogScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveWalkTheDogScore"></span>
+                <div class="task-title">
+                  Walk The Dog:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Walk The Dog: {{ usersShow.user.walkTheDogScore }}</p>
+                <h1>{{ usersShow.user.walkTheDogScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.walkTheDogScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.walkTheDogScore, 'WalkTheDogScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveWalkTheDogScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -297,13 +325,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.cleanOutTheCarScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.cleanOutTheCarScore, 'CleanOutTheCarScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveCleanOutTheCarScore"></span>
+                <div class="task-title">
+                  Clean Out The Car:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clean Out The Car: {{ usersShow.user.cleanOutTheCarScore }}</p>
+                <h1>{{ usersShow.user.cleanOutTheCarScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanOutTheCarScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.cleanOutTheCarScore, 'CleanOutTheCarScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveCleanOutTheCarScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -314,13 +344,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.workOnGardenScor) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.workOnGardenScor, 'WorkOnGardenScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveWorkOnGardenScore"></span>
+                <div class="task-title">
+                  Work On Garden:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Work On Garden: {{ usersShow.user.workOnGardenScore }}</p>
+                <h1>{{ usersShow.user.workOnGardenScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.workOnGardenScor) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.workOnGardenScor, 'WorkOnGardenScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveWorkOnGardenScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -331,13 +363,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.exerciseScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.exerciseScore, 'ExerciseScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveExerciseScore"></span>
+                <div class="task-title">
+                  Exercise:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Exercise: {{ usersShow.user.exerciseScore }}</p></p>
+                <h1>{{ usersShow.user.exerciseScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.exerciseScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.exerciseScore, 'ExerciseScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveExerciseScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -348,13 +382,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.clothesWashingScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.clothesWashingScore, 'ClothesWashingScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveClothesWashingScore"></span>
+                <div class="task-title">
+                  Clothes Washing:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Clothes Washing: {{ usersShow.user.clothesWashingScore }}</p>
+                <h1>{{ usersShow.user.clothesWashingScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.clothesWashingScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.clothesWashingScore, 'ClothesWashingScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveClothesWashingScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -398,7 +434,7 @@
             <div class="has-text-centered">
             </div>
             <div class="expand-div has-text-centered">
-              <button class="expand" ng-click="usersShow.openModal(task._id)">
+              <button class="expand" ng-click="usersShow.selectTask(task)">
                 <i class="fas fa-expand-arrows-alt"></i>
                 &nbsp
                 View More
@@ -425,12 +461,12 @@
           </div>
         </div>
       </div>
-      <div class="modal" id="{{task._id}}">
+      <div class="modal" ng-class="{ 'is-active': usersShow.isSelectedTask(task) }">
         <!-- <div class="modal-background"></div> -->
         <div class="modal-card backcolor">
           <section class="modal-card-body margin-modal">
             <div class="is-pulled-right">
-              <button ng-click="usersShow.openModal(task._id)" class="close-modal" aria-label="close">
+              <button ng-click="usersShow.unSelectTask()" class="close-modal" aria-label="close">
                 <i class="fas fa-times-circle"></i>
               </button>
             </div>

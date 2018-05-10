@@ -2,6 +2,8 @@ UsersShowCtrl.$inject = ['$http', '$state', '$scope'];
 
 function UsersShowCtrl($http, $state, $scope) {
   this.user = {};
+  this.selectedTask = null;
+
   $http
     .get(`/api/users/${$state.params.id}`)
     .then(res => this.user = res.data)
@@ -99,6 +101,18 @@ function UsersShowCtrl($http, $state, $scope) {
 
   this.taskScore = {};
 
+  function selectTask(task){
+    this.selectedTask = task;
+  }
+
+  function unSelectTask() {
+    this.selectedTask = null;
+  }
+
+  function isSelectedTask(task) {
+    return this.selectedTask === task;
+  }
+
   function showDetails(scorename) {
     this.taskScore.title = scorename.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){
       return str.toUpperCase();
@@ -114,7 +128,10 @@ function UsersShowCtrl($http, $state, $scope) {
   function userExBar(task, taskName){
     $scope[`expBarMove${taskName}`] = { 'width': `${((task % 25) / 25 )*100}%`};
   }
-
+  //$scope[`expBarMove${taskName}`] = width: `${(task % 25 )*100}%`
+  this.selectTask = selectTask;
+  this.unSelectTask = unSelectTask;
+  this.isSelectedTask = isSelectedTask;
   this.userExBar = userExBar;
   this.showDetails = showDetails;
   this.userTaskLevel = userTaskLevel;
