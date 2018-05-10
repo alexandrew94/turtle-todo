@@ -13,7 +13,7 @@ function UsersShowCtrl($http, $state) {
   }
 
   function userTaskLevel(){
-    if(this.user.dishwashingScore < 24) return 2;
+    return Math.floor(this.user.dishwashingScore/25);
   }
 
   this.userTaskLevel = userTaskLevel;

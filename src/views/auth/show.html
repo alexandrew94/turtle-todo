@@ -13,7 +13,7 @@
         <div class="media-content">
           <div class="has-text-centered">
             <div class="UserTaskLevel">
-              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>{{ usersShow.userTaskLevel(dishwashingScore) }}</h1>
               <h1>Level</h1>
               <p class="has-text-centered">Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
             </div>
@@ -25,10 +25,10 @@
       <div class="media">
         <div class="media-content">
           <div class="has-text-centered">
-            <div class="user-task-score">
+            <div class="UserTaskLevel">
               <h1>{{ usersShow.userTaskLevel() }}</h1>
               <h1>Level</h1>
-              <p class="title has-text-centered">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
+              <p class="has-text-centered">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
             </div>
           </div>
         </div>
@@ -259,23 +259,6 @@
 </div>
 
 
-<p></p>
-<p></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p >
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p ></p>
-<p >
-<p ></p>
 <button class="button is-success" ui-sref="usersEdit({ id: main.currentUser._id })">
   Edit
 </button>
