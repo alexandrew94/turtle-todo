@@ -59,19 +59,22 @@
     </div>
   </div>
   </nav>
-<div ng-if="main.flashMessage.content" class="flash-message {{ main.flashMessage.style }}">
+  <div ng-if="main.flashMessage.content" class="flash-message {{ main.flashMessage.style }}">
   {{ main.flashMessage.content }}
 </div>
-<div ng-if="main.congrats.score" class="user-task-score">
+<div ng-if="main.congrats.score" class="user-task-score congrats-msg">
   <div class="card congrats">
     <div class="media">
       <div class="media-content">
         <div class="has-text-centered">
           <div class="UserTaskLevel">
             <div class="task-title">
+              Congratulations on completeing your
+              <br/>
               {{ main.congrats.title }}
+              task.<br/> +5 points.
             </div>
-            <h1>{{ main.congrats.score }}</h1>
+            <h1 class="congrats-msg-medal">{{ main.congrats.score }}</h1>
           </div>
         </div>
       </div>

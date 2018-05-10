@@ -29,7 +29,7 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
   $rootScope.$on('congrats', (e, data) => {
     this.congrats = data;
     console.log(data);
-    $timeout(() => this.congrats = null, 3000);
+    $timeout(() => this.congrats = null, 2500);
   });
 
   $transitions.onSuccess({}, (transition) => {
@@ -42,6 +42,12 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
   }
 
   this.toggleNav = toggleNav;
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  this.scrollToTop = scrollToTop;
 
 }
 

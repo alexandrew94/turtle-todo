@@ -65,16 +65,6 @@
   }
 }
 
-.user-task-score {
-  .columns {
-    .card {
-      background-color: $primary;
-      width: 19%;
-      margin: 0.5%;
-    }
-  }
-}
-
 .card.user-profile {
   height: 350px;
 
@@ -134,9 +124,32 @@
 }
 
 .user-task-score {
+
+  .dishwashing { background-color: #2176AE; }
+  .takeOutRecyclingAndBins { background-color: #57B8FF; }
+  .changeTheBedSheets { background-color: #B66D0D; }
+  .takeCareOfBins { background-color: #FBB13C; }
+  .checkAndChangeLightbulbs { background-color: #FE6847; }
+  .cleanKitchen { background-color: #1C3144; }
+  .cleanBathroom { background-color: #D00000; }
+  .cleanBedroom { background-color: #FFBA08; }
+  .cleanLivingRoom { background-color: #A2AEBB; }
+  .deepClean { background-color: #3F88C5; }
+  .foodShopping { background-color: #EE6352; }
+  .cleaningEquipment { background-color: #59CD90; }
+  .ikea { background-color: #3FA7D6; }
+  .walkTheDog { background-color: #FAC05E; }
+  .cleanOutTheCar { background-color: #F79D84; }
+  .workOnGarden { background-color: #EDEEC9; }
+  .exercise { background-color: #DDE7C7; }
+  .updatingComputerSoftware { background-color: #BFD8BD; }
+  .clothesWashing { background-color: #77BFA3; }
+
   .card {
-    height: 400px;
-    background-color: $accent-color;
+    height: 450px;
+    width: 19%;
+    margin: 0.5%;
+    color: $light;
 
     .title {
       font-size: 22px;
@@ -169,7 +182,9 @@
 
   .UserTaskLevel{
     font-size: 20px;
-    color: #008964;
+    // color: #008964;
+    color: $light;
+    padding: 10px;
 
     .task-title {
       font-size: 32px;
@@ -182,20 +197,34 @@
       width: 100px;
       height: 100px;
       border-radius: 100%;
-      margin: 10px auto;
+      color: $dark-text;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
     }
 
     .task-level {
       font-size: 28px;
+      position: absolute;
+      top: 290px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
     }
 
     .expBarWrap{
-      margin: 0 auto;
+      margin: 5%;
       height: 50px;
-      width: 200px;
+      width: 80%;
       border-radius: $default-border-radius;
       border: 7px solid;
-      border-color: $light;
+      border-color: $dark-text;
+      position: absolute;
+      bottom: 10px;
     }
 
     .expBarFront{
