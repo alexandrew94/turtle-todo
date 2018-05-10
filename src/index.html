@@ -59,11 +59,14 @@
     </div>
   </div>
   </nav>
-<div ng-if="main.flashMessage.content" class="flash-message {{ main.flashMessage.style }}">
+  <div ng-if="main.flashMessage.content" class="flash-message {{ main.flashMessage.style }}">
   {{ main.flashMessage.content }}
-</div>
-<div class="container">
-  <ui-view></ui-view>
-</div>
+  </div>
+  <div ng-if="main.congratulationsScreen.content" class="flash-message {{ main.flashMessage.style }}">
+  {{ main.flashMessage.special-message }}
+  </div>
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
 </body>
 </html>

@@ -37,6 +37,12 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
 
   this.toggleNav = toggleNav;
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  this.scrollToTop = scrollToTop;
+
 }
 
 export default MainCtrl;

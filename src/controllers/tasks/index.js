@@ -19,7 +19,7 @@ function TasksIndexCtrl($http, $state, $rootScope) {
       this.futureTasks = res.data[2];
     });
 
-  function handleComplete(userId,taskId){
+  function handleComplete(userId, taskId) {
     $rootScope.$broadcast('flashMessage', {
       style: 'primary',
       content: 'Great job! Task completed!'
