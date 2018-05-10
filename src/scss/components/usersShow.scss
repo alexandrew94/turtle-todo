@@ -1,7 +1,103 @@
+.card.stats-card {
+  background-color: $background-color;
+  border-radius: $default-border-radius;
+  border: $default-border;
+  border-color: $accent-color;
+  padding: 30px;
+  height: auto;
+
+  .card.total-score-card {
+    height: auto;
+    padding: 30px;
+    background-color: $accent-color;
+    border-color: $light;
+    margin-bottom: 30px;
+    color: white;
+
+    .total-score {
+      font-size: 28px;
+      text-align: center;
+
+      .total-score-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .total-score-medal {
+        background-color: $warning;
+        border-radius: 100%;
+        border: 20px solid #ffb744;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+        padding-top: 15px;
+        font-size: 60px;
+        color: $dark-text;
+      }
+    }
+
+    .total-score-meter-title {
+      font-size: 28px;
+    }
+
+    .total-score-meter {
+      width: 100%;
+      background-color: transparent;
+      height: 100px;
+      border: $default-border;
+      border-radius: $default-border-radius;
+      border-color: $dark-text;
+
+      span {
+        height: 100%;
+        display: inline-block;
+        margin: 0;
+      }
+
+      span:hover {
+        border: 5px solid $danger;
+      }
+    }
+
+    .task-score-show {
+      font-size: 24px;
+    }
+  }
+}
+
+.user-task-score {
+  .columns {
+    .card {
+      background-color: $primary;
+      width: 19%;
+      margin: 0.5%;
+    }
+  }
+}
+
+.card.user-profile {
+  height: 350px;
+
+  .user-profile-text {
+    h1 {
+      margin: 0;
+    }
+
+    .user-profile-text-details {
+      background-color: $light;
+      width: 300px;
+      margin: 10px auto;
+      border-radius: $default-border-radius;
+      padding: 30px;
+    }
+    padding: 30px;
+  }
+}
+
 .completed-tasks {
   .card {
     height: 300px;
-    background-color: $accent-color;
+    background-color: inherit;
 
     .title {
       font-size: 22px;
