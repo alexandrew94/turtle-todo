@@ -9,10 +9,7 @@ function UsersShowCtrl($http, $state, $scope) {
     .then(res => this.user = res.data)
     .then(() => $state.go('usersShow', { id: this.user._id }));
 
-  function openModal(taskId){
-    const modal = document.getElementById(taskId);
-    modal.classList.toggle('is-active');
-  }
+
 
   function totalScore() {
     $http
@@ -136,7 +133,7 @@ function UsersShowCtrl($http, $state, $scope) {
   this.showDetails = showDetails;
   this.userTaskLevel = userTaskLevel;
   this.totalScore = totalScore;
-  this.openModal = openModal;
+
 
 }
 

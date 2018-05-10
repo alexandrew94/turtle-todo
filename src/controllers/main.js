@@ -26,6 +26,12 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
     $timeout(() => this.flashMessage = null, 2000);
   });
 
+  $rootScope.$on('congrats', (e, data) => {
+    this.congrats = data;
+    console.log(data);
+    $timeout(() => this.congrats = null, 3000);
+  });
+
   $transitions.onSuccess({}, (transition) => {
     this.isHome = (transition.to().name === 'tasksHome');
     this.navBarIsOpen = false;

@@ -62,6 +62,23 @@
 <div ng-if="main.flashMessage.content" class="flash-message {{ main.flashMessage.style }}">
   {{ main.flashMessage.content }}
 </div>
+<div ng-if="main.congrats.score" class="user-task-score">
+  <div class="card congrats">
+    <div class="media">
+      <div class="media-content">
+        <div class="has-text-centered">
+          <div class="UserTaskLevel">
+            <div class="task-title">
+              {{ main.congrats.title }}
+            </div>
+            <h1>{{ main.congrats.score }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <ui-view></ui-view>
 </div>
