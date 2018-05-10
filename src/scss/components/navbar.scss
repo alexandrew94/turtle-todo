@@ -3,6 +3,18 @@
   font-size: 24px;
   background-color: $accent-color;
 
+  .is-primary.add-button {
+    background-color: #008964;
+    height: 80px;
+    font-size: 36px;
+    padding: 0 50px;
+    border-radius: $default-border-radius;
+  }
+
+  .navbar-brand {
+    height: 100px;
+  }
+
   .navbar-item {
     color: white;
   }
@@ -29,6 +41,7 @@
   .navbar-menu, .is-active{
     background-color: $accent-color;
   }
+
   .navbar-burger{
     height: 100px;
   }

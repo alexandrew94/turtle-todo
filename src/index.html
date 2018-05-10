@@ -17,17 +17,22 @@
         <a ui-sref='tasksHome({ id: main.currentUser._id })' ng-if="main.isAuthenticated()">
           <img class="navbar-logo" src="../assets/image/turtle.svg">
         </a>
+        <a class="navbar-item" ui-sref='home' ng-if="!main.isAuthenticated()">
+          <i class="fas fa-home"></i>
+          &nbsp
+          Home
+        </a>
+        <a class="button is-primary add-button is-pulled-right" ui-sref='tasksNew({ id: main.currentUser._id })' ng-if='main.isAuthenticated()'>
+          <i class="fas fa-plus"></i>
+          &nbsp
+          Add a task
+        </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-click="main.toggleNav()" ng-class="{ 'is-active': main.navBarIsOpen }">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <a class="navbar-item" ui-sref='home' ng-if="!main.isAuthenticated()">
-        <i class="fas fa-home"></i>
-        &nbsp
-        Home
-      </a>
     </div>
     <div class="navbar-menu" ng-class="{ 'is-active': main.navBarIsOpen }">
       <div class="navbar-end">
