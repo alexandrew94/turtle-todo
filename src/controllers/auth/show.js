@@ -12,8 +12,8 @@ function UsersShowCtrl($http, $state) {
     modal.classList.toggle('is-active');
   }
 
-  function userTaskLevel(){
-    return Math.floor(this.user.dishwashingScore/25);
+  function userTaskLevel(task){
+    return Math.floor(task/25);
   }
 
   this.userTaskLevel = userTaskLevel;
