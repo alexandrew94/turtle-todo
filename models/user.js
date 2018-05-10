@@ -7,6 +7,7 @@ const taskSchema = new mongoose.Schema({
   locationTitle: String,
   description: String,
   dueDate: { type: String, required: true },
+  completedDate: String,
   time: String,
   recurring: Number,
   location: {

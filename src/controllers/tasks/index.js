@@ -21,6 +21,7 @@ function TasksIndexCtrl($http, $state, $rootScope) {
 
   function handleComplete(userId,taskId){
     $rootScope.$broadcast('flashMessage', {
+      style: 'primary',
       content: 'Great job! Task completed!'
     });
     $http

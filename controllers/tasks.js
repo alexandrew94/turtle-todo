@@ -52,10 +52,8 @@ function tasksComplete(req, res, next) {
           user[`${task.title}Score`] = 0;
         }
         user[`${task.title}Score`] += 5;
-        // task['completedDate'] = 'hello';
-        // user.completedTasks.push(task);
-        // console.log('LOGGIGN TASK.completedate RIGHT AFTER SAVE', task.completedDate);
-        // console.log('LOGGIGN TASK RIGHT AFTER SAVE', task);
+        task['completedDate'] = moment().format('YYYY-MM-DD');
+        user.completedTasks.push(task);
         task.remove();
         return user.save()
           .then((user) => {

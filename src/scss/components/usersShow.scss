@@ -96,7 +96,7 @@
 
 .completed-tasks {
   .card {
-    height: 300px;
+    height: 400px;
     background-color: inherit;
 
     .title {
@@ -126,12 +126,16 @@
       position: static;
       font-size: 22px;
     }
+
+    .completedDate {
+      font-size: 22px;
+    }
   }
 }
 
 .user-task-score {
   .card {
-    height: 300px;
+    height: 400px;
     background-color: $accent-color;
 
     .title {
@@ -162,22 +166,44 @@
       font-size: 22px;
     }
   }
+
   .UserTaskLevel{
     font-size: 20px;
     color: #008964;
-  }
-  .expBarWrap{
-    height: 50px;
-    width: 200px;
-    border-radius: $default-border-radius;
-    border: 3px solid red;
 
+    .task-title {
+      font-size: 32px;
+      margin-top: 20px;
+    }
 
-  }
-  .expBarFront{
-    height: 46px;
-    background-color: red;
-    display: inline-block;
-    float: left
+    h1 {
+      border: 10px solid #ffb744;
+      background-color: $warning;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      margin: 10px auto;
+    }
+
+    .task-level {
+      font-size: 28px;
+    }
+
+    .expBarWrap{
+      margin: 0 auto;
+      height: 50px;
+      width: 200px;
+      border-radius: $default-border-radius;
+      border: 7px solid;
+      border-color: $light;
+    }
+
+    .expBarFront{
+      height: 100%;
+      background-color: $warning;
+      display: inline-block;
+      float: left;
+      border-radius: 10px;
+    }
   }
 }

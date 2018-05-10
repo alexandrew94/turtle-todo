@@ -95,6 +95,8 @@ function UsersShowCtrl($http, $state, $scope) {
       });
   }
 
+  // "width": `${(task % 25)*100}%`
+
   this.taskScore = {};
 
   function showDetails(scorename) {
@@ -110,22 +112,7 @@ function UsersShowCtrl($http, $state, $scope) {
   }
 
   function userExBar(task, taskName){
-    var x = (task % 25);
-    if(x === 5){
-      $scope[`expBarMove${taskName}`] = { 'width': '40px' };
-    }
-    if(x === 10){
-      $scope[`expBarMove${taskName}`] = { 'width': '80px' };
-    }
-    if(x === 15){
-      $scope[`expBarMove${taskName}`] = { 'width': '120px' };
-    }
-    if(x === 20){
-      $scope[`expBarMove${taskName}`] = { 'width': '160px' };
-    }
-    if(x === 25){
-      $scope[`expBarMove${taskName}`] = { 'width': '0px' };
-    }
+    $scope[`expBarMove${taskName}`] = { 'width': `${((task % 25) / 25 )*100}%`};
   }
 
   this.userExBar = userExBar;

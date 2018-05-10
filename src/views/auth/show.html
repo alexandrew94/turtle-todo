@@ -40,13 +40,15 @@
           <div class="media-content">
             <div class="has-text-centered">
               <div class="UserTaskLevel">
-                <h1>{{ usersShow.userTaskLevel(usersShow.user.dishwashingScore) }}</h1>
-                <h1>{{ usersShow.userExBar(usersShow.user.dishwashingScore, 'DishwashingScore') }}</h1>
-                <div class="expBarWrap">
-                <span class="expBarFront" ng-style="expBarMoveDishwashingScore"></span>
+                <div class="task-title">
+                  Dishwashing Score:
                 </div>
-                <h1>Level</h1>
-                <p class="has-text-centered">Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
+                <h1>{{ usersShow.user.dishwashingScore }}</h1>
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.dishwashingScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.dishwashingScore, 'DishwashingScore')" class="expBarWrap">
+                  <span class="expBarFront" ng-style="expBarMoveDishwashingScore"></span>
+                </div>
+                <div class="remaining-scores"></div>
               </div>
             </div>
           </div>
@@ -413,9 +415,12 @@
                 &nbsp
                 {{ task.time }}
               </p>
-              <p ng-if="task.completedDate">
-                {{ task.completedDate }}
-              </p>
+            </div>
+            <div class="completedDate has-text-centered" ng-if="task.completedDate">
+              <i class="fas fa-check"></i>
+              &nbsp
+              Completed on<br />
+              {{ task.completedDate }}
             </div>
           </div>
         </div>
@@ -430,11 +435,17 @@
               </button>
             </div>
             <h1 class="modal-card-title">{{ task.displayTitle }}</h1>
-            <p class="title is-4">{{ task.description }}</p>
+            <p class="description title is-4">{{ task.description }}</p>
             <p class="title is-4">{{ task.points }}</p>
             <div class="time-and-date has-text-centered">
               <p class="title is-4">{{ task.dueDate }}</p>
               <p ng-if="task.time != 'Invalid date'" class="title is-4">{{ task.time }}</p>
+            </div>
+            <div class="completedDate has-text-centered" ng-if="task.completedDate">
+              <i class="fas fa-check"></i>
+              &nbsp
+              Completed on<br />
+              {{ task.completedDate }}
             </div>
             <div ng-if="task.location" class="modal-map" g-map-max center="task.location">GOOGLE MAP GOES HERE</div>
           </section>
