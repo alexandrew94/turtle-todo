@@ -1,48 +1,306 @@
 <h1 ng-init="usersShow.totalScore()">Showing the user</h1>
-<div class="total-score-meter">
-  <span ng-style="dishwashingScore"></span
-  ><span ng-style="takeOutRecyclingAndBinsScore"></span
-  ><span ng-style="changeTheBedSheetsScore"></span
-  ><span ng-style="takeCareOfBinsScore"></span
-  ><span ng-style="checkAndChangeLightbulbsScore"></span
-  ><span ng-style="cleanKitchenScore"></span
-  ><span ng-style="cleanBathroomScore"></span
-  ><span ng-style="cleanBedroomScore"></span
-  ><span ng-style="cleanLivingRoomScore"></span
-  ><span ng-style="deepCleanScore"></span
-  ><span ng-style="foodShoppingScore"></span
-  ><span ng-style="cleaningEquipmentScore"></span
-  ><span ng-style="ikeaScore"></span
-  ><span ng-style="walkTheDogScore"></span
-  ><span ng-style="cleanOutTheCarScore"></span
-  ><span ng-style="workOnGardenScore"></span
-  ><span ng-style="exerciseScore"></span
-  ><span ng-style="updatingComputerSoftwareScore"></span
-  ><span ng-style="clothesWashingScore"></span>
+<div class="">
+  Total score: {{ usersShow.user.score }}. (Hover for details.)
 </div>
+<div class="total-score-meter">
+  <span ng-mouseover="usersShow.showDetails('dishwashingScore')" ng-style="dishwashingScore"></span
+  ><span ng-mouseover="usersShow.showDetails('takeOutRecyclingAndBinsScore')" ng-style="takeOutRecyclingAndBinsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('changeTheBedSheetsScore')" ng-style="changeTheBedSheetsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('takeCareOfBinsScore')" ng-style="takeCareOfBinsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('checkAndChangeLightbulbsScore')" ng-style="checkAndChangeLightbulbsScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanKitchenScore')" ng-style="cleanKitchenScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanBathroomScore')" ng-style="cleanBathroomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanBedroomScore')" ng-style="cleanBedroomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanLivingRoomScore')" ng-style="cleanLivingRoomScore"></span
+  ><span ng-mouseover="usersShow.showDetails('deepCleanScore')" ng-style="deepCleanScore"></span
+  ><span ng-mouseover="usersShow.showDetails('foodShoppingScore')" ng-style="foodShoppingScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleaningEquipmentScore')" ng-style="cleaningEquipmentScore"></span
+  ><span ng-mouseover="usersShow.showDetails('ikeaScore')" ng-style="ikeaScore"></span
+  ><span ng-mouseover="usersShow.showDetails('walkTheDogScore')" ng-style="walkTheDogScore"></span
+  ><span ng-mouseover="usersShow.showDetails('cleanOutTheCarScore')" ng-style="cleanOutTheCarScore"></span
+  ><span ng-mouseover="usersShow.showDetails('workOnGardenScore')" ng-style="workOnGardenScore"></span
+  ><span ng-mouseover="usersShow.showDetails('exerciseScore')" ng-style="exerciseScore"></span
+  ><span ng-mouseover="usersShow.showDetails('updatingComputerSoftwareScore')" ng-style="updatingComputerSoftwareScore"></span
+  ><span ng-mouseover="usersShow.showDetails('clothesWashingScore')" ng-style="clothesWashingScore"></span>
+</div>
+<div ng-if="usersShow.taskScore.title">{{ usersShow.taskScore.title }}: {{ usersShow.taskScore.data }} ({{ usersShow.taskScore.percentage }}% of all completed tasks).</div>
 <p>You have to be logged in as the user to see the data on this page.</p>
 <p>Username: {{ usersShow.user.username }}</p>
 <p>Email: {{ usersShow.user.email }}</p>
 <p>Total Score: {{ usersShow.user.score }}</p>
-<p ng-if="usersShow.user.dishwashingScore">Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
-<p ng-if="usersShow.user.takeOutRecyclingAndBinsScore">Take Out Recycling and Bins: {{ usersShow.user.takeOutRecyclingAndBinsScore }}</p>
-<p ng-if="usersShow.user.changeTheBedSheetsScore">Change The Bed Sheets: {{ usersShow.user.changeTheBedSheetsScore }}</p>
-<p ng-if="usersShow.user.takeCareOfBinsScore">Take Care Of Bins: {{ usersShow.user.takeCareOfBinsScore }}</p>
-<p ng-if="usersShow.user.checkAndChangeLightbulbsScore">Check And Change Light Bulbs: {{ usersShow.user.checkAndChangeLightbulbsScore }}</p>
-<p ng-if="usersShow.user.cleanKitchenScore">Clean Kitchen: {{ usersShow.user.cleanKitchenScore }}</p>
-<p ng-if="usersShow.user.cleanBathroomScore">Clean Bathroom: {{ usersShow.user.cleanBathroomScore }}</p>
-<p ng-if="usersShow.user.cleanBedroomScore">Clean Bedroom: {{ usersShow.user.cleanBedroomScore }}</p>
-<p ng-if="usersShow.user.cleanLivingRoomScore">Clean Living Rooms: {{ usersShow.user.cleanLivingRoomScore }}</p>
-<p ng-if="usersShow.user.deepCleanScore">Deep Clean: {{ usersShow.user.deepCleanScore }}</p>
-<p ng-if="usersShow.user.foodShoppingScore">Food Shopping: {{ usersShow.user.foodShoppingScore }}</p>
-<p ng-if="usersShow.user.cleaningEquipmentScore">Cleaning Equipment: {{ usersShow.user.cleaningEquipmentScore }}</p>
-<p ng-if="usersShow.user.ikeaScore">IKEA: {{ usersShow.user.ikeaScore }}</p>
-<p ng-if="usersShow.user.walkTheDogScore">Walk The Dog: {{ usersShow.user.walkTheDogScore }}</p>
-<p ng-if="usersShow.user.cleanOutTheCarScore">Clean Out The Car: {{ usersShow.user.cleanOutTheCarScore }}</p>
-<p ng-if="usersShow.user.workOnGardenScore">Work On Garden: {{ usersShow.user.workOnGardenScore }}</p>
-<p ng-if="usersShow.user.exerciseScore">Exercise: {{ usersShow.user.exerciseScore }}</p>
-<p ng-if="usersShow.user.updatingComputerSoftwareScore">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
-<p ng-if="usersShow.user.clothesWashingScore">Clothes Washing: {{ usersShow.user.clothesWashingScore }}</p>
+  <!-- <div class="UserTaskLevel">
+
+    </div> -->
+<div class="user-task-score">
+  <div class="columns is-multiline">
+    <div class="card" ng-if="usersShow.user.dishwashingScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Dishwashing Score: {{ usersShow.user.dishwashingScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.updatingComputerSoftwareScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="user-task-score">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="title has-text-centered">Updating Computer Software: {{ usersShow.user.updatingComputerSoftwareScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.takeOutRecyclingAndBinsScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Take Out Recycling and Bins: {{ usersShow.user.takeOutRecyclingAndBinsScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.changeTheBedSheetsScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Change The Bed Sheets: {{ usersShow.user.changeTheBedSheetsScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.takeCareOfBinsScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Take Care Of Bins: {{ usersShow.user.takeCareOfBinsScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.checkAndChangeLightbulbsScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Check And Change Light Bulbs: {{ usersShow.user.checkAndChangeLightbulbsScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleanKitchenScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clean Kitchen: {{ usersShow.user.cleanKitchenScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleanBathroomScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clean Bathroom: {{ usersShow.user.cleanBathroomScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleanBedroomScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clean Bedroom: {{ usersShow.user.cleanBedroomScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleanLivingRoomScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clean Living Rooms: {{ usersShow.user.cleanLivingRoomScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.deepCleanScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Deep Clean: {{ usersShow.user.deepCleanScore }}</p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.foodShoppingScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Food Shopping: {{ usersShow.user.foodShoppingScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleaningEquipmentScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Cleaning Equipment: {{ usersShow.user.cleaningEquipmentScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.ikeaScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">IKEA: {{ usersShow.user.ikeaScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.walkTheDogScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Walk The Dog: {{ usersShow.user.walkTheDogScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.cleanOutTheCarScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clean Out The Car: {{ usersShow.user.cleanOutTheCarScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.workOnGardenScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Work On Garden: {{ usersShow.user.workOnGardenScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.exerciseScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Exercise: {{ usersShow.user.exerciseScore }}</p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ng-if="usersShow.user.clothesWashingScore">
+      <div class="media">
+        <div class="media-content">
+          <div class="has-text-centered">
+            <div class="UserTaskLevel">
+              <h1>{{ usersShow.userTaskLevel() }}</h1>
+              <h1>Level</h1>
+              <p class="has-text-centered">Clothes Washing: {{ usersShow.user.clothesWashingScore }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p></p>
+<p></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p >
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p ></p>
+<p >
+<p ></p>
 <button class="button is-success" ui-sref="usersEdit({ id: main.currentUser._id })">
   Edit
 </button>

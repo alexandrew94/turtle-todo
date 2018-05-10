@@ -95,6 +95,26 @@ function UsersShowCtrl($http, $state, $scope) {
       });
   }
 
+  this.taskScore = {};
+
+  function showDetails(scorename) {
+    this.taskScore.title = scorename.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){
+      return str.toUpperCase();
+    });
+    this.taskScore.data = this.user[scorename];
+    this.taskScore.percentage = Math.round((this.user[scorename]/this.user.score)*100);
+  }
+
+  function userTaskLevel(){
+    // var level = 0;
+    // level = Math.round(this.user.dishwashingScore/25);
+    // return level;
+    // console.log(Math.round(this.user.dishwashingScore/25));
+    // return Math.floor(this.user.dishwashingScore/25);
+  }
+
+  this.showDetails = showDetails;
+  this.userTaskLevel = userTaskLevel;
   this.totalScore = totalScore;
   this.openModal = openModal;
 
