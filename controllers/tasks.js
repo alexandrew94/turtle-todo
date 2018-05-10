@@ -52,10 +52,11 @@ function tasksComplete(req, res, next) {
           user[`${task.title}Score`] = 0;
         }
         user[`${task.title}Score`] += 5;
-        if (!task.recurring) {
-          user.completedTasks.push(task);
-          task.remove();
-        }
+        // task['completedDate'] = 'hello';
+        // user.completedTasks.push(task);
+        // console.log('LOGGIGN TASK.completedate RIGHT AFTER SAVE', task.completedDate);
+        // console.log('LOGGIGN TASK RIGHT AFTER SAVE', task);
+        task.remove();
         return user.save()
           .then((user) => {
             res.json(user.tasks);
