@@ -12,6 +12,11 @@ function UsersShowCtrl($http, $state) {
     modal.classList.toggle('is-active');
   }
 
+  function userTaskLevel(){
+    if(this.user.dishwashingScore < 24) return 2;
+  }
+
+  this.userTaskLevel = userTaskLevel;
   this.openModal = openModal;
 
 }

@@ -7,6 +7,8 @@ function TasksIndexCtrl($http, $state, $rootScope) {
   this.pastTasks = [];
   this.futureTasks = [];
 
+  this.selectedTask = null;
+
   $http.get(`/api/users/${$state.params.id}/tasks`)
 
   // .then(res => console.log('Users tasks --->', res.data));
@@ -35,13 +37,21 @@ function TasksIndexCtrl($http, $state, $rootScope) {
       });
   }
 
-  function openModal(taskId){
-    console.log(taskId);
-    const modal = document.getElementById(taskId);
-    modal.classList.toggle('is-active');
+  function selectTask(task){
+    this.selectedTask = task;
   }
 
-  this.openModal = openModal;
+  function unSelectTask() {
+    this.selectedTask = null;
+  }
+
+  function isSelectedTask(task) {
+    return this.selectedTask === task;
+  }
+
+  this.selectTask = selectTask;
+  this.unSelectTask = unSelectTask;
+  this.isSelectedTask = isSelectedTask;
   this.handleComplete = handleComplete;
 }
 

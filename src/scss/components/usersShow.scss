@@ -32,3 +32,42 @@
     }
   }
 }
+
+.user-task-score {
+  .card {
+    height: 300px;
+    background-color: $accent-color;
+
+    .title {
+      font-size: 22px;
+      position: static;
+    }
+
+    .expand-div {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+
+      .expand {
+        display: block;
+        margin: 0 auto;
+        font-size: 24px;
+        color: $dark-text;
+        width: 80%;
+        border-radius: $default-border-radius;
+        border: 0px;
+        padding: 10px;
+        background-color: $warning;
+      }
+    }
+
+    .time-and-date {
+      position: static;
+      font-size: 22px;
+    }
+  }
+  .UserTaskLevel{
+    font-size: 20px;
+    color: #008964;
+  }
+}
