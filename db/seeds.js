@@ -11,6 +11,11 @@ mongoose.connect(dbURI, (err, db) => {
     email: 'user1@user1',
     password: 'u1',
     passwordConfirmation: 'u1',
+    dishwashingScore: 35,
+    takeOutRecyclingAndBinsScore: 25,
+    changeTheBedSheetsScore: 100,
+    takeCareOfBinsScore: 120,
+    checkAndChangeLightbulbsScore: 75,
     tasks: [{
       title: 'Dishwashing',
       locationTitle: 'Kings Cross',
