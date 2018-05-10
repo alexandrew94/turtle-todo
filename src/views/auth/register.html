@@ -1,24 +1,31 @@
-<div ng-if="register.message">
+<div ng-if="register.message" class="flash-message invalid">
   {{ register.message.message }}
 </div>
-<form ng-submit="register.handleRegister()">
-  <p>All fields are required.</p>
-  <div class="field">
-    <label for="username">Username</label>
-    <input class="input" placeholder="Username" name="username" ng-model="register.data.username" />
-  </div>
-  <div class="field">
-    <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="register.data.email" />
-  </div>
-  <div class="field">
-    <label for="password">Password</label>
-    <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" />
-  </div>
-  <div class="field">
-    <label for="passwordConfirmation">Password Confirmation</label>
-    <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" />
-  </div>
-
-  <button class="button is-primary">Submit</button>
-</form>
+<div class="userregister card-background">
+  <form ng-submit="register.handleRegister()">
+    <div class="input-fields">
+      <p>All fields are required.</p>
+      <div class="field">
+        <label for="username">Username</label>
+        <input class="input" placeholder="Username" name="username" ng-model="register.data.username" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" placeholder="Email" name="email" ng-model="register.data.email" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" />
+      </div>
+      <div class="field">
+        <label for="passwordConfirmation">Password Confirmation</label>
+        <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" />
+      </div>
+    </div>
+    <button class="button is-primary">
+      <i class="fas fa-user-plus"></i>
+      &nbsp
+      Sign Up
+    </button>
+  </form>
+</div>

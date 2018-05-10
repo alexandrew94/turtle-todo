@@ -32,7 +32,7 @@
       </div>
       <div class="field">
         <label for="description">Description</label>
-        <input value="{{tasksEdit.task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/>
+        <textarea value="{{tasksEdit.task.description}}" class="input" placeholder="Description" name="description" ng-model="tasksEdit.task.description"/></textarea>
       </div>
       <div class="time-and-date">
         <div class="field">
@@ -55,10 +55,10 @@
       &nbsp
       Save Edits
     </button>
-    <button ng-click="tasksEdit.handleDelete()" class="button is-danger">
-      <i class="fas fa-trash-alt"></i>
-      &nbsp
-      Delete Task
-    </button>
   </form>
+  <button ng-click="tasksEdit.handleDelete()" class="button is-danger">
+    <i class="fas fa-trash-alt"></i>
+    &nbsp
+    Delete Task
+  </button>
 </div>

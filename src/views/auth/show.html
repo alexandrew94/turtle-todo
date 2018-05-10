@@ -1,4 +1,25 @@
-<h1>Showing the user</h1>
+<h1 ng-init="usersShow.totalScore()">Showing the user</h1>
+<div class="total-score-meter">
+  <span ng-style="dishwashingScore"></span
+  ><span ng-style="takeOutRecyclingAndBinsScore"></span
+  ><span ng-style="changeTheBedSheetsScore"></span
+  ><span ng-style="takeCareOfBinsScore"></span
+  ><span ng-style="checkAndChangeLightbulbsScore"></span
+  ><span ng-style="cleanKitchenScore"></span
+  ><span ng-style="cleanBathroomScore"></span
+  ><span ng-style="cleanBedroomScore"></span
+  ><span ng-style="cleanLivingRoomScore"></span
+  ><span ng-style="deepCleanScore"></span
+  ><span ng-style="foodShoppingScore"></span
+  ><span ng-style="cleaningEquipmentScore"></span
+  ><span ng-style="ikeaScore"></span
+  ><span ng-style="walkTheDogScore"></span
+  ><span ng-style="cleanOutTheCarScore"></span
+  ><span ng-style="workOnGardenScore"></span
+  ><span ng-style="exerciseScore"></span
+  ><span ng-style="updatingComputerSoftwareScore"></span
+  ><span ng-style="clothesWashingScore"></span>
+</div>
 <p>You have to be logged in as the user to see the data on this page.</p>
 <p>Username: {{ usersShow.user.username }}</p>
 <p>Email: {{ usersShow.user.email }}</p>

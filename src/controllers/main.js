@@ -14,6 +14,7 @@ function MainCtrl($auth, $state, $rootScope, $timeout, $transitions) {
   this.handleLogout = function handleLogout() {
     $auth.logout();
     $rootScope.$broadcast('flashMessage', {
+      style: 'primary',
       content: 'Log out successful!'
     });
     localStorage.removeItem('currentUser');

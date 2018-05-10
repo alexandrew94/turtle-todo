@@ -1,11 +1,19 @@
-<form ng-submit="login.handleLogin(); main.setCurrentUser()">
-  <div class="field">
-    <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="login.data.email" />
-  </div>
-  <div class="field">
-    <label for="password">Password</label>
-    <input class="input" type="password" placeholder="Password" name="password" ng-model="login.data.password" />
-  </div>
-  <button class="button is-primary">Submit</button>
-</form>
+<div class="userlogin card-background">
+  <form ng-submit="login.handleLogin(); main.setCurrentUser()">
+    <div class="input-fields">
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" placeholder="Email" name="email" ng-model="login.data.email" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" type="password" placeholder="Password" name="password" ng-model="login.data.password" />
+      </div>
+    </div>
+    <button class="button is-primary">
+      <i class="fas fa-sign-in-alt"></i>
+      &nbsp
+      Log In
+    </button>
+  </form>
+</div>
