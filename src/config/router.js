@@ -6,11 +6,13 @@ function secureState($q, $auth, $state, $stateParams, $rootScope) {
         return resolve();
       }
       $rootScope.$broadcast('flashMessage', {
+        style: 'invalid',
         content: 'Incorrect URL.'
       });
       return $state.go('tasksHome', { id: $auth.getPayload().sub });
     }
     $rootScope.$broadcast('flashMessage', {
+      style: 'invalid',
       content: 'You must be logged in to visit that page.'
     });
     $state.go('login');
@@ -69,10 +71,15 @@ function Router($stateProvider, $urlRouterProvider) {
     var $state = $injector.get('$state');
     var $auth = $injector.get('$auth');
     var $rootScope = $injector.get('$rootScope');
-    $rootScope.$broadcast('flashMessage', {
-      content: 'Invalid URL!'
-    });
-    $state.go('home', { id: $auth.getPayload().sub });
+    if ($auth.getPayload()) {
+      $rootScope.$broadcast('flashMessage', {
+        style: 'invalid',
+        content: 'Invalid URL!'
+      });
+      return $state.go('tasksHome', { id: $auth.getPayload().sub });
+    } else {
+      return $state.go('home');
+    }
   });
 }
 
