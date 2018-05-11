@@ -26,10 +26,10 @@
 }
 .congrats-msg{
   .congrats{
-    max-width: 400px;
+    max-width: 600px;
     z-index: 100;
-    position: absolute;
-    top: -400px;
+    position: fixed;
+    top: -200px;
     left:0;
     right: 0;
     bottom: 0;

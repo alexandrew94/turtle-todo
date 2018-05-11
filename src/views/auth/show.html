@@ -3,12 +3,15 @@
   <div class="card total-score-card">
     <div class="total-score">
       <div class="total-score-title">Total Score:</div>
-      <div class="total-score-medal">
+      <div ng-if="usersShow.user.score" class="total-score-medal">
         {{ usersShow.user.score }}
       </div>
+      <div ng-if="!usersShow.user.score" class="total-score-medal">
+        0
+      </div>
     </div>
-    <div class="total-score-meter-title">Score breakdown:</div>
-    <div class="total-score-meter">
+    <div ng-if="usersShow.user.score" class="total-score-meter-title">Score breakdown:</div>
+    <div ng-if="usersShow.user.score" class="total-score-meter">
       <span ng-mouseover="usersShow.showDetails('dishwashingScore')" ng-style="dishwashingScore"></span
       ><span ng-mouseover="usersShow.showDetails('takeOutRecyclingAndBinsScore')" ng-style="takeOutRecyclingAndBinsScore"></span
       ><span ng-mouseover="usersShow.showDetails('changeTheBedSheetsScore')" ng-style="changeTheBedSheetsScore"></span
@@ -29,7 +32,8 @@
       ><span ng-mouseover="usersShow.showDetails('updatingComputerSoftwareScore')" ng-style="updatingComputerSoftwareScore"></span
       ><span ng-mouseover="usersShow.showDetails('clothesWashingScore')" ng-style="clothesWashingScore"></span>
     </div>
-    <div class="task-score-show" ng-if="!usersShow.taskScore.title">(Hover for details)</div>
+    <div ng-if="usersShow.user.score && !usersShow.taskScore.title" class="task-score-show">(Hover for details)</div>
+    <div ng-if="!usersShow.user.score" class="task-score-show has-text-centered">You have not completed any tasks yet. <a ui-sref='tasksNew({ id: main.currentUser._id })'>Add a task!</a></div>
     <div class="task-score-show" ng-if="usersShow.taskScore.title">{{ usersShow.taskScore.title }}: {{ usersShow.taskScore.data }} ({{ usersShow.taskScore.percentage }}% of all completed tasks).</div>
   </div>
 
@@ -423,7 +427,7 @@
   <i class="fas fa-leaf"></i>
 </div>
 
-<h1>Completed Tasks Archive</h1>
+<h1 ng-if="usersShow.user.score">Completed Tasks Archive</h1>
 <div class="completed-tasks">
   <div class="columns is-multiline">
     <div ng-repeat="task in usersShow.user.completedTasks" class="column is-one-third-tablet is-one-fifth-desktop">
@@ -489,6 +493,9 @@
       </div>
     </div>
   </div>
+</div>
+<div ng-if="usersShow.user.score" class="has-text-centered divider">
+  <i class="fas fa-leaf"></i>
 </div>
 <footer>
   <button ng-click="main.scrollToTop()" class="button is-warning has-text-centered footer-button">Back To Top</button>
