@@ -15,7 +15,6 @@ function gMap() {
             "elementType": "all",
             "stylers": [
               {
-                'elementType': 'labels',
                 'stylers': [
                   {
                     'visibility': 'off'
@@ -110,6 +109,12 @@ function gMap() {
               {
                 "gamma": 1
               }
+            ]
+          },
+          {
+            featureType: 'poi',
+            stylers: [
+              { visibility: 'off' }
             ]
           }
         ],
