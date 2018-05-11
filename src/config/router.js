@@ -71,14 +71,14 @@ function Router($stateProvider, $urlRouterProvider) {
     var $state = $injector.get('$state');
     var $auth = $injector.get('$auth');
     var $rootScope = $injector.get('$rootScope');
-    $rootScope.$broadcast('flashMessage', {
-      style: 'invalid',
-      content: 'Invalid URL!'
-    });
-    if ($auth.getPayload().sub) {
-      $state.go('tasksHome', { id: $auth.getPayload().sub });
+    if ($auth.getPayload()) {
+      $rootScope.$broadcast('flashMessage', {
+        style: 'invalid',
+        content: 'Invalid URL!'
+      });
+      return $state.go('tasksHome', { id: $auth.getPayload().sub });
     } else {
-      $state.go('home');
+      return $state.go('home');
     }
   });
 }
