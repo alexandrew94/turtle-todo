@@ -9,8 +9,6 @@ function UsersShowCtrl($http, $state, $scope) {
     .then(res => this.user = res.data)
     .then(() => $state.go('usersShow', { id: this.user._id }));
 
-
-
   function totalScore() {
     $http
       .get(`/api/users/${$state.params.id}`)
