@@ -11,204 +11,107 @@ function gMap() {
         zoom: 12,
         styles: [
           {
-            'elementType': 'labels',
-            'stylers': [
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [
               {
-                'visibility': 'off'
+                'elementType': 'labels',
+                'stylers': [
+                  {
+                    'visibility': 'off'
+                  }
+                ]
+              },
+
+              {
+                "hue": "#FFA800"
               },
               {
-                'color': '#f49f53'
+                "gamma": 1
               }
             ]
           },
           {
-            'featureType': 'landscape',
-            'stylers': [
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
               {
-                'color': '#f9ddc5'
+                "hue": "#679714"
               },
               {
-                'lightness': -7
+                "saturation": 33.4
+              },
+              {
+                "lightness": -25.4
+              },
+              {
+                "gamma": 1
               }
             ]
           },
           {
-            'featureType': 'road',
-            'stylers': [
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [
               {
-                'color': '#813033'
+                "hue": "#53FF00"
               },
               {
-                'lightness': 43
+                "saturation": -73
+              },
+              {
+                "lightness": 40
+              },
+              {
+                "gamma": 1
               }
             ]
           },
           {
-            'featureType': 'poi.business',
-            'stylers': [
+            "featureType": "road.arterial",
+            "elementType": "all",
+            "stylers": [
               {
-                'color': '#645c20'
+                "hue": "#FBFF00"
               },
               {
-                'lightness': 38
+                "gamma": 1
               }
             ]
           },
           {
-            'featureType': 'water',
-            'stylers': [
+            "featureType": "road.local",
+            "elementType": "all",
+            "stylers": [
               {
-                'color': '#1994bf'
+                "hue": "#00FFFD"
               },
               {
-                'saturation': -69
+                "lightness": 30
               },
               {
-                'gamma': 0.99
-              },
-              {
-                'lightness': 43
+                "gamma": 1
               }
             ]
           },
           {
-            'featureType': 'road.local',
-            'elementType': 'geometry.fill',
-            'stylers': [
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [
               {
-                'color': '#f19f53'
+                "hue": "#00BFFF"
               },
               {
-                'weight': 1.3
+                "saturation": 6
               },
               {
-                'visibility': 'on'
+                "lightness": 8
               },
               {
-                'lightness': 16
+                "gamma": 1
               }
             ]
-          },
-          {
-            'featureType': 'poi.business'
-          },
-          {
-            'featureType': 'poi.park',
-            'stylers': [
-              {
-                'color': '#645c20'
-              },
-              {
-                'lightness': 39
-              }
-            ]
-          },
-          {
-            'featureType': 'poi.school',
-            'stylers': [
-              {
-                'color': '#a95521'
-              },
-              {
-                'lightness': 35
-              }
-            ]
-          },
-          {},
-          {
-            'featureType': 'poi.medical',
-            'elementType': 'geometry.fill',
-            'stylers': [
-              {
-                'color': '#813033'
-              },
-              {
-                'lightness': 38
-              },
-              {
-                'visibility': 'off'
-              }
-            ]
-          },
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {
-            'elementType': 'labels'
-          },
-          {
-            'featureType': 'poi.sports_complex',
-            'stylers': [
-              {
-                'color': '#9e5916'
-              },
-              {
-                'lightness': 32
-              }
-            ]
-          },
-          {},
-          {
-            'featureType': 'poi.government',
-            'stylers': [
-              {
-                'color': '#9e5916'
-              },
-              {
-                'lightness': 46
-              }
-            ]
-          },
-          {
-            'featureType': 'transit.station',
-            'stylers': [
-              {
-                'visibility': 'off'
-              }
-            ]
-          },
-          {
-            'featureType': 'transit.line',
-            'stylers': [
-              {
-                'color': '#813033'
-              },
-              {
-                'lightness': 22
-              }
-            ]
-          },
-          {
-            'featureType': 'transit',
-            'stylers': [
-              {
-                'lightness': 38
-              }
-            ]
-          },
-          {
-            'featureType': 'road.local',
-            'elementType': 'geometry.stroke',
-            'stylers': [
-              {
-                'color': '#f19f53'
-              },
-              {
-                'lightness': -10
-              }
-            ]
-          },
-          {},
-          {},
-          {}
+          }
         ],
         disableDefaultUI: true
       });

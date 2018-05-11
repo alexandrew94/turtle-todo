@@ -15,9 +15,6 @@ function gMap() {
             'stylers': [
               {
                 'visibility': 'off'
-              },
-              {
-                'color': '#f49f53'
               }
             ]
           },

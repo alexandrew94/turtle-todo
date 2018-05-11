@@ -76,7 +76,7 @@ function UsersShowCtrl($http, $state, $scope) {
           "width" : `${(res.data.cleanOutTheCarScore/res.data.score)*100}%`
         };
         $scope.workOnGardenScore = {
-          "background-color" : "#EDEEC9",
+          "background-color" : "#E8B71A",
           "width" : `${(res.data.workOnGardenScore/res.data.score)*100}%`
         };
         $scope.exerciseScore = {

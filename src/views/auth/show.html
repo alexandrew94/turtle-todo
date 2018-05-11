@@ -180,7 +180,7 @@
                 <div class="task-title">
                   Clean Bathroom:
                 </div>
-                <h1>{{ usersShow.user.cleanKitchenScore }}</h1>
+                <h1>{{ usersShow.user.cleanBathroomScore }}</h1>
                 <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.cleanBathroomScore) }}</div>
                 <div ng-init="usersShow.userExBar(usersShow.user.cleanBathroomScore, 'CleanBathroomScore')" class="expBarWrap">
                   <span class="expBarFront" ng-style="expBarMoveCleanBathroomScore"></span>
@@ -352,8 +352,8 @@
                   Work On Garden:
                 </div>
                 <h1>{{ usersShow.user.workOnGardenScore }}</h1>
-                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.workOnGardenScor) }}</div>
-                <div ng-init="usersShow.userExBar(usersShow.user.workOnGardenScor, 'WorkOnGardenScore')" class="expBarWrap">
+                <div class="task-level">Level {{ usersShow.userTaskLevel(usersShow.user.workOnGardenScore) }}</div>
+                <div ng-init="usersShow.userExBar(usersShow.user.workOnGardenScore, 'WorkOnGardenScore')" class="expBarWrap">
                   <span class="expBarFront" ng-style="expBarMoveWorkOnGardenScore"></span>
                 </div>
                 <div class="remaining-scores"></div>
