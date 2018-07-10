@@ -54,19 +54,46 @@ Show page for a single restaurant:
 Viewing a user profile and the restaurants added by that user:
 ![Screenshot 3](./readme-images/screenshot3.png)
 
+
 ![Screenshot 4](./readme-images/screenshot4.png =500x)
 
 ## Code Examples
 
 Here are some of the code snippets in this project that I found the most interesting and challenging to write.
 
-_Example 1: Calculating and displaying the average ratings for each restaurant._
+_Example 1: Function in the back-end controller for when the user completes a task._
 
 ```javascript
-...
+function tasksComplete(req, res, next) {
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if(user.id === req.currentUser.id) {
+        const task = user.tasks.id(req.params.taskId);
+        if (!user.score) {
+          user.score = 0;
+        }
+        user.score += 5;
+        if (!user[`${task.title}Score`]) {
+          user[`${task.title}Score`] = 0;
+        }
+        user[`${task.title}Score`] += 5;
+        task['completedDate'] = moment().format('YYYY-MM-DD');
+        user.completedTasks.push(task);
+        task.remove();
+        return user.save()
+          .then((user) => {
+            res.json(user.tasks);
+          });
+      } else {
+        res.json({ message: 'Unauthorized' });
+      }
+    })
+    .catch(err => next(err));
+}
 ```
 
-...
+This function is where the scorekeeping was done in the back-end when a user completed their task. It needed to add 5 to the user's total score for all tasks, creating a `user.score` for total scores if there isn't one, then it needed to add 5 to the score for that type of task, creating a ``user[`${task.title}`Score]`` if there isn't one.
 
 _Example 2: Making a request to the Google Static Maps API._
 
