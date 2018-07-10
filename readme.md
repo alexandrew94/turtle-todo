@@ -126,8 +126,10 @@ This function, which also appears in the back-end task controller, was cool to w
 
 ## Challenges
 
-* ...
+* There was one strange situation where we couldn't save an object inside of a user in the database. This required some really hacky workarounds both in the front-end and in the back-end.
+* Working with Moment.js and fiddling with date formats was a little bit of a headache sometimes, but it was still probably better than using the JS `Date()` constructor.
 
 ## Wins
 
-* ...
+* The score system and data visualization was a lot of fun to do.
+* I'm quite happy with the UX/UI in general and with how the CSS turned out, especially on the User Profile page.
