@@ -6,7 +6,7 @@ function tasksIndex(req, res) {
   const allTasks = [];
   allTasks.push(req.currentUser.tasks.filter(task => {
     // Pushing all tasks that are supposed to be for today.
-    if (task.dueDate === moment().format('YYYY-MM-DD') || task.recurring === 'daily') {
+    if (task.dueDate === moment().format('YYYY-MM-DD')) {
       return task;
     }
   }));
