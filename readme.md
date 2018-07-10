@@ -54,14 +54,14 @@ Show page for a single restaurant:
 Viewing a user profile and the restaurants added by that user:
 ![Screenshot 3](./readme-images/screenshot3.png)
 
-
-![Screenshot 4](./readme-images/screenshot4.png =500x)
+Form for creating a new task:
+![Screenshot 4](./readme-images/screenshot4.png)
 
 ## Code Examples
 
 Here are some of the code snippets in this project that I found the most interesting and challenging to write.
 
-_Example 1: Function in the back-end controller for when the user completes a task._
+_Example 1: Function in the back-end tasks controller for when the user completes a task._
 
 ```javascript
 function tasksComplete(req, res, next) {
@@ -95,13 +95,34 @@ function tasksComplete(req, res, next) {
 
 This function is where the scorekeeping was done in the back-end when a user completed their task. It needed to add 5 to the user's total score for all tasks, creating a `user.score` for total scores if there isn't one, then it needed to add 5 to the score for that type of task, creating a ``user[`${task.title}`Score]`` if there isn't one.
 
-_Example 2: Making a request to the Google Static Maps API._
+_Example 2: Indexing a user's tasks._
 
 ```javascript
-...
+function tasksIndex(req, res) {
+  const allTasks = [];
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for today.
+    if (task.dueDate === moment().format('YYYY-MM-DD')) {
+      return task;
+    }
+  }));
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for the past.
+    if (moment(task.dueDate).isBefore(moment().format('YYYY-MM-DD'))) {
+      return task;
+    }
+  }));
+  allTasks.push(req.currentUser.tasks.filter(task => {
+    // Pushing all tasks that are supposed to be for the future.
+    if (moment(task.dueDate).isAfter(moment().format('YYYY-MM-DD'))) {
+      return task;
+    }
+  }));
+  res.json(allTasks);
+}
 ```
 
-...
+This function, which also appears in the back-end task controller, was cool to write because it extensively used functionality that was built into Moment.js. Because of the way we wanted to display data in the front-end of our app, we felt it would be better to effectively have two "user show" endpoints in the back-end, one for indexing the user's currently uncompleted tasks, and another for indexing the user's scores and the user's data. This endpoint would return an array of three arrays, giving today's tasks, past unfinished tasks, and future tasks.
 
 ## Challenges
 
