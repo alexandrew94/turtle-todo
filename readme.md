@@ -45,6 +45,8 @@ Show page for a single restaurant:
 Viewing a user profile and the restaurants added by that user:
 ![Screenshot 3](./readme-images/screenshot3.png)
 
+![Screenshot 4](./readme-images/screenshot4.png)
+
 ## Code Examples
 
 Here are some of the code snippets in this project that I found the most interesting and challenging to write.
