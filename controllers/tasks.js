@@ -45,9 +45,9 @@ function tasksComplete(req, res, next) {
           user.score = 0;
         }
         user.score += 5;
-        if(!user.taskScores) {
-          user.taskScores = [];
-        }
+        // if(!user.taskScores) {
+        //   user.taskScores = [];
+        // }
         if (!user[`${task.title}Score`]) {
           user[`${task.title}Score`] = 0;
         }
