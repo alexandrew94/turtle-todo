@@ -10,23 +10,6 @@
     "test": "nyc mocha \"test/**/*_spec.js\" --require \"test/spec_helper\" --recursive --exit",
     "build": "webpack -p"
   },
-  "author": "Students",
-  "license": "ISC",
-  "dependencies": {
-    "@uirouter/angularjs": "^1.0.15",
-    "angular": "^1.6.0",
-    "angular-moment": "^1.2.0",
-    "bcrypt": "^2.0.1",
-    "bluebird": "^3.5.1",
-    "body-parser": "^1.18.2",
-    "bulma": "^0.7.1",
-    "express": "^4.16.3",
-    "jsonwebtoken": "^8.2.1",
-    "moment": "^2.22.1",
-    "mongoose": "^5.0.17",
-    "mongoose-unique-validator": "^2.0.1",
-    "satellizer": "^0.15.5"
-  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.26.0",
@@ -46,5 +29,22 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
+  },
+  "author": "Students",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.0",
+    "angular-moment": "^1.2.0",
+    "bcrypt": "^2.0.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "bulma": "^0.7.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.17",
+    "mongoose-unique-validator": "^2.0.1",
+    "satellizer": "^0.15.5"
   }
 }
