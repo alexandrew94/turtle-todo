@@ -20,9 +20,7 @@ What problem are we trying to solve? We have decided that fundamentally we want 
 
 ## Link
 
-* [Heroku](https://turtle-to-do.herokuapp.com/)
-
-Login with email *user1@user1* and password *u1* to try using the app.
+* [Heroku](https://turtle-to-do.herokuapp.com/) (Login with email *user1@user1* and password *u1* to try using the app.)
 
 ## Description
 
